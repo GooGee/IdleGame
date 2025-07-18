@@ -339,8 +339,8 @@ export default {
       var lv = this.dungeons.lv
       // 获取独特装备
       if (event.type == 'boss' && this.dungeons.type != 'endless') {
-        var randow = 1 - 0.02*((this.dungeons.difficulty-1)*2+1)
-        if (Math.random() > randow) {
+        var randow = 0.2*(this.dungeons.difficulty-1)
+        if (Math.random() < randow) {
           var random = Math.random()
           if (random <= 0.3 && random > 0) {
             var b = this.findBrothersComponents(this, 'weaponPanel', false)[0]

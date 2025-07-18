@@ -186,9 +186,7 @@ export default {
       }
     },
     createShopItem(lv) {
-      var equip = [0.4, 0.342, 0.25, 0.008];
-      // var equip = [0.4, 0.30, 0.25, 0.05];
-      // var equip = [0, 0, 0,1];
+      var equip = [0.4, 0.3, 0.2, 0.1];
       var equipQua = -1;
       var r = Math.random();
       if (r <= equip[0]) {

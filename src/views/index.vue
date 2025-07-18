@@ -140,7 +140,7 @@
         <cTooltip placement="bottom">
           <template v-slot:content>
             <div class="gold" v-if="attribute.DPS" :style="{fontSize:attribute.DPS>=10000?'.18rem':'.22rem'}">DPS:
-              <span :style="{fontSize:attribute.DPS>=10000?'.18rem':'.22rem'}">{{(attribute.DPS).toFixed(2)}}</span>
+              <span :style="{fontSize:attribute.DPS>=10000?'.18rem':'.22rem'}">{{(attribute.DPS).toFixed(1)}}</span>
             </div>
           </template>
           <template v-slot:tip>
@@ -283,7 +283,7 @@
           <p class="info">* 刷新当前世界副本</p>
           <p class="info">* 刷新有30秒钟的间隔</p>
           <p class="info">* 刷新时有较低概率同时刷新出高难度副本</p>
-          <p class="info">* 刷新规则[lv-5,lv+6]</p>
+          <p class="info">* 刷新规则[lv-5,lv+5]</p>
         </template>
       </cTooltip>
 
@@ -609,7 +609,7 @@ export default {
       // 存储副本数据的数组
       this.dungeonsArr = []
       // 此系数决定生成副本难度对应的概率
-      let Co = [0.85, 0.1, 0.05]
+      let Co = [0.7, 0.2, 0.1]
       // 这个for循环会生成低于玩家等级的副本
       for (let i = this.playerLv - 1; i > this.playerLv - 5; i--) {
         if (i < 1) {
@@ -639,7 +639,7 @@ export default {
         }
       }
       // 这个for循环会生成高于玩家等级的副本
-      for (let i = this.playerLv; i < this.playerLv + 6; i++) {
+      for (let i = this.playerLv; i < this.playerLv + 5; i++) {
         let difficulty = 1, r = Math.random()
         // 生成普通副本时有几率刷新高难度副本
         if (r <= Co[0]) {
