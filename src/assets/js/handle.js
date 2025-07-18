@@ -260,29 +260,29 @@ function createRandomEntry(lv, qualityCoefficient) {
       entry.showVal = '+' + random
       break;
     case 'ATKPERCENT':
-      var random = parseFloat(lv * 0.11 + (randomCoefficient  * lv / 10 + 4)).toFixed(2)
-      random = parseFloat(random * qualityCoefficient).toFixed(2)
+      var random = parseFloat(lv * 0.11 + (randomCoefficient  * lv / 10 + 4)).toFixed(1)
+      random = parseFloat(random * qualityCoefficient).toFixed(1)
       random = random || 1
       entry.value = random
       entry.showVal = '+' + random + '%'
       break;
     case 'DEFPERCENT':
-      var random = parseFloat(lv * 0.1 + (randomCoefficient  * lv / 10 + 4)).toFixed(2)
-      random = parseFloat(random * qualityCoefficient).toFixed(2)
+      var random = parseFloat(lv * 0.1 + (randomCoefficient  * lv / 10 + 4)).toFixed(1)
+      random = parseFloat(random * qualityCoefficient).toFixed(1)
       random = random || 1
       entry.value = random
       entry.showVal = '+' + random + '%'
       break;
     case 'HPPERCENT':
-      var random = parseFloat(lv * 0.13 + (randomCoefficient  * lv / 10 + 4)).toFixed(2)
-      random = parseFloat(random * qualityCoefficient).toFixed(2)
+      var random = parseFloat(lv * 0.13 + (randomCoefficient  * lv / 10 + 4)).toFixed(1)
+      random = parseFloat(random * qualityCoefficient).toFixed(1)
       random = random || 1
       entry.value = random
       entry.showVal = '+' + random + '%'
       break;
     case 'BLOCPERCENT':
-        var random = parseFloat(lv * 0.1 + (randomCoefficient  * lv / 10 + 4)).toFixed(2)
-        random = parseFloat(random * qualityCoefficient).toFixed(2)
+        var random = parseFloat(lv * 0.1 + (randomCoefficient  * lv / 10 + 4)).toFixed(1)
+        random = parseFloat(random * qualityCoefficient).toFixed(1)
         random = random || 1
         entry.value = random
         entry.showVal = '+' + random + '%'

@@ -180,22 +180,22 @@ export default {
             item.showVal = '+' + random
             break;
           case 'ATKPERCENT':
-            var random = parseFloat(lv * 0.11 + (Math.random() * lv / 10 + 4)).toFixed(2)
-            random = parseFloat(random * weapon.quality.qualityCoefficient).toFixed(2)
+            var random = parseFloat(lv * 0.11 + (Math.random() * lv / 10 + 4)).toFixed(1)
+            random = parseFloat(random * weapon.quality.qualityCoefficient).toFixed(1)
             random = random || 1
             item.value = random
             item.showVal = '+' + random + '%'
             break;
           case 'DEFPERCENT':
-            var random = parseFloat(lv * 0.1 + (Math.random() * lv / 10 + 4)).toFixed(2)
-            random = parseFloat(random * weapon.quality.qualityCoefficient).toFixed(2)
+            var random = parseFloat(lv * 0.1 + (Math.random() * lv / 10 + 4)).toFixed(1)
+            random = parseFloat(random * weapon.quality.qualityCoefficient).toFixed(1)
             random = random || 1
             item.value = random
             item.showVal = '+' + random + '%'
             break;
           case 'HPPERCENT':
-            var random = parseFloat(lv * 0.13 + (Math.random() * lv / 10 + 4)).toFixed(2)
-            random = parseFloat(random * weapon.quality.qualityCoefficient).toFixed(2)
+            var random = parseFloat(lv * 0.13 + (Math.random() * lv / 10 + 4)).toFixed(1)
+            random = parseFloat(random * weapon.quality.qualityCoefficient).toFixed(1)
             random = random || 1
             item.value = random
             item.showVal = '+' + random + '%'
