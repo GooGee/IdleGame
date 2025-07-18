@@ -24,7 +24,7 @@
           <div class="hp">
             <img src="../assets/icons/S_Holy01.png" alt="">
             <div class="value" :style="{fontSize:attribute.MAXHP.value>=100000000?'.20rem':'.26rem'}">
-              {{attribute.CURHP.value}}/{{attribute.MAXHP.value}}
+              {{attribute.CURHP.value}}/{{attribute.MAXHP.showValue}}
             </div>
           </div>
         </template>
@@ -49,7 +49,7 @@
             <div class="item" title="攻击力">
               <img src="../assets/icons/ATK.png" alt="">
               <div class="value" :style="{fontSize:attribute.ATK.value>=100000?'.18rem':'.23rem'}">
-                {{attribute.ATK.value}}
+                {{attribute.ATK.showValue}}
               </div>
             </div>
           </template>
@@ -91,7 +91,7 @@
             <div class="item">
               <img src="../assets/icons/icon_11.png" alt="">
               <div class="value" :style="{fontSize:attribute.DEF.value>=100000?'.18rem':'.23rem'}">
-                {{attribute.DEF.value}} <span style="font-size:.12rem;">({{((1-attribute.REDUCDMG)*100).toFixed(2)}}%)</span>
+                {{attribute.DEF.value}} ({{((1-attribute.REDUCDMG)*100).toFixed(1)}}%)
               </div>
             </div>
           </template>
@@ -99,37 +99,6 @@
             <p class="info">* 角色防御力以及计算后的减伤比例</p>
             <p class="info">* 减伤比例采用非线性计算，护甲越高收益越低</p>
             <p class="info">* 显示为近似值，实际上永远不会到达100%减伤</p>
-          </template>
-        </cTooltip>
-
-        <!-- <cTooltip placement="bottom">
-          <template v-slot:content>
-            <div class="item">
-              <img src="../assets/icons/S_EVA.png" alt="">
-              <div class="value">
-                {{attribute.EVA.showValue}}
-              </div>
-            </div>
-          </template>
-          <template v-slot:tip>
-            <p class="info">* 角色闪避几率</p>
-            <p class="info">* 闪避几率采用非线性计算</p>
-            <p class="info">* 多个闪避来源自身乘法叠加</p>
-          </template>
-        </cTooltip> -->
-
-        <cTooltip placement="bottom">
-          <template v-slot:content>
-            <div class="item">
-              <img src="../assets/icons/S_BLOC.png" alt="">
-              <div class="value" :style="{fontSize:attribute.BLOC.value>=100000?'.18rem':'.23rem'}">
-                {{attribute.BLOC.value}}
-              </div>
-            </div>
-          </template>
-          <template v-slot:tip>
-            <p class="info">* 角色格挡伤害</p>
-            <p class="info">* 计算护甲后再计算格挡伤害就是最终受到的伤害</p>
           </template>
         </cTooltip>
 
@@ -1176,7 +1145,7 @@ a {
       & > div,
       .item {
         cursor: pointer;
-        width: 33.3%;
+        width: 50%;
         height: 50%;
         display: flex;
         align-items: center;

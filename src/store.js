@@ -338,18 +338,18 @@ export default new Vuex.Store({
         }
       })
       attribute.ATK.value = parseInt(attribute.ATK.value * (100 + ATKPERCENT) / 100)
-      attribute.ATK.showValue = '+' + (attribute.ATK.value)
+      attribute.ATK.showValue = '+' + (attribute.ATK.value) + ` (${ATKPERCENT.toFixed(1)}%)`
       attribute.DEF.value = parseInt(attribute.DEF.value * (100 + DEFPERCENT) / 100)
       attribute.DEF.showValue = '+' + (attribute.DEF.value)
       attribute.MAXHP.value = parseInt(attribute.MAXHP.value * (100 + HPPERCENT) / 100)
-      attribute.MAXHP.showValue = '+' + (attribute.MAXHP.value)
+      attribute.MAXHP.value += 200
+      attribute.MAXHP.showValue = (attribute.MAXHP.value) + ` (${HPPERCENT.toFixed(1)}%)`
       attribute.BLOC.value = parseInt(attribute.BLOC.value * (100 + BLOCPERCENT) / 100)
       attribute.BLOC.showValue = '+' + (attribute.BLOC.value)
       attribute.EVA.value = ((1 - HitChance) * 100).toFixed(1)
       attribute.EVA.showValue = ((1 - HitChance) * 100).toFixed(1) + '%'
 
       // console.log(vueInstance.$store.state)
-      attribute.MAXHP.value += 200
       if (hpP) {
 
         attribute.CURHP.value = parseInt(attribute.MAXHP.value * hpP)
