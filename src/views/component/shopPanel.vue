@@ -17,7 +17,7 @@
         <span>剩余刷新次数：{{refreshTime}}次。</span>
       </div>
 
-      <div class="button" @click="goldRefreshShopItems()">10000金币刷新</div>
+      <div class="button" @click="goldRefreshShopItems()">付费刷新</div>
       <div class="button" @click="refreshShopItems()">免费刷新</div>
       <!-- <div class="button" @click="sell">一键出售</div> -->
     </div>
@@ -40,7 +40,7 @@ export default {
       visible: false,
       currentItem: {},
       currentItemIndex: "",
-      refreshTime: 5,
+      refreshTime: 10,
       timeo: 60,
       timeStart: false,
       timeInterval: '',
@@ -62,7 +62,7 @@ export default {
       }
     },
     refreshTime(value) {
-      if (value < 5) {
+      if (value < 10) {
 
         if (this.timeStart) {
           return
@@ -113,8 +113,8 @@ export default {
         })
         return
       }
-      if (this.refreshTime > 5) {
-        this.refreshTime = 5
+      if (this.refreshTime > 10) {
+        this.refreshTime = 10
       }
       if (this.refreshTime < 1) {
         this.$store.commit("set_sys_info", {
@@ -165,7 +165,8 @@ export default {
         })
         return
       }
-      if (this.$store.state.playerAttribute.GOLD < 10000) {
+      var cost = 100 * this.$store.state.playerAttribute.lv
+      if (this.$store.state.playerAttribute.GOLD < cost) {
         this.$store.commit("set_sys_info", {
           msg: `
               钱不够啊，想啥呢。
@@ -173,7 +174,7 @@ export default {
           type: "warning",
         });
       } else {
-        this.$store.commit("set_player_gold", -10000);
+        this.$store.commit("set_player_gold", -cost);
         this.grid = new Array(5).fill({});
         var wlv = Number(this.$store.state.playerAttribute.weapon.lv);
         var alv = Number(this.$store.state.playerAttribute.armor.lv);
