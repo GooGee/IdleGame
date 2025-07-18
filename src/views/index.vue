@@ -75,20 +75,6 @@
         <cTooltip placement="bottom">
           <template v-slot:content>
             <div class="item">
-              <img src="../assets/icons/CRITDMG.png" alt="">
-              <div class="value">
-                {{attribute.CRITDMG.value}}%
-              </div>
-            </div>
-          </template>
-          <template v-slot:tip>
-            <p class="info">* 暴击伤害初始为150%</p>
-          </template>
-        </cTooltip>
-
-        <cTooltip placement="bottom">
-          <template v-slot:content>
-            <div class="item">
               <img src="../assets/icons/icon_11.png" alt="">
               <div class="value" :style="{fontSize:attribute.DEF.value>=100000?'.18rem':'.23rem'}">
                 {{attribute.DEF.value}} ({{((1-attribute.REDUCDMG)*100).toFixed(1)}}%)
@@ -99,6 +85,20 @@
             <p class="info">* 角色防御力以及计算后的减伤比例</p>
             <p class="info">* 减伤比例采用非线性计算，护甲越高收益越低</p>
             <p class="info">* 显示为近似值，实际上永远不会到达100%减伤</p>
+          </template>
+        </cTooltip>
+
+        <cTooltip placement="bottom">
+          <template v-slot:content>
+            <div class="item">
+              <img src="../assets/icons/CRITDMG.png" alt="">
+              <div class="value">
+                {{attribute.CRITDMG.value}}%
+              </div>
+            </div>
+          </template>
+          <template v-slot:tip>
+            <p class="info">* 暴击伤害初始为150%</p>
           </template>
         </cTooltip>
 
