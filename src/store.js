@@ -5,34 +5,34 @@ import handle from './assets/js/handle'
 Vue.use(Vuex)
 
 var initial_weapon = {
-    "lv": 1,
-    itemType: 'weapon',
-    "quality": {
-      name: '破旧',
-      qualityCoefficient: 0.7,
-      probability: '0.25',
-      color: '#a1a1a1',
-      extraEntryNum: 1,
-    },
-    "type": {
-      "name": "新手短剑",
-      "des": "新手菜鸡使用的短剑",
-      "iconSrc": "./icons/W_Sword001.png",
-      "entry": [{
-        "valCoefficient": 0.9,
-        "value": 1,
-        "showVal": "+1",
-        "type": "ATK",
-        "name": "攻击力"
-      }]
-    },
-    "extraEntry": [{
+  "lv": 1,
+  itemType: 'weapon',
+  "quality": {
+    name: '破旧',
+    qualityCoefficient: 0.7,
+    probability: '0.25',
+    color: '#a1a1a1',
+    extraEntryNum: 1,
+  },
+  "type": {
+    "name": "新手短剑",
+    "des": "新手菜鸡使用的短剑",
+    "iconSrc": "./icons/W_Sword001.png",
+    "entry": [{
+      "valCoefficient": 0.9,
       "value": 1,
       "showVal": "+1",
       "type": "ATK",
       "name": "攻击力"
     }]
   },
+  "extraEntry": [{
+    "value": 1,
+    "showVal": "+1",
+    "type": "ATK",
+    "name": "攻击力"
+  }]
+},
   initial_armor = {
     "lv": 1,
     itemType: 'armor',
@@ -60,7 +60,7 @@ var initial_weapon = {
       "value": 10,
       "showVal": "+10",
       "name": "生命值"
-    }, ]
+    },]
   },
   initial_neck = {
     "lv": 1,
@@ -318,7 +318,7 @@ export default new Vuex.Store({
       var ATKPERCENT = 0,
         DEFPERCENT = 0,
         HPPERCENT = 0,
-      BLOCPERCENT = 0
+        BLOCPERCENT = 0
       entry.map(item => {
         switch (item.type) {
           case 'ATKPERCENT':
@@ -374,10 +374,10 @@ export default new Vuex.Store({
       //承受伤害比例
       // attribute.REDUCDMG = 1 - 0.06 * armor / (1 + (0.06 * armor))
       attribute.REDUCDMG = 1 - 0.05 * armor / (1 + (0.0525 * armor))
-      if(armor>7600){
+      if (armor > 7600) {
         armor = armor - 7600
-        attribute.REDUCDMG = 0.95+ 0.05*(0.00001 * armor / (1 + (0.00001 * armor)))
-        attribute.REDUCDMG=1-attribute.REDUCDMG
+        attribute.REDUCDMG = 0.95 + 0.05 * (0.00001 * armor / (1 + (0.00001 * armor)))
+        attribute.REDUCDMG = 1 - attribute.REDUCDMG
       }
       // state.playerAttribute.attribute=attribute
       // vueInstance.$store.commit("set_player_attribute", attribute);
@@ -426,10 +426,10 @@ export default new Vuex.Store({
         MAXHP = this.state.playerAttribute.attribute.MAXHP
       if (data == 'dead') {
         CURHP.value = 1
-      }else if(data == 'full'){
+      } else if (data == 'full') {
         CURHP.value = MAXHP.value
       }
-       else {
+      else {
         CURHP.value += Number(data);
         CURHP.value = parseInt(CURHP.value)
         if (CURHP.value > MAXHP.value) {
