@@ -29,6 +29,7 @@
 </template>
 <script>
 import { assist } from "../../assets/js/assist";
+import { calculatePrice } from '../../assets/js/helper';
 export default {
   name: "shop",
   data() {
@@ -228,7 +229,7 @@ export default {
           var item = b.createNewItem(equipQua, lv);
         }
         item = JSON.parse(item);
-        item.gold = parseInt(item.lv * item.quality.qualityCoefficient * (250 + 20 * item.lv))
+        item.gold = calculatePrice(item)
         for (let i = 0; i < this.grid.length; i++) {
           if (JSON.stringify(this.grid[i]).length < 3) {
             this.$set(this.grid, i, item);

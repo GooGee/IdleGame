@@ -49,6 +49,7 @@
 </template>
 <script>
 import { assist } from '../../assets/js/assist';
+import { calculatePrice } from '../../assets/js/helper';
 export default {
   name: "backpackPanel",
   data() {
@@ -60,7 +61,7 @@ export default {
       currentItem: {},
       currentItemIndex: '',
       autoSellPanel: false,
-      autoSell:[false,false,false,false]
+      autoSell:[true,true,false,false]
     };
   },
   mixins: [assist],
@@ -262,7 +263,7 @@ export default {
         return
       }
       this.$set(this.grid, this.currentItemIndex, {});
-      var gold = this.currentItem.lv * this.currentItem.quality.qualityCoefficient * 30
+      var gold = this.currentItem.gold ? this.currentItem.gold : calculatePrice(this.currentItem)
       this.$store.commit("set_player_gold", parseInt(gold));
       this.$store.commit("set_sys_info", {
         msg: `
