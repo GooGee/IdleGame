@@ -212,18 +212,18 @@ function createRandomEntry(lv, qualityCoefficient) {
       type: 'HPPERCENT',
       'name': '生命值'
     },
-    {
-      'value': '11%',
-      'showVal': '+11%',
-      type: 'BLOCPERCENT',
-      'name': '格挡'
-    },
-    {
-      'value': '11%',
-      'showVal': '+11%',
-      type: 'BLOC',
-      'name': '格挡'
-    },
+    // {
+    //   'value': '11%',
+    //   'showVal': '+11%',
+    //   type: 'BLOCPERCENT',
+    //   'name': '格挡'
+    // },
+    // {
+    //   'value': '11%',
+    //   'showVal': '+11%',
+    //   type: 'BLOC',
+    //   'name': '格挡'
+    // },
     // {
     //   'value': '11%',
     //   'showVal': '+11%',

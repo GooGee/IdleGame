@@ -4,8 +4,8 @@
  */
 
 export const equiAttributeNeck = {
-  data(){
-    return{
+  data() {
+    return {
       qualityNeck: [{
         name: '破旧',
         qualityCoefficient: 0.6,
@@ -116,11 +116,11 @@ export const equiAttributeNeck = {
           type: 'CRITDMG',
           'name': '暴击伤害'
         }, {
-          'valCoefficient': 1.2,
+          'valCoefficient': 0.5,
           'value': '11',
           'showVal': '+11',
-          type: 'BLOC',
-          'name': '格挡'
+          type: 'CRIT',
+          'name': '暴击率'
         }, {
           'valCoefficient': 0.7,
           'value': '11',
@@ -150,11 +150,11 @@ export const equiAttributeNeck = {
         des: '',
         iconSrc: './icons/U_neck05.png',
         entry: [{
-          'valCoefficient': 0.9,
+          'valCoefficient': 0.5,
           'value': '11',
           'showVal': '+11',
-          type: 'BLOC',
-          'name': '格挡'
+          type: 'CRIT',
+          'name': '暴击率'
         }, {
           'valCoefficient': 0.9,
           'value': '11',
@@ -186,13 +186,13 @@ export const equiAttributeNeck = {
             'showVal': '+11',
             type: 'HP',
             'name': '生命值'
-          },{
-          'valCoefficient': 0.6,
-          'value': '11',
-          'showVal': '+11',
-          type: 'BLOC',
-          'name': '格挡'
-        }]
+          }, {
+            'valCoefficient': 0.5,
+            'value': '11',
+            'showVal': '+11',
+            type: 'CRIT',
+            'name': '暴击率'
+          }]
         },
         {
           name: '冰龙凝雪',
@@ -223,7 +223,7 @@ export const equiAttributeNeck = {
           des: '银魂之眼',
           iconSrc: './icons/Ac_5.png',
           entry: [{
-            'valCoefficient': 1.1,
+            'valCoefficient': 0.5,
             'value': '11',
             'showVal': '+11',
             type: 'CRIT',
@@ -235,45 +235,14 @@ export const equiAttributeNeck = {
             type: 'HP',
             'name': '生命值'
           }, {
-          'valCoefficient': 0.6,
-          'value': '11',
-          'showVal': '+11',
-          type: 'ATK',
-          'name': '攻击力'
-        }]
+            'valCoefficient': 0.6,
+            'value': '11',
+            'showVal': '+11',
+            type: 'ATK',
+            'name': '攻击力'
+          }]
         }
-      ],
-      extraEntryNeck: [{
-        'value': '11',
-        'showVal': '+11',
-        type: 'ATK',
-        'name': '攻击力'
-      }, {
-        type: 'CRIT',
-        'value': '8',
-        'showVal': '+8%',
-        'name': '暴击率'
-      }, {
-        type: 'CRITDMG',
-        'value': '20',
-        'showVal': '+20%',
-        'name': '暴击伤害'
-      }, {
-        type: 'HP',
-        'value': '20',
-        'showVal': '+20',
-        'name': '生命值'
-      }, {
-        type: 'DEF',
-        'value': '8',
-        'showVal': '+8%',
-        'name': '防御力'
-      }, {
-        'value': '11%',
-        'showVal': '+11%',
-        type: 'BLOC',
-        'name': '格挡'
-      }]
+      ]
     }
   },
   methods: {

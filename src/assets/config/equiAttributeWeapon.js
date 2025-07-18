@@ -4,7 +4,7 @@
  */
 
 export const equiAttributeWeapon = {
-  data(){
+  data() {
     return {
       quality: [{
         name: '破旧',
@@ -203,6 +203,12 @@ export const equiAttributeWeapon = {
           'showVal': '+11',
           type: 'ATK',
           'name': '攻击力'
+        }, {
+          type: 'HP',
+          'valCoefficient': 1.8,
+          'value': '8',
+          'showVal': '8',
+          'name': '生命值'
         }]
       }, {
         name: '埃苏莱布斯军刀',
@@ -221,11 +227,11 @@ export const equiAttributeWeapon = {
           'showVal': '8',
           'name': '防御力'
         }, {
-          type: 'BLOC',
+          type: 'HP',
           'valCoefficient': 1.2,
           'value': '8',
           'showVal': '8',
-          'name': '格挡'
+          'name': '生命值'
         }]
       },],
       category: [{

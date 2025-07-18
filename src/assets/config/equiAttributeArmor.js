@@ -4,8 +4,8 @@
  */
 
 export const equiAttributeArmor = {
-  data(){
-    return{
+  data() {
+    return {
       qualityArmor: [{
         name: '破旧',
         qualityCoefficient: 0.7,
@@ -98,12 +98,12 @@ export const equiAttributeArmor = {
           'showVal': '+11',
           type: 'ATK',
           'name': '攻击力'
-        },{
+        }, {
           'valCoefficient': 1.2,
           'value': '11',
           'showVal': '+11',
-          type: 'BLOC',
-          'name': '格挡'
+          type: 'DEF',
+          'name': '防御力'
         },]
       }, {
         name: '争执连身衣',
@@ -191,7 +191,7 @@ export const equiAttributeArmor = {
           type: 'ATK',
           'name': '攻击力'
         }]
-      },{
+      }, {
         name: '先代狂龙战士盔甲',
         des: '',
         iconSrc: './icons/U_Armor07.png',
@@ -205,9 +205,9 @@ export const equiAttributeArmor = {
           'valCoefficient': 1.2,
           'value': '11',
           'showVal': '+11',
-          type: 'BLOC',
-          'name': '格挡'
-        },{
+          type: 'ATK',
+          'name': '攻击力'
+        }, {
           type: 'HP',
           'valCoefficient': 1.4,
           'value': '8',
