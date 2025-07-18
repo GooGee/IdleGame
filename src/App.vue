@@ -4,11 +4,6 @@
   </div>
 </template>
 <style lang="scss">
-// @import url('https://fonts.googleapis.com/css?family=Noto+Serif+SC');
-// @import url('https://fonts.googleapis.com/css?family=Noto+Sans+SC');
-// @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-// @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
-
 // #app {
 //   font-family: 'Noto Sans','Source Sans Pro','Avenir', Helvetica, Arial, sans-serif !important;
 //   -webkit-font-smoothing: antialiased;

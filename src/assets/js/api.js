@@ -2,11 +2,18 @@
  * axios封装
  * 请求拦截、响应拦截、错误统一处理
  */
-import axios from 'axios';
 import router from '../../router';
 import vue from '../../main'
 
 export async function getAxiosInstance() {
+
+  return {
+    post() {
+      return new Promise()
+    }
+  }
+
+
   var baseURL, instance
 
   baseURL = 'http://couy.xyz:3001/';
@@ -22,7 +29,7 @@ export async function getAxiosInstance() {
       case 401:
         vue.$store.commit("set_sys_info", {
           msg: `
-          😭${response.data.msg|| '服务器有点问题，请稍后重试'}
+          😭${response.data.msg || '服务器有点问题，请稍后重试'}
           `,
           type: 'warning'
         });
@@ -30,7 +37,7 @@ export async function getAxiosInstance() {
       case 403:
         vue.$store.commit("set_sys_info", {
           msg: `
-          😭${response.data.msg|| '服务器有点问题，请稍后重试'}
+          😭${response.data.msg || '服务器有点问题，请稍后重试'}
           `,
           type: 'warning'
         });
@@ -38,7 +45,7 @@ export async function getAxiosInstance() {
       case 404:
         vue.$store.commit("set_sys_info", {
           msg: `
-          😭${response.data.msg|| '服务器有点问题，请稍后重试'}
+          😭${response.data.msg || '服务器有点问题，请稍后重试'}
           `,
           type: 'warning'
         });
@@ -46,7 +53,7 @@ export async function getAxiosInstance() {
       default:
         vue.$store.commit("set_sys_info", {
           msg: `
-          😭${response.data.msg|| '服务器有点问题，请稍后重试'}
+          😭${response.data.msg || '服务器有点问题，请稍后重试'}
           `,
           type: 'warning'
         });
@@ -88,7 +95,7 @@ export async function getAxiosInstance() {
       } else {
         vue.$store.commit("set_sys_info", {
           msg: `
-          😭${response.data.msg|| '服务器有点问题，请稍后重试'}
+          😭${response.data.msg || '服务器有点问题，请稍后重试'}
           `,
           type: 'warning'
         });
