@@ -183,8 +183,8 @@ function createRandomEntry(lv, qualityCoefficient) {
       'name': '暴击率'
     }, {
       type: 'CRITDMG',
-      'value': '20',
-      'showVal': '+20%',
+      'value': '11',
+      'showVal': '+11%',
       'name': '暴击伤害'
     }, {
       type: 'HP',
@@ -294,7 +294,7 @@ function createRandomEntry(lv, qualityCoefficient) {
       entry.showVal = '+' + random + '%'
       break;
     case 'CRITDMG':
-      var random = parseInt(randomCoefficient  * 12 + 20)
+      var random = parseFloat(lv * 0.11 + (randomCoefficient  * lv / 10 + 4)).toFixed(1)
       random = parseInt(random * qualityCoefficient)
       entry.value = random
       entry.showVal = '+' + random + '%'

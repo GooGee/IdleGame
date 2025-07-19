@@ -101,7 +101,7 @@ export default {
             item.showVal = '+' + random
             break;
           case 'CRIT':
-            var random = parseInt(Math.random() * 5 + 10)
+            var random = parseInt(Math.random() * 5 + 5)
             random = parseInt(random * neck.quality.qualityCoefficient * item.valCoefficient)
             item.value = random
             item.showVal = '+' + random + '%'
