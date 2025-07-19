@@ -14,6 +14,7 @@
 </template>
 <script>
 import { assist } from '../../assets/js/assist';
+import { calculatePrice } from '../../assets/js/helper';
 export default {
   name: "dungeons",
   mixins: [assist],
@@ -425,7 +426,7 @@ export default {
         items.map(item => {
           // 当开启了自动出售并且新获得的装备品质低于史诗时，自动出售
           if (backpackPanel.autoSell[equipQua]&&item.quality.name!="独特") {
-            var gold = item.lv * item.quality.qualityCoefficient * 30
+            var gold = calculatePrice(item)
             this.$store.commit("set_player_gold", parseInt(gold));
             this.$store.commit("set_sys_info", {
               msg: `

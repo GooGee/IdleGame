@@ -80,6 +80,7 @@
 import { assist } from '../../assets/js/assist';
 import cTooltip from '../uiComponent/tooltip'
 import handle from '../../assets/js/handle'
+import { calculateReplacePrice, calculateUpgradePrice } from '../../assets/js/helper'
 export default {
   components: { cTooltip },
   name: "equimentPanel",
@@ -135,13 +136,11 @@ export default {
     item() { return this.$store.state.needStrengthenEquipment },
     // 计算强化所需金币
     strengthenNeedGold() {
-      var a = parseInt((parseInt(this.equiment.lv) + 1) * (1.1 ** (this.equiment.enchantlvl) ** 1.1) * (10 + parseInt(this.equiment.lv) / 5)) + 100
-      return a
+      return calculateUpgradePrice(this.equiment)
     },
     // 计算重铸所需金币
     recastNeedGold() {
-      var a = parseInt(parseInt(this.equiment.lv) * this.equiment.quality.qualityCoefficient * (200 + 10 * parseInt(this.equiment.lv)) / 4)
-      return a
+      return calculateReplacePrice(this.equiment)
     }
   },
   watch: {
