@@ -360,6 +360,7 @@ export default new Vuex.Store({
 
       // 初始暴击伤害150%
       attribute.CRITDMG.value += 150
+      attribute.CRITDMG.value = attribute.CRITDMG.value.toFixed(1)
 
       var atk = attribute.ATK.value,
         crit = attribute.CRIT.value,

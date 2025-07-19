@@ -295,7 +295,7 @@ function createRandomEntry(lv, qualityCoefficient) {
       break;
     case 'CRITDMG':
       var random = parseFloat(lv * 0.11 + (randomCoefficient  * lv / 10 + 4)).toFixed(1)
-      random = parseInt(random * qualityCoefficient)
+      random = parseFloat(random * qualityCoefficient).toFixed(1)
       entry.value = random
       entry.showVal = '+' + random + '%'
       break;
