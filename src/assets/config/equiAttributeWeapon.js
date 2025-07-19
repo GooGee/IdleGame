@@ -35,62 +35,62 @@ export const equiAttributeWeapon = {
       }],
       uniqueCategory: [{
         name: '创世亡命剑',
-        des: '只有被选中的勇士才能唤醒它真正的力量。',
+        des: '',
         iconSrc: './icons/U_Sword01.png',
         entry: [{
-          'valCoefficient': 1.8,
+          'valCoefficient': 3.8,
+          'value': '11',
+          'showVal': '+11',
+          type: 'ATK',
+          'name': '攻击力'
+        }, {
+          type: 'DEF',
+          'valCoefficient': 1.2,
+          'value': '8',
+          'showVal': '8',
+          'name': '防御力'
+        }]
+      }, {
+        name: '阿加雷斯血色巨剑',
+        des: '',
+        iconSrc: './icons/U_Sword03.png',
+        entry: [{
+          'valCoefficient': 2.2,
           'value': '11',
           'showVal': '+11',
           type: 'ATK',
           'name': '攻击力'
         }, {
           type: 'CRIT',
-          'valCoefficient': 1.5,
+          'valCoefficient': 1.2,
           'value': '8',
           'showVal': '+8%',
           'name': '暴击率'
         }, {
-          'valCoefficient': 1.3,
+          'valCoefficient': 1.6,
           'value': '11',
           'showVal': '+11',
           type: 'CRITDMG',
           'name': '暴击伤害'
         }]
       }, {
-        name: '无名剑',
-        des: '没有人知道它的来历。',
-        iconSrc: './icons/U_Sword02.png',
-        entry: [{
-          'valCoefficient': 2.7,
-          'value': '11',
-          'showVal': '+11',
-          type: 'ATK',
-          'name': '攻击力'
-        }, {
-          type: 'CRIT',
-          'valCoefficient': 2.5,
-          'value': '8',
-          'showVal': '+8%',
-          'name': '暴击率'
-        }]
-      }, {
-        name: '死亡之刃',
-        des: '万物生自守恒，源力破则失。',
+        name: '死亡之镰',
+        des: '',
         iconSrc: './icons/U_Sword04.png',
         entry: [{
-          'valCoefficient': 1.8,
+          'valCoefficient': 1.2,
           'value': '11',
           'showVal': '+11',
           type: 'ATK',
           'name': '攻击力'
         }, {
           type: 'CRIT',
-          'valCoefficient': 1.5,
+          'valCoefficient': 1.2,
           'value': '8',
           'showVal': '+8%',
           'name': '暴击率'
         }, {
-          'valCoefficient': 1.3,
+          'valCoefficient': 2.6,
           'value': '11',
           'showVal': '+11',
           type: 'CRITDMG',
@@ -98,88 +98,8 @@ export const equiAttributeWeapon = {
         }]
       }, {
         name: '霜龙利刃',
-        des: '傲雪冷心绝，万念化冰华。',
+        des: '',
         iconSrc: './icons/U_Sword05.png',
-        entry: [{
-          'valCoefficient': 1.8,
-          'value': '11',
-          'showVal': '+11',
-          type: 'ATK',
-          'name': '攻击力'
-        }, {
-          type: 'CRIT',
-          'valCoefficient': 1.5,
-          'value': '8',
-          'showVal': '+8%',
-          'name': '暴击率'
-        }, {
-          'valCoefficient': 1.3,
-          'value': '11',
-          'showVal': '+11',
-          type: 'CRITDMG',
-          'name': '暴击伤害'
-        }]
-      }, {
-        name: '阿加雷斯血色巨剑',
-        des: '诚既勇兮又以武，终刚强兮不可凌。身既死兮神以灵，子魂魄兮为鬼雄。',
-        iconSrc: './icons/U_Sword03.png',
-        entry: [{
-          'valCoefficient': 1.8,
-          'value': '11',
-          'showVal': '+11',
-          type: 'ATK',
-          'name': '攻击力'
-        }, {
-          type: 'CRIT',
-          'valCoefficient': 1.5,
-          'value': '8',
-          'showVal': '+8%',
-          'name': '暴击率'
-        }, {
-          'valCoefficient': 1.3,
-          'value': '11',
-          'showVal': '+11',
-          type: 'CRITDMG',
-          'name': '暴击伤害'
-        }]
-      }, {
-        name: '神龙纳格林之刃',
-        des: '神龙纳格林的爪子锻造的利刃',
-        iconSrc: './icons/U_Sword06.png',
-        entry: [{
-          'valCoefficient': 2.8,
-          'value': '11',
-          'showVal': '+11',
-          type: 'ATK',
-          'name': '攻击力'
-        }, {
-          'valCoefficient': 2.2,
-          'value': '11',
-          'showVal': '+11',
-          type: 'CRITDMG',
-          'name': '暴击伤害'
-        }]
-      }, {
-        name: '大师大冒险家之剑',
-        des: '大师大冒险家之剑',
-        iconSrc: './icons/U_Sword07.png',
-        entry: [{
-          'valCoefficient': 2.4,
-          'value': '11',
-          'showVal': '+11',
-          type: 'ATK',
-          'name': '攻击力'
-        }, {
-          type: 'HP',
-          'valCoefficient': 1.8,
-          'value': '8',
-          'showVal': '8',
-          'name': '生命值'
-        }]
-      }, {
-        name: '六翼天使武刃',
-        des: '六翼天使武刃',
-        iconSrc: './icons/U_Sword08.png',
         entry: [{
           'valCoefficient': 2.6,
           'value': '11',
@@ -187,51 +107,80 @@ export const equiAttributeWeapon = {
           type: 'ATK',
           'name': '攻击力'
         }, {
-          type: 'DEF',
-          'valCoefficient': 1.8,
+          type: 'CRIT',
+          'valCoefficient': 1.2,
           'value': '8',
-          'showVal': '8',
-          'name': '防御力'
+          'showVal': '+8%',
+          'name': '暴击率'
+        }, {
+          'valCoefficient': 1.2,
+          'value': '11',
+          'showVal': '+11',
+          type: 'CRITDMG',
+          'name': '暴击伤害'
         }]
       }, {
-        name: '数珠丸恒次',
-        des: '具体情况不明，传说为日莲上人所有',
-        iconSrc: './icons/U_Sword09.png',
+        name: '大冒险家之剑',
+        des: '',
+        iconSrc: './icons/U_Sword07.png',
         entry: [{
-          'valCoefficient': 3.9,
+          'valCoefficient': 2.2,
           'value': '11',
           'showVal': '+11',
           type: 'ATK',
           'name': '攻击力'
         }, {
-          type: 'HP',
-          'valCoefficient': 1.8,
+          type: 'CRIT',
+          'valCoefficient': 1.6,
           'value': '8',
-          'showVal': '8',
-          'name': '生命值'
+          'showVal': '+8%',
+          'name': '暴击率'
+        }, {
+          'valCoefficient': 1.2,
+          'value': '11',
+          'showVal': '+11',
+          type: 'CRITDMG',
+          'name': '暴击伤害'
         }]
       }, {
-        name: '埃苏莱布斯军刀',
+        name: '六翼天使之剑',
+        des: '',
+        iconSrc: './icons/U_Sword08.png',
+        entry: [{
+          'valCoefficient': 1.2,
+          'value': '11',
+          'showVal': '+11',
+          type: 'ATK',
+          'name': '攻击力'
+        }, {
+          type: 'CRIT',
+          'valCoefficient': 2.6,
+          'value': '8',
+          'showVal': '+8%',
+          'name': '暴击率'
+        }, {
+          'valCoefficient': 1.2,
+          'value': '11',
+          'showVal': '+11',
+          type: 'CRITDMG',
+          'name': '暴击伤害'
+        }]
+      }, {
+        name: '埃苏莱布斯之刀',
         des: '',
         iconSrc: './icons/U_Sword10.png',
         entry: [{
-          'valCoefficient': 1.9,
+          'valCoefficient': 3.2,
           'value': '11',
           'showVal': '+11',
           type: 'ATK',
           'name': '攻击力'
         }, {
           type: 'DEF',
-          'valCoefficient': 1.2,
+          'valCoefficient': 1.8,
           'value': '8',
           'showVal': '8',
           'name': '防御力'
-        }, {
-          type: 'HP',
-          'valCoefficient': 1.2,
-          'value': '8',
-          'showVal': '8',
-          'name': '生命值'
         }]
       },],
       category: [{
