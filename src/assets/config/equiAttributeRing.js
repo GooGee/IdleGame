@@ -34,107 +34,55 @@ export const equiAttributeRing = {
         color: '#ff0000', extraEntryNum: 5,
       }],
       uniqueCategory: [{
-        name: '真·毛毛指环',
-        des: '',
-        iconSrc: './icons/U_ring02.png',
-        entry: [{
-          'valCoefficient': 1.2,
-          'value': '11',
-          'showVal': '+11',
-          type: 'CRITDMG',
-          'name': '暴击伤害'
-        }, {
-          'valCoefficient': 0.5,
-          'value': '11',
-          'showVal': '+11',
-          type: 'CRIT',
-          'name': '暴击率'
-        }, {
-          'valCoefficient': 0.7,
-          'value': '11',
-          'showVal': '+11',
-          type: 'ATK',
-          'name': '攻击力'
-        },]
-      }, {
-        name: '死神名片戒指',
-        des: '',
-        iconSrc: './icons/U_ring01.png',
-        entry: [{
-          'valCoefficient': 1.0,
-          'value': '11',
-          'showVal': '+11',
-          type: 'CRITDMG',
-          'name': '暴击伤害'
-        }, {
-          'valCoefficient': 0.5,
-          'value': '11',
-          'showVal': '+11',
-          type: 'CRIT',
-          'name': '暴击率'
-        }, {
-          'valCoefficient': 0.8,
-          'value': '11',
-          'showVal': '+11',
-          type: 'HP',
-          'name': '生命值'
-        }]
-      }, {
         name: '先驱者戒指',
         des: '',
         iconSrc: './icons/U_ring03.png',
         entry: [{
-          'valCoefficient': 1.0,
-          'value': '11',
-          'showVal': '+11',
-          type: 'CRITDMG',
-          'name': '暴击伤害'
-        }, {
-          'valCoefficient': 0.5,
-          'value': '11',
-          'showVal': '+11',
           type: 'CRIT',
-          'name': '暴击率'
+          valCoefficient: 1.5,
+          value: '8',
+          showVal: '+8%',
+          name: '暴击率'
         }, {
-          'valCoefficient': 0.7,
-          'value': '11',
-          'showVal': '+11',
-          type: 'HP',
-          'name': '生命值'
+          valCoefficient: 1.5,
+          value: '11',
+          showVal: '+11',
+          type: 'CRITDMG',
+          name: '暴击伤害'
         }]
       }, {
-        name: '素盏呜尊的意志',
+        name: '死神名片戒指',
         des: '',
         iconSrc: './icons/U_ring04.png',
         entry: [{
-          'valCoefficient': 1.6,
-          'value': '11',
-          'showVal': '+11',
-          type: 'CRITDMG',
-          'name': '暴击伤害'
+          type: 'CRIT',
+          valCoefficient: 1.8,
+          value: '8',
+          showVal: '+8%',
+          name: '暴击率'
         }, {
-          'valCoefficient': 1.1,
-          'value': '11',
-          'showVal': '+11',
-          type: 'ATK',
-          'name': '攻击力'
+          valCoefficient: 1.2,
+          value: '11',
+          showVal: '+11',
+          type: 'CRITDMG',
+          name: '暴击伤害'
         },]
       }, {
         name: '月夜见尊的意志',
         des: '',
         iconSrc: './icons/U_ring05.png',
         entry: [{
-          'valCoefficient': 1.5,
-          'value': '11',
-          'showVal': '+11',
-          type: 'CRITDMG',
-          'name': '暴击伤害'
+          type: 'CRIT',
+          valCoefficient: 1.2,
+          value: '8',
+          showVal: '+8%',
+          name: '暴击率'
         }, {
-          'valCoefficient': 1.2,
-          'value': '11',
-          'showVal': '+11',
-          type: 'HP',
-          'name': '生命值'
+          valCoefficient: 1.8,
+          value: '11',
+          showVal: '+11',
+          type: 'CRITDMG',
+          name: '暴击伤害'
         }]
       },],
       category: [
@@ -205,8 +153,8 @@ export const equiAttributeRing = {
         'name': '暴击率'
       }, {
         type: 'CRITDMG',
-        'value': '20',
-        'showVal': '+20%',
+        'value': '11',
+        'showVal': '+11%',
         'name': '暴击伤害'
       }, {
         type: 'HP',

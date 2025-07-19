@@ -60,113 +60,55 @@ export const equiAttributeNeck = {
         'name': '生命值'
       },],
       uniqueCategoryNeck: [{
-        name: '十字旅团降魔项链',
+        name: '十字降魔项链',
         des: '',
         iconSrc: './icons/U_neck01.png',
         entry: [{
-          'valCoefficient': 0.7,
-          'value': '11',
-          'showVal': '+11',
-          type: 'ATK',
-          'name': '攻击力'
-        }, {
-          'valCoefficient': 0.8,
+          'valCoefficient': 1.5,
           'value': '11',
           'showVal': '+11',
           type: 'HP',
           'name': '生命值'
         }, {
-          'valCoefficient': 0.9,
-          'value': '11',
-          'showVal': '+11',
-          type: 'DEF',
-          'name': '防御力'
-        }]
-      }, {
-        name: '进阶黑暗龙王项链',
-        des: '',
-        iconSrc: './icons/U_neck02.png',
-        entry: [{
-          'valCoefficient': 1.0,
-          'value': '11',
-          'showVal': '+11',
+          valCoefficient: 1.5,
+          value: '11',
+          showVal: '+11',
           type: 'CRITDMG',
-          'name': '暴击伤害'
-        }, {
-          'valCoefficient': 0.5,
-          'value': '11',
-          'showVal': '+11',
-          type: 'CRIT',
-          'name': '暴击率'
-        }, {
-          'valCoefficient': 0.8,
-          'value': '11',
-          'showVal': '+11',
-          type: 'HP',
-          'name': '生命值'
-        }]
-      }, {
-        name: '伟大单身成员的项链',
-        des: '真棒，真帅。有了这条帅气的项链，一辈子单身都不会孤独',
-        iconSrc: './icons/U_neck03.png',
-        entry: [{
-          'valCoefficient': 1.0,
-          'value': '11',
-          'showVal': '+11',
-          type: 'CRITDMG',
-          'name': '暴击伤害'
-        }, {
-          'valCoefficient': 0.5,
-          'value': '11',
-          'showVal': '+11',
-          type: 'CRIT',
-          'name': '暴击率'
-        }, {
-          'valCoefficient': 0.7,
-          'value': '11',
-          'showVal': '+11',
-          type: 'HP',
-          'name': '生命值'
+          name: '暴击伤害'
         }]
       }, {
         name: '魔族之翼展',
-        des: '你能看到什么呢',
+        des: '',
         iconSrc: './icons/U_neck04.png',
         entry: [{
-          'valCoefficient': 1.6,
-          'value': '11',
-          'showVal': '+11',
-          type: 'CRITDMG',
-          'name': '暴击伤害'
-        }, {
-          'valCoefficient': 1.6,
-          'value': '11',
-          'showVal': '+11',
-          type: 'ATK',
-          'name': '攻击力'
-        },]
-      }, {
-        name: '伊帕娅之项链',
-        des: '',
-        iconSrc: './icons/U_neck05.png',
-        entry: [{
-          'valCoefficient': 0.5,
-          'value': '11',
-          'showVal': '+11',
-          type: 'CRIT',
-          'name': '暴击率'
-        }, {
-          'valCoefficient': 0.9,
-          'value': '11',
-          'showVal': '+11',
-          type: 'DEF',
-          'name': '防御力'
-        }, {
-          'valCoefficient': 1.3,
+          'valCoefficient': 1.2,
           'value': '11',
           'showVal': '+11',
           type: 'HP',
           'name': '生命值'
+        }, {
+          valCoefficient: 1.8,
+          value: '11',
+          showVal: '+11',
+          type: 'CRITDMG',
+          name: '暴击伤害'
+        },]
+      }, {
+        name: '黑暗龙王项链',
+        des: '',
+        iconSrc: './icons/U_neck05.png',
+        entry: [{
+          'valCoefficient': 1.8,
+          'value': '11',
+          'showVal': '+11',
+          type: 'HP',
+          'name': '生命值'
+        }, {
+          valCoefficient: 1.2,
+          value: '11',
+          showVal: '+11',
+          type: 'CRITDMG',
+          name: '暴击伤害'
         }]
       }],
       categoryNeck: [

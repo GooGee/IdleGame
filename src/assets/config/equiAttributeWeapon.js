@@ -34,7 +34,7 @@ export const equiAttributeWeapon = {
         color: '#ff0000', extraEntryNum: 5,
       }],
       uniqueCategory: [{
-        name: '创世亡命剑',
+        name: '创世之剑',
         des: '',
         iconSrc: './icons/U_Sword01.png',
         entry: [{
@@ -51,9 +51,9 @@ export const equiAttributeWeapon = {
           name: '防御力'
         }]
       }, {
-        name: '阿加雷斯血色巨剑',
+        name: '死亡之镰',
         des: '',
-        iconSrc: './icons/U_Sword03.png',
+        iconSrc: './icons/U_Sword04.png',
         entry: [{
           valCoefficient: 2.2,
           value: '11',
@@ -74,30 +74,7 @@ export const equiAttributeWeapon = {
           name: '暴击伤害'
         }]
       }, {
-        name: '死亡之镰',
-        des: '',
-        iconSrc: './icons/U_Sword04.png',
-        entry: [{
-          valCoefficient: 1.2,
-          value: '11',
-          showVal: '+11',
-          type: 'ATK',
-          name: '攻击力'
-        }, {
-          type: 'CRIT',
-          valCoefficient: 1.2,
-          value: '8',
-          showVal: '+8%',
-          name: '暴击率'
-        }, {
-          valCoefficient: 2.6,
-          value: '11',
-          showVal: '+11',
-          type: 'CRITDMG',
-          name: '暴击伤害'
-        }]
-      }, {
-        name: '霜龙利刃',
+        name: '冰霜利刃',
         des: '',
         iconSrc: './icons/U_Sword05.png',
         entry: [{
@@ -120,9 +97,9 @@ export const equiAttributeWeapon = {
           name: '暴击伤害'
         }]
       }, {
-        name: '大冒险家之剑',
+        name: '六翼天使之剑',
         des: '',
-        iconSrc: './icons/U_Sword07.png',
+        iconSrc: './icons/U_Sword08.png',
         entry: [{
           valCoefficient: 2.2,
           value: '11',
@@ -143,30 +120,7 @@ export const equiAttributeWeapon = {
           name: '暴击伤害'
         }]
       }, {
-        name: '六翼天使之剑',
-        des: '',
-        iconSrc: './icons/U_Sword08.png',
-        entry: [{
-          valCoefficient: 1.2,
-          value: '11',
-          showVal: '+11',
-          type: 'ATK',
-          name: '攻击力'
-        }, {
-          type: 'CRIT',
-          valCoefficient: 2.6,
-          value: '8',
-          showVal: '+8%',
-          name: '暴击率'
-        }, {
-          valCoefficient: 1.2,
-          value: '11',
-          showVal: '+11',
-          type: 'CRITDMG',
-          name: '暴击伤害'
-        }]
-      }, {
-        name: '埃苏莱布斯之刀',
+        name: '大冒险家之剑',
         des: '',
         iconSrc: './icons/U_Sword10.png',
         entry: [{
@@ -311,8 +265,8 @@ export const equiAttributeWeapon = {
         name: '暴击率'
       }, {
         type: 'CRITDMG',
-        value: '20',
-        showVal: '+20%',
+        value: '11',
+        showVal: '+11%',
         name: '暴击伤害'
       }, {
         type: 'HP',
