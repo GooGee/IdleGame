@@ -39,14 +39,14 @@ export const equiAttributeWeapon = {
         iconSrc: './icons/U_Sword01.png',
         entry: [{
           valCoefficient: 3.8,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'ATK',
           name: '攻击力'
         }, {
           type: 'DEF',
           valCoefficient: 1.2,
-          value: '8',
+          value: 8,
           showVal: '8',
           name: '防御力'
         }]
@@ -56,19 +56,19 @@ export const equiAttributeWeapon = {
         iconSrc: './icons/U_Sword04.png',
         entry: [{
           valCoefficient: 2.2,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'ATK',
           name: '攻击力'
         }, {
           type: 'CRIT',
           valCoefficient: 1.2,
-          value: '8',
+          value: 8,
           showVal: '+8%',
           name: '暴击率'
         }, {
           valCoefficient: 1.6,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'CRITDMG',
           name: '暴击伤害'
@@ -79,19 +79,19 @@ export const equiAttributeWeapon = {
         iconSrc: './icons/U_Sword05.png',
         entry: [{
           valCoefficient: 2.6,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'ATK',
           name: '攻击力'
         }, {
           type: 'CRIT',
           valCoefficient: 1.2,
-          value: '8',
+          value: 8,
           showVal: '+8%',
           name: '暴击率'
         }, {
           valCoefficient: 1.2,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'CRITDMG',
           name: '暴击伤害'
@@ -102,19 +102,19 @@ export const equiAttributeWeapon = {
         iconSrc: './icons/U_Sword08.png',
         entry: [{
           valCoefficient: 2.2,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'ATK',
           name: '攻击力'
         }, {
           type: 'CRIT',
           valCoefficient: 1.6,
-          value: '8',
+          value: 8,
           showVal: '+8%',
           name: '暴击率'
         }, {
           valCoefficient: 1.2,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'CRITDMG',
           name: '暴击伤害'
@@ -125,14 +125,14 @@ export const equiAttributeWeapon = {
         iconSrc: './icons/U_Sword10.png',
         entry: [{
           valCoefficient: 3.2,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'ATK',
           name: '攻击力'
         }, {
           type: 'DEF',
           valCoefficient: 1.8,
-          value: '8',
+          value: 8,
           showVal: '8',
           name: '防御力'
         }]
@@ -143,14 +143,14 @@ export const equiAttributeWeapon = {
         iconSrc: './icons/W_Sword016.png',
         entry: [{
           valCoefficient: 1.2,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'ATK',
           name: '攻击力'
         }, {
           type: 'CRIT',
           valCoefficient: 1.3,
-          value: '8',
+          value: 8,
           showVal: '+8%',
           name: '暴击率'
         }]
@@ -161,14 +161,14 @@ export const equiAttributeWeapon = {
         iconSrc: './icons/W_Sword007.png',
         entry: [{
           valCoefficient: 1.2,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'ATK',
           name: '攻击力'
         }, {
           type: 'DEF',
           valCoefficient: 0.5,
-          value: '8',
+          value: 8,
           showVal: '8',
           name: '防御力'
         }]
@@ -179,14 +179,14 @@ export const equiAttributeWeapon = {
         iconSrc: './icons/W_Sword019.png',
         entry: [{
           valCoefficient: 1.3,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'ATK',
           name: '攻击力'
         }, {
           type: 'HP',
           valCoefficient: 1.1,
-          value: '8',
+          value: 8,
           showVal: '8',
           name: '生命值'
         }]
@@ -197,7 +197,7 @@ export const equiAttributeWeapon = {
         iconSrc: './icons/W_Sword001.png',
         entry: [{
           valCoefficient: 1.7,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'ATK',
           name: '攻击力'
@@ -210,7 +210,7 @@ export const equiAttributeWeapon = {
         iconSrc: './icons/W_Sword021.png',
         entry: [{
           valCoefficient: 1.7,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'ATK',
           name: '攻击力'
@@ -222,14 +222,14 @@ export const equiAttributeWeapon = {
         iconSrc: './icons/W_Fist003.png',
         entry: [{
           valCoefficient: 2,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'ATK',
           name: '攻击力'
         }, {
           type: 'CRIT',
           valCoefficient: 0.7,
-          value: '8',
+          value: 8,
           showVal: '+8%',
           name: '暴击率'
         }]
@@ -240,13 +240,13 @@ export const equiAttributeWeapon = {
         iconSrc: './icons/W_Sword018.png',
         entry: [{
           valCoefficient: 1.4,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'ATK',
           name: '攻击力'
         }, {
           valCoefficient: 1.3,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'CRITDMG',
           name: '暴击伤害'
@@ -254,42 +254,42 @@ export const equiAttributeWeapon = {
       }
       ],
       extraEntry: [{
-        value: '11',
+        value: 11,
         showVal: '+11',
         type: 'ATK',
         name: '攻击力'
       }, {
         type: 'CRIT',
-        value: '8',
+        value: 8,
         showVal: '+8%',
         name: '暴击率'
       }, {
         type: 'CRITDMG',
-        value: '11',
+        value: 11,
         showVal: '+11%',
         name: '暴击伤害'
       }, {
         type: 'HP',
-        value: '20',
+        value: 20,
         showVal: '+20',
         name: '生命值'
       }, {
         type: 'DEF',
-        value: '8',
+        value: 8,
         showVal: '+8%',
         name: '防御力'
       }, {
-        value: '11%',
+        value: 11,
         showVal: '+11%',
         type: 'ATKPERCENT',
         name: '攻击力'
       }, {
-        value: '11%',
+        value: 11,
         showVal: '+11%',
         type: 'DEFPERCENT',
         name: '防御力'
       }, {
-        value: '11%',
+        value: 11,
         showVal: '+11%',
         type: 'HPPERCENT',
         name: '生命值'

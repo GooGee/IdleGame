@@ -40,12 +40,12 @@ export const equiAttributeRing = {
         entry: [{
           type: 'CRIT',
           valCoefficient: 1.5,
-          value: '8',
+          value: 8,
           showVal: '+8%',
           name: '暴击率'
         }, {
           valCoefficient: 1.5,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'CRITDMG',
           name: '暴击伤害'
@@ -57,12 +57,12 @@ export const equiAttributeRing = {
         entry: [{
           type: 'CRIT',
           valCoefficient: 1.8,
-          value: '8',
+          value: 8,
           showVal: '+8%',
           name: '暴击率'
         }, {
           valCoefficient: 1.2,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'CRITDMG',
           name: '暴击伤害'
@@ -74,12 +74,12 @@ export const equiAttributeRing = {
         entry: [{
           type: 'CRIT',
           valCoefficient: 1.2,
-          value: '8',
+          value: 8,
           showVal: '+8%',
           name: '暴击率'
         }, {
           valCoefficient: 1.8,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'CRITDMG',
           name: '暴击伤害'
@@ -92,7 +92,7 @@ export const equiAttributeRing = {
           iconSrc: './icons/Ac_9.png',
           entry: [{
             valCoefficient: 1.1,
-            value: '11',
+            value: 11,
             showVal: '+11',
             type: 'HP',
             name: '生命值'
@@ -104,19 +104,19 @@ export const equiAttributeRing = {
           iconSrc: './icons/Ac_11.png',
           entry: [{
             valCoefficient: 0.9,
-            value: '11',
+            value: 11,
             showVal: '+11',
             type: 'HP',
             name: '生命值'
           }, {
             valCoefficient: 0.3,
-            value: '11',
+            value: 11,
             showVal: '+11',
             type: 'ATK',
             name: '攻击力'
           }, {
             valCoefficient: 0.5,
-            value: '11',
+            value: 11,
             showVal: '+11',
             type: 'CRIT',
             name: '暴击率'
@@ -128,13 +128,13 @@ export const equiAttributeRing = {
           iconSrc: './icons/Ac_10.png',
           entry: [{
             valCoefficient: 0.7,
-            value: '11',
+            value: 11,
             showVal: '+11',
             type: 'HP',
             name: '生命值'
           }, {
             valCoefficient: 0.5,
-            value: '11',
+            value: 11,
             showVal: '+11',
             type: 'ATK',
             name: '攻击力'
@@ -142,28 +142,28 @@ export const equiAttributeRing = {
         },
       ],
       extraEntry: [{
-        value: '11',
+        value: 11,
         showVal: '+11',
         type: 'ATK',
         name: '攻击力'
       }, {
         type: 'CRIT',
-        value: '8',
+        value: 8,
         showVal: '+8%',
         name: '暴击率'
       }, {
         type: 'CRITDMG',
-        value: '11',
+        value: 11,
         showVal: '+11%',
         name: '暴击伤害'
       }, {
         type: 'HP',
-        value: '20',
+        value: 20,
         showVal: '+20',
         name: '生命值'
       }, {
         type: 'DEF',
-        value: '8',
+        value: 8,
         showVal: '+8%',
         name: '防御力'
       }]

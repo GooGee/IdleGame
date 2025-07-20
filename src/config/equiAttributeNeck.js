@@ -34,27 +34,27 @@ export const equiAttributeNeck = {
         color: '#ff0000', extraEntryNum: 5,
       }],
       extraEntryNeck: [{
-        value: '11',
+        value: 11,
         showVal: '+11',
         type: 'ATK',
         name: '攻击力'
       }, {
         type: 'HP',
-        value: '20',
+        value: 20,
         showVal: '+20',
         name: '生命值'
       }, {
         type: 'DEF',
-        value: '8',
+        value: 8,
         showVal: '+8%',
         name: '防御力'
       }, {
-        value: '11%',
+        value: 11,
         showVal: '+11%',
         type: 'DEFPERCENT',
         name: '防御力'
       }, {
-        value: '11%',
+        value: 11,
         showVal: '+11%',
         type: 'HPPERCENT',
         name: '生命值'
@@ -65,13 +65,13 @@ export const equiAttributeNeck = {
         iconSrc: './icons/U_neck01.png',
         entry: [{
           valCoefficient: 1.5,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'HP',
           name: '生命值'
         }, {
           valCoefficient: 1.5,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'CRITDMG',
           name: '暴击伤害'
@@ -82,13 +82,13 @@ export const equiAttributeNeck = {
         iconSrc: './icons/U_neck04.png',
         entry: [{
           valCoefficient: 1.2,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'HP',
           name: '生命值'
         }, {
           valCoefficient: 1.8,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'CRITDMG',
           name: '暴击伤害'
@@ -99,13 +99,13 @@ export const equiAttributeNeck = {
         iconSrc: './icons/U_neck05.png',
         entry: [{
           valCoefficient: 1.8,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'HP',
           name: '生命值'
         }, {
           valCoefficient: 1.2,
-          value: '11',
+          value: 11,
           showVal: '+11',
           type: 'CRITDMG',
           name: '暴击伤害'
@@ -118,19 +118,19 @@ export const equiAttributeNeck = {
           iconSrc: './icons/Ac_1.png',
           entry: [{
             valCoefficient: 0.9,
-            value: '11',
+            value: 11,
             showVal: '+11',
             type: 'DEF',
             name: '防御力'
           }, {
             valCoefficient: 0.5,
-            value: '11',
+            value: 11,
             showVal: '+11',
             type: 'HP',
             name: '生命值'
           }, {
             valCoefficient: 0.5,
-            value: '11',
+            value: 11,
             showVal: '+11',
             type: 'CRIT',
             name: '暴击率'
@@ -142,19 +142,19 @@ export const equiAttributeNeck = {
           iconSrc: './icons/Ac_7.png',
           entry: [{
             valCoefficient: 0.75,
-            value: '11',
+            value: 11,
             showVal: '+11',
             type: 'CRITDMG',
             name: '暴击伤害'
           }, {
             valCoefficient: 0.5,
-            value: '11',
+            value: 11,
             showVal: '+11',
             type: 'CRIT',
             name: '暴击率'
           }, {
             valCoefficient: 0.5,
-            value: '11',
+            value: 11,
             showVal: '+11',
             type: 'HP',
             name: '生命值'
@@ -166,19 +166,19 @@ export const equiAttributeNeck = {
           iconSrc: './icons/Ac_5.png',
           entry: [{
             valCoefficient: 0.5,
-            value: '11',
+            value: 11,
             showVal: '+11',
             type: 'CRIT',
             name: '暴击率'
           }, {
             valCoefficient: 0.5,
-            value: '11',
+            value: 11,
             showVal: '+11',
             type: 'HP',
             name: '生命值'
           }, {
             valCoefficient: 0.6,
-            value: '11',
+            value: 11,
             showVal: '+11',
             type: 'ATK',
             name: '攻击力'

@@ -1517,7 +1517,6 @@ a {
 }
 .gm-panel {
   width: 5rem;
-  height: 3rem;
   .content {
     input {
       padding: 0.05rem 0.1rem;
