@@ -28,8 +28,8 @@
   </div>
 </template>
 <script>
-import { assist } from "../../assets/js/assist";
-import { calculatePrice } from '../../assets/js/helper';
+import { assist } from "../../service/assist";
+import { calculatePrice } from '../../service/helper';
 export default {
   name: "shop",
   data() {

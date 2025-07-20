@@ -38,7 +38,7 @@
   </div>
 </template>
 <script>
-import {equiAttributeWeapon} from '@/assets/config/equiAttributeWeapon'
+import {equiAttributeWeapon} from '@/config/equiAttributeWeapon'
 export default {
   name: "weaponPanel",
   mixins: [equiAttributeWeapon],

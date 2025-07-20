@@ -85,10 +85,10 @@
   </div>
 </template>
 <script>
-import { assist } from '../../assets/js/assist';
+import { assist } from '../../service/assist';
 import cTooltip from '../uiComponent/tooltip'
-import handle from '../../assets/js/handle'
-import { calculateReplacePrice, calculateUpgradePrice } from '../../assets/js/helper'
+import handle from '../../service/handle'
+import { calculateReplacePrice, calculateUpgradePrice } from '../../service/helper'
 export default {
   components: { cTooltip },
   name: "equimentPanel",

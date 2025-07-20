@@ -38,7 +38,7 @@
   </div>
 </template>
 <script>
-import {equiAttributeNeck} from '@/assets/config/equiAttributeNeck'
+import {equiAttributeNeck} from '@/config/equiAttributeNeck'
 export default {
   name: "neckPanel",
   mixins:[equiAttributeNeck],

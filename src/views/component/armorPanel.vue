@@ -38,7 +38,7 @@
   </div>
 </template>
 <script>
-import {equiAttributeArmor} from '@/assets/config/equiAttributeArmor'
+import {equiAttributeArmor} from '@/config/equiAttributeArmor'
 export default {
   name: "armorPanel",
   mixins:[equiAttributeArmor],

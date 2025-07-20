@@ -6,7 +6,7 @@ import '@/assets/css/base.scss'
 
 import {
   getAxiosInstance
-} from '@/assets/js/api' // 导入api接口
+} from '@/service/api' // 导入api接口
 getAxiosInstance().then(v => {
   Vue.prototype.$api = v
 }).catch(e => {
@@ -22,8 +22,8 @@ const vue = new Vue({
 import Message from './views/uiComponent/message/index'
 Vue.prototype.$message = Message
 
-Vue.prototype.$deepCopy = function(data){
-  data = JSON.stringify(data).length>1?data:{}
+Vue.prototype.$deepCopy = function (data) {
+  data = JSON.stringify(data).length > 1 ? data : {}
   return JSON.parse(JSON.stringify(data))
 }
 

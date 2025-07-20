@@ -410,9 +410,9 @@ import extras from './component/extras'
 import setting from './component/setting'
 import qa from './component/qa'
 import cTooltip from './uiComponent/tooltip'
-import { assist } from '../assets/js/assist';
+import { assist } from '../service/assist';
 import { Base64 } from 'js-base64';
-import handle from '../assets/js/handle'
+import handle from '../service/handle'
 export default {
   name: "index",
   mixins: [assist],

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import vueInstance from './main'
-import handle from './assets/js/handle'
+import handle from './service/handle'
 Vue.use(Vuex)
 
 var initial_weapon = {

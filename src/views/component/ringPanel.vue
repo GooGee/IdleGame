@@ -38,7 +38,7 @@
   </div>
 </template>
 <script>
-import { equiAttributeRing } from '@/assets/config/equiAttributeRing'
+import { equiAttributeRing } from '@/config/equiAttributeRing'
 export default {
   name: "ringPanel",
   mixins: [equiAttributeRing],
