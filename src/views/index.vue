@@ -665,7 +665,7 @@ export default {
           point: this.$store.state.reincarnation.point,
         }
       }
-      this.saveDateString = Base64.encode(Base64.encode(JSON.stringify(data)))
+      this.saveDateString = Base64.encode(JSON.stringify(data))
     },
     importSaveData() {
       if (!this.saveDateString) {
@@ -734,7 +734,7 @@ export default {
       try {
         if (sd) {
           //兼容存档
-          var saveDataStr = Base64.decode(Base64.decode(sd))
+          var saveDataStr = Base64.decode(sd)
           saveDataStr = saveDataStr.replace(/playerAcc/gi, 'playerRing')
           saveDataStr = saveDataStr.replace(/acc/gi, "ring")
           this.saveData = JSON.parse(saveDataStr)
