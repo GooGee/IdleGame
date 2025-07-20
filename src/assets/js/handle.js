@@ -172,67 +172,71 @@ function createRandomDungeons(lv, difficulty) {
 function createRandomEntry(lv, qualityCoefficient) {
 
   let extraEntry = [{
-      'value': '11',
-      'showVal': '+11',
-      type: 'ATK',
-      'name': '攻击力'
-    }, {
-      type: 'CRIT',
-      'value': '8',
-      'showVal': '+8%',
-      'name': '暴击率'
-    }, {
-      type: 'CRITDMG',
-      'value': '11',
-      'showVal': '+11%',
-      'name': '暴击伤害'
-    }, {
-      type: 'HP',
-      'value': '20',
-      'showVal': '+20',
-      'name': '生命值'
-    }, {
-      type: 'DEF',
-      'value': '8',
-      'showVal': '+8%',
-      'name': '防御力'
-    }, {
-      'value': '11%',
-      'showVal': '+11%',
-      type: 'ATKPERCENT',
-      'name': '攻击力'
-    }, {
-      'value': '11%',
-      'showVal': '+11%',
-      type: 'DEFPERCENT',
-      'name': '防御力'
-    }, {
-      'value': '11%',
-      'showVal': '+11%',
-      type: 'HPPERCENT',
-      'name': '生命值'
-    },
+    'value': 11,
+    'showVal': '+11',
+    type: 'ATK',
+    'name': '攻击力'
+  }, {
+    type: 'CRIT',
+    'value': 8,
+    'showVal': '+8%',
+    'name': '暴击率'
+  }, {
+    type: 'CRITDMG',
+    'value': 11,
+    'showVal': '+11%',
+    'name': '暴击伤害'
+  }, {
+    type: 'HP',
+    'value': 20,
+    'showVal': '+20',
+    'name': '生命值'
+  }, {
+    type: 'DEF',
+    'value': 8,
+    'showVal': '+8%',
+    'name': '防御力'
+  }, {
+    'value': 11,
+    'showVal': '+11%',
+    type: 'ATKPERCENT',
+    'name': '攻击力'
+  }, {
+    'value': 11,
+    'showVal': '+11%',
+    type: 'DEFPERCENT',
+    'name': '防御力'
+  }, {
+    'value': 11,
+    'showVal': '+11%',
+    type: 'HPPERCENT',
+    'name': '生命值'
+  },
     // {
-    //   'value': '11%',
+    //   'value': 11,
     //   'showVal': '+11%',
     //   type: 'BLOCPERCENT',
     //   'name': '格挡'
     // },
     // {
-    //   'value': '11%',
+    //   'value': 11,
     //   'showVal': '+11%',
     //   type: 'BLOC',
     //   'name': '格挡'
     // },
     // {
-    //   'value': '11%',
+    //   'value': 11,
     //   'showVal': '+11%',
     //   type: 'EVA',
     //   'name': '闪避'
     // },
   ]
 
-  let randomCoefficient = Math.random() ,EntryLevel = Math.floor(randomCoefficient*100)+'%'
+  let randomCoefficient = Math.random()
+  if (randomCoefficient < 11) {
+    randomCoefficient = 11
+  }
+  let EntryLevel = Math.floor(randomCoefficient * 100)
   let entry = {}
   let index = Math.floor((Math.random()  * extraEntry.length));
   entry = extraEntry[index]
