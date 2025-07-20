@@ -203,7 +203,7 @@
         </div>
         <div class="handle">
           <div v-if="dungeons.type!='endless'">
-            <p v-if="dungeons.difficulty==1"><input type="checkbox" name="" v-model="reChallenge"> 重复挑战</p>
+            <label v-if="dungeons.difficulty==1"><input type="checkbox" name="" v-model="reChallenge"> 重复挑战</label>
           </div>
           <div class="handle-column" style="display:flex;flex-direction:column" v-else>
             <p><input type="checkbox" name="" v-model="upEChallenge"> 向上挑战</p>
@@ -250,9 +250,8 @@
         </template>
         <template v-slot:tip>
           <p class="info">* 刷新当前世界副本</p>
-          <p class="info">* 刷新有30秒钟的间隔</p>
-          <p class="info">* 刷新时有较低概率同时刷新出高难度副本</p>
-          <p class="info">* 刷新规则[lv-5,lv+5]</p>
+          <p class="info">* 刷新冷却时间：30秒钟</p>
+          <p class="info">* 刷新副本等级[lv-5,lv+5]</p>
         </template>
       </cTooltip>
 

@@ -15,7 +15,6 @@
       </cTooltip>
 
       <div class="title">
-
         <div class='icon' :class="{'red-flash':equiment.enchantlvl>=13}"  :style="{'box-shadow':'inset 0 0 7px 2px '+equiment.quality.color}">
           <img :src="equiment.type.iconSrc" alt="">
         </div>
@@ -39,7 +38,7 @@
         <div class="button" @click="startStreng()">强化至+{{parseInt(equiment.enchantlvl)+1}}</div>
       </div>
       <div class="btn-group" v-if='!autoStrengModel'>
-        <p>自动强化目标等级：</p>
+        <p>自动强化至等级：</p>
         <p><input type="number" placeholder="目标等级" max="15" min="5" v-model="autoStrengLv"></p>
         <div class="button" @click="startAutoStreng">自动强化</div>
       </div>
@@ -47,18 +46,27 @@
         <p>自动强化中...</p>
         <div class="button" @click="stopAutoStreng">中断自动强化</div>
       </div>
+      
       <cTooltip placement="bottom">
         <template v-slot:content>
-          <div class="panel-title">- 词条重铸 i -</div>
+          <div class="panel-title">- 属性重铸 i -</div>
         </template>
         <template v-slot:tip>
-          <p class="info">* 花费金币重铸装备词条</p>
-          <p class="info">* 重铸时词条颜色与百分比值显示了该词条的等级</p>
+          <p class="info">* 花费金币重铸装备属性</p>
+          <p class="info">* 重铸时属性颜色与百分比值显示了该属性的等级</p>
         </template>
       </cTooltip>
 
+      <div class="btn-group">
+        <div>
+          <label><input type="checkbox" name="autoRecastModel" v-model="autoRecastModel">自动重铸目标：</label>
+          <input type="number" placeholder="目标等级" max="99" min="50" v-model="autoRecastLv">%
+        </div>
+        <div v-if="autoRecasting" class="button" @click="stopAutoRecast">停止重铸</div>
+      </div>
+
       <div class="extraEntry">
-        <div class="extraEntry-item" v-for="(v,k) in equiment.extraEntry" :key="v.id" @click="recastTheEquiment(v,k)" @mouseover="changeRecastStatus(v,k,true)" @mouseleave="changeRecastStatus(v,k,false)">
+        <div class="extraEntry-item" v-for="(v,k) in equiment.extraEntry" :key="v.id" @click="startAutoRecast(v,k)" @mouseover="changeRecastStatus(v,k,true)" @mouseleave="changeRecastStatus(v,k,false)">
           <button class="btn btn-snake-border" :class="qualityClass">
             <div class="btn-borders">
               <div class="border-top"></div>
@@ -67,7 +75,7 @@
               <div class="border-left"></div>
             </div>
             <div v-if="v.recastStatus" class="recast-info"><span :class="{red:userGold<recastNeedGold}"></span>点击花费{{recastNeedGold}}金币重铸</div>
-            <div v-else>{{v.name}} : {{v.showVal}} <span style="font-size:.12rem;margin-left:.06rem" v-if="v.EntryLevel"> ({{v.EntryLevel}})</span> </div>
+            <div v-else>{{v.name}} : {{v.showVal}} <span style="font-size:.12rem;margin-left:.06rem" v-if="v.EntryLevel"> ({{v.EntryLevel}}%)</span> </div>
           </button>
 
         </div>
@@ -90,9 +98,13 @@ export default {
       equiment: {},
       strengTime: '', //刷新副本计时器
       strengTimeO: 60, //刷新副本时间间隔 单位：S
+      autoRecasting: false,
+      autoRecastModel: false,
+      autoRecastLv: 80,
+      autoRecastTimer: 0,
       autoStrengModel: false,
       autoStrengLv: 12,
-      autoStrengTime: '',
+      autoStrengTimer: 0,
       recast: false,
       qualityClass: '',
       qualityProbability: [0.25, 0.55, 0.15, 0.05,],
@@ -168,7 +180,7 @@ export default {
           type: 'wrning'
         });
         this.autoStrengModel = false
-        clearInterval(this.autoStrengTime)
+        clearInterval(this.autoStrengTimer)
         return
       }
       // 自动强化需要金币倍率
@@ -217,7 +229,7 @@ export default {
     },
     startAutoStreng() {
       this.autoStrengModel = true
-      this.autoStrengTime = setInterval(() => {
+      this.autoStrengTimer = setInterval(() => {
         this.startStreng(true)
         if (this.equiment.enchantlvl == this.autoStrengLv) {
           this.stopAutoStreng()
@@ -228,11 +240,11 @@ export default {
             type: "win",
           });
         }
-      }, 150)
+      }, 333)
     },
     stopAutoStreng() {
       this.autoStrengModel = false
-      clearInterval(this.autoStrengTime)
+      clearInterval(this.autoStrengTimer)
     },
     // 重铸装备
     recastTheEquiment(v, k) {
@@ -248,19 +260,47 @@ export default {
       let newEntry = handle.createRandomEntry(this.equiment.lv, this.equiment.quality.qualityCoefficient)
       this.$set(this.equiment.extraEntry, k, newEntry);
       this.$store.commit("set_player_gold", -parseInt(this.recastNeedGold));
-      var a = parseInt(this.equiment.extraEntry[k].EntryLevel)
-      if (a < 25) {
+      var EntryLevel = this.equiment.extraEntry[k].EntryLevel
+      if (EntryLevel < 25) {
         this.qualityClass = 'D'
-      } else if (a < 50 && a >= 25) {
+      } else if (EntryLevel < 50) {
         this.qualityClass = 'C'
-      } else if (a < 70 && a >= 50) {
+      } else if (EntryLevel < 70) {
         this.qualityClass = 'B'
-      } else if (a < 90 && a >= 70) {
+      } else if (EntryLevel < 90) {
         this.qualityClass = 'A'
       } else {
         this.qualityClass = 'S'
       }
       this.changeTheEquiment()
+      return newEntry
+    },
+    startAutoRecast(v, k) {
+      if (this.autoRecasting) {
+        return
+      }
+      if (this.autoRecastModel === false) {
+        this.recastTheEquiment(v, k)
+        return
+      }
+
+      this.autoRecasting = true
+      this.autoRecastTimer = setInterval(() => {
+        let entry = this.recastTheEquiment(v, k)
+        if (entry.EntryLevel >= this.autoRecastLv) {
+          this.stopAutoRecast()
+          this.$store.commit("set_sys_info", {
+            msg: `
+              自动重铸完成了。${entry.name} ${entry.showVal} (${entry.EntryLevel}%)
+            `,
+            type: "win",
+          });
+        }
+      }, 333)
+    },
+    stopAutoRecast() {
+      this.autoRecasting = false
+      clearInterval(this.autoRecastTimer)
     },
     //根据强化等级变动装备
     changeTheEquimentByLv(lv) {
@@ -285,7 +325,7 @@ export default {
 }
 .equimentPanel {
   color: #f1f1f1;
-  width: 4rem;
+  width: 333px;
   height: auto;
   background: rgba(0, 0, 0, 0.8);
   border: #393839;
