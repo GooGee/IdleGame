@@ -1,5 +1,5 @@
 export function calculatePrice(item) {
-    return parseInt((item.lv + 1) ** 1.5 * item.quality.qualityCoefficient ** 2 * 10)
+    return parseInt((item.lv + 1) ** 1.5 * item.quality.qualityCoefficient ** 3 * 10)
 }
 
 export function calculateReplacePrice(item) {

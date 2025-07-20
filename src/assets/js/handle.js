@@ -233,14 +233,13 @@ function createRandomEntry(lv, qualityCoefficient) {
   ]
 
   let randomCoefficient = Math.random()
-  if (randomCoefficient < 11) {
-    randomCoefficient = 11
+  if (randomCoefficient < 0.11) {
+    randomCoefficient = 0.11
   }
-  let EntryLevel = Math.floor(randomCoefficient * 100)
   let entry = {}
   let index = Math.floor((Math.random() * extraEntry.length));
   entry = extraEntry[index]
-  entry.EntryLevel = EntryLevel
+  entry.EntryLevel = Math.floor(randomCoefficient * 100)
   switch (entry.type) {
     case 'ATK':
       var random = parseInt(lv * 1 + (randomCoefficient * lv / 2 + 1))
