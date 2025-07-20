@@ -110,24 +110,24 @@ export default {
         //   currentValue: 0,
         //   maxPoint: null,
         // },
-        {
-          name: 'MOVESPEED',
-          showName: '副本行进速度',
-          img: require('../../assets/icons/S_EVA.png'),
-          oldValue: 0,
-          point: 0, unity: 'X',
-          currentValue: 0,
-          maxPoint: 500,
-        },
-        {
-          name: 'BATTLESPEED',
-          showName: '副本战斗速度',
-          img: require('../../assets/icons/S_EVA.png'),
-          oldValue: 0,
-          point: 0, unity: 'X',
-          currentValue: 0,
-          maxPoint: 500,
-        },
+        // {
+        //     name: 'MOVESPEED',
+        //     showName: '副本行进速度',
+        //     img: require('../../assets/icons/S_EVA.png'),
+        //     oldValue: 0,
+        //     point: 0, unity: 'X',
+        //     currentValue: 0,
+        //     maxPoint: 500,
+        // },
+        // {
+        //     name: 'BATTLESPEED',
+        //     showName: '副本战斗速度',
+        //     img: require('../../assets/icons/S_EVA.png'),
+        //     oldValue: 0,
+        //     point: 0, unity: 'X',
+        //     currentValue: 0,
+        //     maxPoint: 500,
+        // },
       ]
     };
   },
@@ -356,7 +356,7 @@ export default {
             data.ATK = item.currentValue
             break;
           case 'CRIT':
-            item.currentValue = Number((item.point * 0.1).toFixed(1)) + item.oldValue
+            item.currentValue = Number((item.point * 0.5).toFixed(1)) + item.oldValue
             data.CRIT = item.currentValue
             break;
           case 'CRITDMG':

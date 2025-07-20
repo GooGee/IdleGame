@@ -481,7 +481,7 @@ export default {
   mounted() {
     // 自动回血
     this.autoHealthRecovery = setInterval(() => {
-      this.$store.commit('set_player_curhp', this.healthRecoverySpeed * (this.attribute.MAXHP.value / 50) / 2)
+      this.$store.commit('set_player_curhp', this.healthRecoverySpeed * this.attribute.MAXHP.value / 50)
     }, 500)
 
 
