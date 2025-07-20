@@ -55,10 +55,10 @@ function CalculateStrAttr(entry, lv) {
         item.showValue = '+' + value + '%'
         break;
       case 'BLOC':
-          value = Math.round(a * item.value)
-          item.value = value
-          item.showValue = '+' + value
-          break;
+        value = Math.round(a * item.value)
+        item.value = value
+        item.showValue = '+' + value
+        break;
       default:
         break;
     }
@@ -73,34 +73,34 @@ function CalculateStrAttr(entry, lv) {
  * @param {number} difficulty(1:普通 2:困难 3:极难) 副本难度
  */
 function createRandomDungeons(lv, difficulty) {
-  lv = lv||1,difficulty = difficulty||1;
+  lv = lv || 1, difficulty = difficulty || 1;
   // 此处决定困难与极难的副本难度系数
   // 困难 1.1
   // 极难 1.25
-  var df = difficulty==1?1:difficulty==2?1.1:1.25
+  var df = difficulty == 1 ? 1 : difficulty == 2 ? 1.1 : 1.25
   var dungeonsConfig = {
-    id:lv+''+difficulty,
+    id: lv + '' + difficulty,
     battleTime: 2000,
-    name: 'Lv'+lv+'_'+(difficulty==1?'普通':difficulty==2?'困难':'极难'),
+    name: 'Lv' + lv + '_' + (difficulty == 1 ? '普通' : difficulty == 2 ? '困难' : '极难'),
     eventNum: '5',
     lv: lv,
-    needDPS: parseInt(lv*lv**1.3*2*difficulty),
-    difficulty:difficulty,
-    difficultyName:difficulty==1?'普通':difficulty==2?'困难':'极难',
-    top:Math.random()*70+15+'%',
-    left:Math.random()*70+10+'%',
+    needDPS: parseInt(lv * lv ** 1.3 * 2 * difficulty),
+    difficulty: difficulty,
+    difficultyName: difficulty == 1 ? '普通' : difficulty == 2 ? '困难' : '极难',
+    top: Math.random() * 70 + 15 + '%',
+    left: Math.random() * 70 + 10 + '%',
     eventType: [{
       name: 'monster',
       type: 'monster',
       eventType: 'battle',
       attribute: {
-        HP: parseInt(lv*lv**1.1*(Math.random()*5+16)*df),
-        ATK: parseInt(lv*lv**1.1*(Math.random()*1+2)*df),
+        HP: parseInt(lv * lv ** 1.1 * (Math.random() * 5 + 16) * df),
+        ATK: parseInt(lv * lv ** 1.1 * (Math.random() * 1 + 2) * df),
       },
       trophy: {
-        gold: parseInt(lv**1.16*(Math.random()*5+11)*df),
+        gold: parseInt(lv ** 1.16 * (Math.random() * 5 + 11) * df),
         equip: [
-          0.2*df, 0.08*df, 0.03*df, 0*df
+          0.2 * df, 0.08 * df, 0.03 * df, 0 * df
         ],
       }
     }, {
@@ -108,13 +108,13 @@ function createRandomDungeons(lv, difficulty) {
       type: 'monster',
       eventType: 'battle',
       attribute: {
-        HP: parseInt(lv*lv**1.1*(Math.random()*5+16)*df),
-        ATK: parseInt(lv*lv**1.1*(Math.random()*1+2)*df),
+        HP: parseInt(lv * lv ** 1.1 * (Math.random() * 5 + 16) * df),
+        ATK: parseInt(lv * lv ** 1.1 * (Math.random() * 1 + 2) * df),
       },
       trophy: {
-        gold: parseInt(lv**1.16*(Math.random()*5+11)*df),
+        gold: parseInt(lv ** 1.16 * (Math.random() * 5 + 11) * df),
         equip: [
-          0.2*df, 0.08*df, 0.03*df, 0*df
+          0.2 * df, 0.08 * df, 0.03 * df, 0 * df
         ],
       }
     }, {
@@ -122,13 +122,13 @@ function createRandomDungeons(lv, difficulty) {
       type: 'monster',
       eventType: 'battle',
       attribute: {
-        HP: parseInt(lv*lv**1.1*(Math.random()*5+16)*df),
-        ATK: parseInt(lv*lv**1.1*(Math.random()*1+2)*df),
+        HP: parseInt(lv * lv ** 1.1 * (Math.random() * 5 + 16) * df),
+        ATK: parseInt(lv * lv ** 1.1 * (Math.random() * 1 + 2) * df),
       },
       trophy: {
-        gold: parseInt(lv**1.16*(Math.random()*5+11)*df),
+        gold: parseInt(lv ** 1.16 * (Math.random() * 5 + 11) * df),
         equip: [
-          0.2*df, 0.08*df, 0.03*df, 0*df
+          0.2 * df, 0.08 * df, 0.03 * df, 0 * df
         ],
       }
     }, {
@@ -136,13 +136,13 @@ function createRandomDungeons(lv, difficulty) {
       type: 'monster',
       eventType: 'battle',
       attribute: {
-        HP: parseInt(lv*lv**1.1*(Math.random()*5+16)*df),
-        ATK: parseInt(lv*lv**1.1*(Math.random()*1+2)*df),
+        HP: parseInt(lv * lv ** 1.1 * (Math.random() * 5 + 16) * df),
+        ATK: parseInt(lv * lv ** 1.1 * (Math.random() * 1 + 2) * df),
       },
       trophy: {
-        gold: parseInt(lv**1.16*(Math.random()*5+11)*df),
+        gold: parseInt(lv ** 1.16 * (Math.random() * 5 + 11) * df),
         equip: [
-          0.2*df, 0.08*df, 0.03*df, 0*df
+          0.2 * df, 0.08 * df, 0.03 * df, 0 * df
         ],
       }
     }, {
@@ -150,16 +150,16 @@ function createRandomDungeons(lv, difficulty) {
       type: 'boss',
       eventType: 'battle',
       attribute: {
-        HP: parseInt(lv*lv**1.1*(Math.random()*5+30)*df),
-        ATK: parseInt(lv*lv**1.1*(Math.random()*1+3)*df),
+        HP: parseInt(lv * lv ** 1.1 * (Math.random() * 5 + 30) * df),
+        ATK: parseInt(lv * lv ** 1.1 * (Math.random() * 1 + 3) * df),
       },
       trophy: {
-        gold: parseInt(lv**1.16*(Math.random()*10+28)*df),
+        gold: parseInt(lv ** 1.16 * (Math.random() * 10 + 28) * df),
         equip: [
-          0.25-0.05*df, 0.55-0.15*df, 0.15+0.15*df, 0.05+0.05*df
+          0.25 - 0.05 * df, 0.55 - 0.15 * df, 0.15 + 0.15 * df, 0.05 + 0.05 * df
         ],
       }
-    }, ]
+    },]
   }
   return dungeonsConfig
 }
@@ -238,84 +238,84 @@ function createRandomEntry(lv, qualityCoefficient) {
   }
   let EntryLevel = Math.floor(randomCoefficient * 100)
   let entry = {}
-  let index = Math.floor((Math.random()  * extraEntry.length));
+  let index = Math.floor((Math.random() * extraEntry.length));
   entry = extraEntry[index]
   entry.EntryLevel = EntryLevel
   switch (entry.type) {
     case 'ATK':
-      var random = parseInt(lv * 1 + (randomCoefficient  * lv / 2 + 1))
+      var random = parseInt(lv * 1 + (randomCoefficient * lv / 2 + 1))
       random = parseInt(random * qualityCoefficient)
       random = random || 1
       entry.value = random
       entry.showVal = '+' + random
       break;
     case 'DEF':
-      var random = parseInt((lv * 0.4 + (randomCoefficient  * lv / 2 + 1)))
+      var random = parseInt((lv * 0.4 + (randomCoefficient * lv / 2 + 1)))
       random = parseInt(random * qualityCoefficient)
       random = random || 1
       entry.value = random
       entry.showVal = '+' + random
       break;
     case 'HP':
-      var random = parseInt((lv * 0.2 * 15 + (randomCoefficient  * lv / 2 + 1)))
+      var random = parseInt((lv * 0.2 * 15 + (randomCoefficient * lv / 2 + 1)))
       random = parseInt(random * qualityCoefficient)
       random = random || 1
       entry.value = random
       entry.showVal = '+' + random
       break;
     case 'ATKPERCENT':
-      var random = parseFloat(lv * 0.11 + (randomCoefficient  * lv / 10 + 4)).toFixed(1)
+      var random = parseFloat(lv * 0.11 + (randomCoefficient * lv / 10 + 4)).toFixed(1)
       random = parseFloat(random * qualityCoefficient).toFixed(1)
       random = random || 1
       entry.value = random
       entry.showVal = '+' + random + '%'
       break;
     case 'DEFPERCENT':
-      var random = parseFloat(lv * 0.1 + (randomCoefficient  * lv / 10 + 4)).toFixed(1)
+      var random = parseFloat(lv * 0.1 + (randomCoefficient * lv / 10 + 4)).toFixed(1)
       random = parseFloat(random * qualityCoefficient).toFixed(1)
       random = random || 1
       entry.value = random
       entry.showVal = '+' + random + '%'
       break;
     case 'HPPERCENT':
-      var random = parseFloat(lv * 0.13 + (randomCoefficient  * lv / 10 + 4)).toFixed(1)
+      var random = parseFloat(lv * 0.13 + (randomCoefficient * lv / 10 + 4)).toFixed(1)
       random = parseFloat(random * qualityCoefficient).toFixed(1)
       random = random || 1
       entry.value = random
       entry.showVal = '+' + random + '%'
       break;
     case 'BLOCPERCENT':
-        var random = parseFloat(lv * 0.1 + (randomCoefficient  * lv / 10 + 4)).toFixed(1)
-        random = parseFloat(random * qualityCoefficient).toFixed(1)
-        random = random || 1
-        entry.value = random
-        entry.showVal = '+' + random + '%'
-        break;
+      var random = parseFloat(lv * 0.1 + (randomCoefficient * lv / 10 + 4)).toFixed(1)
+      random = parseFloat(random * qualityCoefficient).toFixed(1)
+      random = random || 1
+      entry.value = random
+      entry.showVal = '+' + random + '%'
+      break;
     case 'CRIT':
-      var random = parseInt(randomCoefficient  * 5 + 5)
+      var random = parseInt(randomCoefficient * 5 + 5)
       random = parseInt(random * qualityCoefficient)
       entry.value = random
       entry.showVal = '+' + random + '%'
       break;
     case 'CRITDMG':
-      var random = parseFloat(lv * 0.11 + (randomCoefficient  * lv / 10 + 4)).toFixed(1)
+      var random = parseFloat(lv * 0.11 + (randomCoefficient * lv / 10 + 4)).toFixed(1)
       random = parseFloat(random * qualityCoefficient).toFixed(1)
       entry.value = random
       entry.showVal = '+' + random + '%'
       break;
     case 'BLOC':
-      var random = parseInt((lv * 0.6 + (randomCoefficient  * lv / 2 + 1)))
+      var random = parseInt((lv * 0.6 + (randomCoefficient * lv / 2 + 1)))
       random = parseInt(random * qualityCoefficient)
       random = random || 1
       entry.value = random
       entry.showVal = '+' + random
       break;
-      // case 'EVA':
-      //     var random = parseInt(randomCoefficient  * 12 + 3)
-      //     random = parseInt(random * qualityCoefficient)
-      //     entry.value = random
-      //     entry.showVal = '+' + random + '%'
-      //     break;
+    // case 'EVA':
+    //     var random = parseInt(randomCoefficient  * 12 + 3)
+    //     random = parseInt(random * qualityCoefficient)
+    //     entry.value = random
+    //     entry.showVal = '+' + random + '%'
+    //     break;
     default:
       break;
   }
