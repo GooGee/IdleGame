@@ -107,7 +107,7 @@ export default {
             item.showVal = '+' + random + '%'
             break;
           case 'CRITDMG':
-            var random = parseInt(Math.random() * 20 + 20)
+            var random = parseInt(lv * item.valCoefficient + 1)
             random = parseInt(random * armor.quality.qualityCoefficient)
             item.value = random
             item.showVal = '+' + random + '%'
@@ -152,62 +152,7 @@ export default {
         var index = Math.floor((Math.random() * this.extraEntryArmor.length));
         extraEntry.push(this.extraEntryArmor[index])
       }
-      var b = this.$deepCopy(extraEntry)
-      b.map(item => {
-        switch (item.type) {
-          case 'ATK':
-            var random = parseInt(lv * 0.3 + (Math.random() * lv / 2 + 1))
-            random = parseInt(random * armor.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-          case 'DEF':
-            var random = parseInt((lv * 0.2 + (Math.random() * lv / 2 + 1)))
-            random = parseInt(random * armor.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-          case 'HP':
-            var random = parseInt((lv * 0.2 * 10 + (Math.random() * lv / 2 + 1)))
-            random = parseInt(random * armor.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-          case 'CRIT':
-            var random = parseInt(Math.random() * 5 + 5)
-            random = parseInt(random * armor.quality.qualityCoefficient)
-            item.value = random
-            item.showVal = '+' + random + '%'
-            break;
-          case 'CRITDMG':
-            var random = parseInt(Math.random() * 12 + 20)
-            random = parseInt(random * armor.quality.qualityCoefficient)
-            item.value = random
-            item.showVal = '+' + random + '%'
-            break;
-          case 'DEFPERCENT':
-            var random = parseFloat(lv * 0.12 + (Math.random() * lv / 10 + 4)).toFixed(1)
-            random = parseFloat(random * armor.quality.qualityCoefficient).toFixed(1)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random + '%'
-            break;
-          case 'HPPERCENT':
-            var random = parseFloat(lv * 0.11 + (Math.random() * lv / 10 + 4)).toFixed(1)
-            random = parseFloat(random * armor.quality.qualityCoefficient).toFixed(1)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random + '%'
-            break;
-          default:
-            break;
-        }
-      })
-      extraEntry = b
-      return extraEntry
+      return this.$deepCopy(extraEntry)
     }
   }
 };

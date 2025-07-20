@@ -84,7 +84,6 @@
           <template v-slot:tip>
             <p class="info">* 角色防御力以及计算后的减伤比例</p>
             <p class="info">* 减伤比例采用非线性计算，护甲越高收益越低</p>
-            <p class="info">* 显示为近似值，实际上永远不会到达100%减伤</p>
           </template>
         </cTooltip>
 
