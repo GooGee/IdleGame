@@ -48,8 +48,8 @@
   </div>
 </template>
 <script>
-import { assist } from '../../service/assist';
-import { calculatePrice } from '../../service/helper';
+import { assist } from '@/service/assist';
+import { calculatePrice } from '@/service/helper';
 export default {
   name: "backpackPanel",
   data() {

@@ -25,7 +25,7 @@
   </div>
 </template>
 <script>
-import { assist } from '../../service/assist';
+import { assist } from '@/service/assist';
 export default {
   name: "qa",
   mixins: [assist],

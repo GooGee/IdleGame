@@ -33,8 +33,8 @@
   </div>
 </template>
 <script>
-import { assist } from '../../service/assist';
-import { calculateGainingPoint } from '../../service/helper';
+import { assist } from '@/service/assist';
+import { calculateGainingPoint } from '@/service/helper';
 export default {
   name: "reincarnation",
   mixins: [assist],
