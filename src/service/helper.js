@@ -1,3 +1,24 @@
+export function calculateGainingPoint(playerAttribute) {
+    let sum = playerAttribute.lv < 20 ? 0 : Math.floor((playerAttribute.lv - 20) ** 1.5)
+
+    const warezz = [
+        playerAttribute.armor,
+        playerAttribute.neck,
+        playerAttribute.ring,
+        playerAttribute.weapon,
+    ]
+
+    warezz.forEach(function (item) {
+        if (item.lv < 20) {
+            return
+        }
+
+        // sum += ((item.lv - 20) / 10) ** 1.5 * (0.1 * item.enchantlvl ** 1.5 + 1) * item.quality.qualityCoefficient / 3
+    })
+
+    return parseInt(sum * 1.2)
+}
+
 export function calculatePrice(item) {
     return parseInt((item.lv + 1) ** 1.5 * item.quality.qualityCoefficient ** 3 * 10)
 }

@@ -34,6 +34,7 @@
 </template>
 <script>
 import { assist } from '../../service/assist';
+import { calculateGainingPoint } from '../../service/helper';
 export default {
   name: "reincarnation",
   mixins: [assist],
@@ -229,41 +230,7 @@ export default {
       p.createdDungeons(true)
     },
     caculateWillGetreincarnationPoint() {
-      let lv = this.$store.state.playerAttribute.lv, lvPoint
-      lvPoint = lv >= 20 ? Math.floor((lv - 20) ** 1.1 / 2.1) : 0
-
-      let weapon = this.$store.state.playerAttribute.weapon, weaponPonit
-      var wlv = weapon.lv, elv = weapon.enchantlvl || 0, q = weapon.quality.qualityCoefficient
-      if (wlv >= 20) {
-        weaponPonit = Math.floor(((wlv - 20) / 10) ** 1.1 * (0.1 * elv ** 1.5 + 1) * q / 3.5)
-      } else {
-        weaponPonit = 0
-      }
-
-      let armor = this.$store.state.playerAttribute.armor, armorPonit
-      var wlv = armor.lv, elv = armor.enchantlvl || 0, q = armor.quality.qualityCoefficient
-      if (wlv >= 20) {
-        armorPonit = Math.floor(((wlv - 20) / 10) ** 1.1 * (0.1 * elv ** 1.5 + 1) * q / 3.5)
-      } else {
-        armorPonit = 0
-      }
-
-      let ring = this.$store.state.playerAttribute.ring, ringPonit
-      var wlv = ring.lv, elv = ring.enchantlvl || 0, q = ring.quality.qualityCoefficient
-      if (wlv >= 20) {
-        ringPonit = Math.floor(((wlv - 20) / 10) ** 1.1 * (0.1 * elv ** 1.5 + 1) * q / 3.5)
-      } else {
-        ringPonit = 0
-      }
-
-      let neck = this.$store.state.playerAttribute.neck, neckPonit
-      var wlv = neck.lv, elv = neck.enchantlvl || 0, q = neck.quality.qualityCoefficient
-      if (wlv >= 20) {
-        neckPonit = Math.floor(((wlv - 20) / 10) ** 1.1 * (0.1 * elv ** 1.5 + 1) * q / 3.5)
-      } else {
-        neckPonit = 0
-      }
-      this.willGetreincarnationPoint = parseInt((lvPoint + weaponPonit + armorPonit + ringPonit + neckPonit)*1.2)
+      this.willGetreincarnationPoint = calculateGainingPoint(this.$store.state.playerAttribute)
     },
     subtract(v, e) {
       let num = 1
