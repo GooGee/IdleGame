@@ -38,11 +38,11 @@ export const equiAttributeRing = {
         des: '',
         iconSrc: './icons/U_ring03.png',
         entry: [{
-          type: 'CRIT',
           valCoefficient: 1.5,
-          value: 8,
-          showVal: '+8%',
-          name: '暴击率'
+          value: 11,
+          showVal: '+11',
+          type: 'ATK',
+          name: '攻击力'
         }, {
           valCoefficient: 1.5,
           value: 11,
@@ -55,11 +55,11 @@ export const equiAttributeRing = {
         des: '',
         iconSrc: './icons/U_ring04.png',
         entry: [{
-          type: 'CRIT',
           valCoefficient: 1.8,
-          value: 8,
-          showVal: '+8%',
-          name: '暴击率'
+          value: 11,
+          showVal: '+11',
+          type: 'ATK',
+          name: '攻击力'
         }, {
           valCoefficient: 1.2,
           value: 11,
@@ -72,11 +72,11 @@ export const equiAttributeRing = {
         des: '',
         iconSrc: './icons/U_ring05.png',
         entry: [{
-          type: 'CRIT',
           valCoefficient: 1.2,
-          value: 8,
-          showVal: '+8%',
-          name: '暴击率'
+          value: 11,
+          showVal: '+11',
+          type: 'ATK',
+          name: '攻击力'
         }, {
           valCoefficient: 1.8,
           value: 11,

@@ -107,7 +107,7 @@ export default {
             item.showVal = '+' + random + '%'
             break;
           case 'CRITDMG':
-            var random = parseInt(lv * item.valCoefficient + 1)
+            var random = lv * item.valCoefficient / 2 + 1
             random = parseInt(random * ring.quality.qualityCoefficient)
             item.value = random
             item.showVal = '+' + random + '%'

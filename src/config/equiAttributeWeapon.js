@@ -55,19 +55,13 @@ export const equiAttributeWeapon = {
         des: '',
         iconSrc: './icons/U_Sword04.png',
         entry: [{
-          valCoefficient: 2.2,
+          valCoefficient: 3.2,
           value: 11,
           showVal: '+11',
           type: 'ATK',
           name: '攻击力'
         }, {
-          type: 'CRIT',
-          valCoefficient: 1.2,
-          value: 8,
-          showVal: '+8%',
-          name: '暴击率'
-        }, {
-          valCoefficient: 1.6,
+          valCoefficient: 1.8,
           value: 11,
           showVal: '+11',
           type: 'CRITDMG',
@@ -78,19 +72,13 @@ export const equiAttributeWeapon = {
         des: '',
         iconSrc: './icons/U_Sword05.png',
         entry: [{
-          valCoefficient: 2.6,
+          valCoefficient: 2.8,
           value: 11,
           showVal: '+11',
           type: 'ATK',
           name: '攻击力'
         }, {
-          type: 'CRIT',
-          valCoefficient: 1.2,
-          value: 8,
-          showVal: '+8%',
-          name: '暴击率'
-        }, {
-          valCoefficient: 1.2,
+          valCoefficient: 2.2,
           value: 11,
           showVal: '+11',
           type: 'CRITDMG',
@@ -107,13 +95,7 @@ export const equiAttributeWeapon = {
           type: 'ATK',
           name: '攻击力'
         }, {
-          type: 'CRIT',
-          valCoefficient: 1.6,
-          value: 8,
-          showVal: '+8%',
-          name: '暴击率'
-        }, {
-          valCoefficient: 1.2,
+          valCoefficient: 2.8,
           value: 11,
           showVal: '+11',
           type: 'CRITDMG',
