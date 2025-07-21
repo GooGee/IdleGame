@@ -31,7 +31,7 @@ export function calculatePrice(item) {
 }
 
 export function calculateReplacePrice(item) {
-    return parseInt(calculatePrice(item) / 2)
+    return parseInt(calculatePrice(item) / 5)
 }
 
 export function calculateUpgradePrice(item) {

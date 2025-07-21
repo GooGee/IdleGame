@@ -181,7 +181,7 @@ export default {
         var ringlv = Number(this.$store.state.playerAttribute.ring.lv);
         var necklv = Number(this.$store.state.playerAttribute.neck.lv);
         for (let i = 0; i < 5; i++) {
-          var lv = Math.floor(this.$store.state.playerAttribute.lv + Math.random() * 3);
+          var lv = Math.floor(this.$store.state.playerAttribute.lv + Math.random() * 11);
           this.createShopItem(lv);
         }
       }

@@ -345,19 +345,19 @@ export default {
           var random = Math.random()
           if (random <= 0.3 && random > 0) {
             var b = this.findBrothersComponents(this, 'weaponPanel', false)[0]
-            var item = b.createNewItem(4, parseInt(lv + Math.random() * 6))
+            var item = b.createNewItem(4, parseInt(lv + Math.random() * 11))
             items.push(JSON.parse(item))
           } else if (random <= 0.5 && random > 0.3) {
             var b = this.findBrothersComponents(this, 'armorPanel', false)[0]
-            var item = b.createNewItem(4, parseInt(lv + Math.random() * 6))
+            var item = b.createNewItem(4, parseInt(lv + Math.random() * 11))
             items.push(JSON.parse(item))
           }else if (random <= 0.75 && random > 0.5) {
             var b = this.findBrothersComponents(this, 'ringPanel', false)[0]
-            var item = b.createNewItem(4, parseInt(lv + Math.random() * 6))
+            var item = b.createNewItem(4, parseInt(lv + Math.random() * 11))
             items.push(JSON.parse(item))
           } else {
             var b = this.findBrothersComponents(this, 'neckPanel', false)[0]
-            var item = b.createNewItem(4, parseInt(lv + Math.random() * 6))
+            var item = b.createNewItem(4, parseInt(lv + Math.random() * 11))
             items.push(JSON.parse(item))
           }
 
