@@ -3,9 +3,7 @@
     <!-- <a class="github" target="_blank" @click="navToGithub" title="源码" src="https://github.com/Couy69/vue-idle-game"></a> -->
     <div class="title">
       <p>现在转生可以获得{{willGetreincarnationPoint}}转生点数</p>
-      <div class="info">
-        <p>- 转生后会失去金币与装备</p>
-      </div>
+      <p style="color:#f00">转生后会失去所有物品和金币</p>
       <div class='btn-div'>
         <div class="button" @click="reincarnationConfirm">确认转生</div>
       </div>
@@ -203,7 +201,7 @@ export default {
         return
       }
       this.$message({
-        message: `你将获得${this.willGetreincarnationPoint}转生点数，同时你的金币和装备都会消失。`,
+        message: `你将获得${this.willGetreincarnationPoint}转生点数，但你现有的金币和物品都会消失！`,
         title: '提示',
         closeBtnText: '算了',
         confirmBtnText: '转了转了',

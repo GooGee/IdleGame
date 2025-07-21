@@ -10,7 +10,6 @@
           <p class="info">* 强化装备会加强装备的基础属性</p>
           <p class="info">* 强化等级越高成功率越低</p>
           <p class="info">* 强化等级高于5时强化失败可能会降低强化等级</p>
-          <p class="info">* 强化概率：6级80%，7级65%，8级45%，9级30%，10级以后20%</p>
         </template>
       </cTooltip>
 
@@ -103,7 +102,7 @@ export default {
       autoRecastLv: 80,
       autoRecastTimer: 0,
       autoStrengModel: false,
-      autoStrengLv: 12,
+      autoStrengLv: 10,
       autoStrengTimer: 0,
       recast: false,
       qualityClass: '',
@@ -249,6 +248,7 @@ export default {
     // 重铸装备
     recastTheEquiment(v, k) {
       if (this.$store.state.playerAttribute.GOLD < this.recastNeedGold) {
+        this.stopAutoRecast()
         this.$store.commit("set_sys_info", {
           msg: `
               钱不够啊，重铸啥呢。

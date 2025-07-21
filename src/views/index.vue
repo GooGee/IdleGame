@@ -14,7 +14,6 @@
         <template v-slot:tip>
           <p class="info">* 玩家当前等级与转生次数</p>
           <p class="info">* 成功挑战首领时会提升等级</p>
-          <p class="info">* 超过30级时可以转生获取更强力的初始属性</p>
         </template>
 
       </cTooltip>
@@ -23,14 +22,13 @@
         <template v-slot:content>
           <div class="hp">
             <img src="../assets/icons/S_Holy01.png" alt="">
-            <div class="value" :style="{fontSize:attribute.MAXHP.value>=100000000?'.20rem':'.26rem'}">
+            <div class="value" :style="{fontSize:attribute.MAXHP.value>=10000?'.20rem':'.26rem'}">
               {{attribute.CURHP.value}}/{{attribute.MAXHP.showValue}}
             </div>
           </div>
         </template>
         <template v-slot:tip>
           <p class="info">* 当前生命值/最大生命值</p>
-          <p class="info">* 每秒会回复2%的最大生命值</p>
         </template>
 
       </cTooltip>
@@ -82,8 +80,7 @@
             </div>
           </template>
           <template v-slot:tip>
-            <p class="info">* 角色防御力以及计算后的减伤比例</p>
-            <p class="info">* 减伤比例采用非线性计算，护甲越高收益越低</p>
+            <p class="info">* 角色防御力和减伤比例</p>
           </template>
         </cTooltip>
 
@@ -108,12 +105,12 @@
         <cTooltip placement="bottom">
           <template v-slot:content>
             <div class="gold" v-if="attribute.DPS" :style="{fontSize:attribute.DPS>=10000?'.18rem':'.22rem'}">DPS:
-              <span :style="{fontSize:attribute.DPS>=10000?'.18rem':'.22rem'}">{{(attribute.DPS).toFixed(1)}}</span>
+              <span :style="{fontSize:attribute.DPS>=10000?'.18rem':'.22rem'}">{{(attribute.DPS).toFixed(0)}}</span>
             </div>
           </template>
           <template v-slot:tip>
             <p class="info">* DPS:角色每秒伤害</p>
-            <p class="info">* 这个只是伤害数据，并没有统计防御属性，所以只是作为战斗力评估的一个依据</p>
+            <p class="info">* 这个只是伤害数据，并没有计算防御属</p>
           </template>
         </cTooltip>
         <cTooltip placement="bottom">
@@ -122,7 +119,6 @@
           </template>
           <template v-slot:tip>
             <p class="info">* 你拥有的金币数量</p>
-            <p class="info">* 在这里，钱就是万能的</p>
           </template>
         </cTooltip>
 

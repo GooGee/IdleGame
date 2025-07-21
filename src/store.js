@@ -344,6 +344,7 @@ export default new Vuex.Store({
       attribute.MAXHP.value = parseInt(attribute.MAXHP.value * (100 + HPPERCENT) / 100)
       attribute.MAXHP.value += 200
       attribute.MAXHP.showValue = (attribute.MAXHP.value) + ` (+${HPPERCENT.toFixed(1)}%)`
+      attribute.CRIT.value = attribute.CRIT.value.toFixed(1)
       attribute.BLOC.value = parseInt(attribute.BLOC.value * (100 + BLOCPERCENT) / 100)
       attribute.BLOC.showValue = '+' + (attribute.BLOC.value)
       attribute.EVA.value = ((1 - HitChance) * 100).toFixed(1)
