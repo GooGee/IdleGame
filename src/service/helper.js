@@ -37,3 +37,16 @@ export function calculateReplacePrice(item) {
 export function calculateUpgradePrice(item) {
     return parseInt(calculatePrice(item) / 5 * (1.2 ** item.enchantlvl))
 }
+
+export function calculateUpgradeChange(level) {
+    const base = 5
+    if (level <= base) {
+        return 1
+    }
+
+    let odds = (level - base) * 0.1
+    if (odds > 0.9) {
+        odds = 0.9
+    }
+    return 1 - odds
+}

@@ -197,20 +197,7 @@ export default {
         return
       }
       let lv = this.equiment.enchantlvl
-      let probabilityOfSuccess = 1
-      if (lv <= 5) {
-        probabilityOfSuccess = 1
-      } else if (lv == 6) {
-        probabilityOfSuccess = 0.8
-      } else if (lv == 7) {
-        probabilityOfSuccess = 0.65
-      } else if (lv == 8) {
-        probabilityOfSuccess = 0.45
-      } else if (lv == 9) {
-        probabilityOfSuccess = 0.3
-      } else {
-        probabilityOfSuccess = 0.2
-      }
+      let probabilityOfSuccess = calculateUpgradeChange(lv)
       let r = Math.random()
       if (r < probabilityOfSuccess) {
         // 强化成功
