@@ -166,7 +166,7 @@ export const equiAttributeArmor = {
       categoryArmor: [
         {
           name: '紫金守护胸甲',
-          des: '够肉才能输出',
+          des: '',
           iconSrc: './icons/A_A2.png',
           entry: [{
             valCoefficient: 2,
@@ -184,7 +184,7 @@ export const equiAttributeArmor = {
         },
         {
           name: '战士重铠',
-          des: '六级战士使用的重型铠甲',
+          des: '',
           iconSrc: './icons/A_A5.png',
           entry: [{
             valCoefficient: 1.1,
@@ -201,8 +201,8 @@ export const equiAttributeArmor = {
           }]
         },
         {
-          name: '天权轻甲',
-          des: '舍弃了防御性能的轻甲，因为更加轻便，攻击性能更加突出',
+          name: '皮衣',
+          des: '',
           iconSrc: './icons/A_A7.png',
           entry: [{
             valCoefficient: 0.7,
@@ -225,8 +225,8 @@ export const equiAttributeArmor = {
           }]
         },
         {
-          name: '赤柳血铠',
-          des: '似乎会给使用者提供生命气息',
+          name: '天权轻甲',
+          des: '',
           iconSrc: './icons/A_A3.png',
           entry: [{
             valCoefficient: 0.9,
@@ -240,30 +240,6 @@ export const equiAttributeArmor = {
             value: 8,
             showVal: '8',
             name: '生命值'
-          }]
-        },
-        {
-          name: '哈皮毛毛连身衣',
-          des: '哈皮毛毛',
-          iconSrc: './icons/A_A9.png',
-          entry: [{
-            valCoefficient: 0.8,
-            value: 11,
-            showVal: '+11',
-            type: 'DEF',
-            name: '防御力'
-          }, {
-            type: 'HP',
-            valCoefficient: 0.8,
-            value: 8,
-            showVal: '8',
-            name: '生命值'
-          }, {
-            valCoefficient: 0.4,
-            value: 11,
-            showVal: '+11',
-            type: 'ATK',
-            name: '攻击力'
           }]
         }
       ],

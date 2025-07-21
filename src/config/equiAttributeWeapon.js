@@ -120,9 +120,9 @@ export const equiAttributeWeapon = {
         }]
       },],
       category: [{
-        name: '狱岩石太刀',
-        des: '用狱岩石制作的太刀，据说拥有让使用者潜力爆发的神秘力量',
-        iconSrc: './icons/W_Sword016.png',
+        name: '铁剑',
+        des: '',
+        iconSrc: './icons/W_Sword003.png',
         entry: [{
           valCoefficient: 1.2,
           value: 11,
@@ -139,7 +139,7 @@ export const equiAttributeWeapon = {
       },
       {
         name: '战士长剑',
-        des: '六级战士使用的长剑',
+        des: '',
         iconSrc: './icons/W_Sword007.png',
         entry: [{
           valCoefficient: 1.2,
@@ -157,8 +157,8 @@ export const equiAttributeWeapon = {
       },
       {
         name: '赤柳血刃',
-        des: '似乎会给使用者提供生命气息',
-        iconSrc: './icons/W_Sword019.png',
+        des: '',
+        iconSrc: './icons/W_Sword016.png',
         entry: [{
           valCoefficient: 1.3,
           value: 11,
@@ -174,51 +174,8 @@ export const equiAttributeWeapon = {
         }]
       },
       {
-        name: '普通长剑',
-        des: '朴实无华普通长剑，有的只有强力的攻击力',
-        iconSrc: './icons/W_Sword001.png',
-        entry: [{
-          valCoefficient: 1.7,
-          value: 11,
-          showVal: '+11',
-          type: 'ATK',
-          name: '攻击力'
-        }]
-      }
-        ,
-      {
-        name: '紫炎波刃剑',
-        des: '传说中的狂战士最喜爱的剑。',
-        iconSrc: './icons/W_Sword021.png',
-        entry: [{
-          valCoefficient: 1.7,
-          value: 11,
-          showVal: '+11',
-          type: 'ATK',
-          name: '攻击力'
-        }]
-      },
-      {
-        name: '毛毛的爪子',
-        des: '这？这也是武器？',
-        iconSrc: './icons/W_Fist003.png',
-        entry: [{
-          valCoefficient: 2,
-          value: 11,
-          showVal: '+11',
-          type: 'ATK',
-          name: '攻击力'
-        }, {
-          type: 'CRIT',
-          valCoefficient: 0.7,
-          value: 8,
-          showVal: '+8%',
-          name: '暴击率'
-        }]
-      },
-      {
         name: '冰晶之刃',
-        des: '剑锋覆盖着冰晶，碰到的敌人都会被冻住。',
+        des: '',
         iconSrc: './icons/W_Sword018.png',
         entry: [{
           valCoefficient: 1.4,

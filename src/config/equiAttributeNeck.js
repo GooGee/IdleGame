@@ -114,7 +114,7 @@ export const equiAttributeNeck = {
       categoryNeck: [
         {
           name: '十字军项链',
-          des: '十字军佩戴的项链',
+          des: '',
           iconSrc: './icons/Ac_1.png',
           entry: [{
             valCoefficient: 1.5,
@@ -132,7 +132,7 @@ export const equiAttributeNeck = {
         },
         {
           name: '冰龙凝雪',
-          des: '冰龙凝雪',
+          des: '',
           iconSrc: './icons/Ac_7.png',
           entry: [{
             valCoefficient: 1.1,
@@ -150,7 +150,7 @@ export const equiAttributeNeck = {
         },
         {
           name: '银魂之眼',
-          des: '银魂之眼',
+          des: '',
           iconSrc: './icons/Ac_5.png',
           entry: [{
             valCoefficient: 0.5,
