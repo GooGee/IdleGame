@@ -242,75 +242,75 @@ function createRandomEntry(lv, qualityCoefficient) {
   entry.EntryLevel = Math.floor(randomCoefficient * 100)
   switch (entry.type) {
     case 'ATK':
-      var random = parseInt(lv * 1 + (randomCoefficient * lv / 2 + 1))
+      var random = lv * 1 + (randomCoefficient * lv / 2 + 1)
       random = parseInt(random * qualityCoefficient)
       random = random || 1
       entry.value = random
       entry.showVal = '+' + random
       break;
     case 'DEF':
-      var random = parseInt((lv * 0.4 + (randomCoefficient * lv / 2 + 1)))
+      var random = lv * 0.4 + (randomCoefficient * lv / 2 + 1)
       random = parseInt(random * qualityCoefficient)
       random = random || 1
       entry.value = random
       entry.showVal = '+' + random
       break;
     case 'HP':
-      var random = parseInt((lv * 0.2 * 15 + (randomCoefficient * lv / 2 + 1)))
+      var random = lv * 0.2 * 15 + (randomCoefficient * lv / 2 + 1)
       random = parseInt(random * qualityCoefficient)
       random = random || 1
       entry.value = random
       entry.showVal = '+' + random
       break;
     case 'ATKPERCENT':
-      var random = parseFloat(lv * 0.11 + (randomCoefficient * lv / 10 + 4)).toFixed(1)
+      var random = lv * 0.11 + (randomCoefficient * lv / 10 + 5)
       random = parseFloat(random * qualityCoefficient).toFixed(1)
       random = random || 1
       entry.value = random
       entry.showVal = '+' + random + '%'
       break;
     case 'DEFPERCENT':
-      var random = parseFloat(lv * 0.1 + (randomCoefficient * lv / 10 + 4)).toFixed(1)
+      var random = lv * 0.11 + (randomCoefficient * lv / 10 + 5)
       random = parseFloat(random * qualityCoefficient).toFixed(1)
       random = random || 1
       entry.value = random
       entry.showVal = '+' + random + '%'
       break;
     case 'HPPERCENT':
-      var random = parseFloat(lv * 0.13 + (randomCoefficient * lv / 10 + 4)).toFixed(1)
+      var random = lv * 0.11 + (randomCoefficient * lv / 10 + 5)
       random = parseFloat(random * qualityCoefficient).toFixed(1)
       random = random || 1
       entry.value = random
       entry.showVal = '+' + random + '%'
       break;
-    case 'BLOCPERCENT':
-      var random = parseFloat(lv * 0.1 + (randomCoefficient * lv / 10 + 4)).toFixed(1)
-      random = parseFloat(random * qualityCoefficient).toFixed(1)
-      random = random || 1
-      entry.value = random
-      entry.showVal = '+' + random + '%'
-      break;
+    // case 'BLOCPERCENT':
+    //   var random = lv * 0.1 + (randomCoefficient * lv / 10 + 5)
+    //   random = parseFloat(random * qualityCoefficient).toFixed(1)
+    //   random = random || 1
+    //   entry.value = random
+    //   entry.showVal = '+' + random + '%'
+    //   break;
     case 'CRIT':
-      var random = parseInt(randomCoefficient * 5 + 5)
-      random = parseInt(random * qualityCoefficient)
+      var random = lv * 0.11 + (randomCoefficient * lv / 10 + 5)
+      random = parseFloat(random * qualityCoefficient).toFixed(1)
       entry.value = random
       entry.showVal = '+' + random + '%'
       break;
     case 'CRITDMG':
-      var random = parseFloat(lv * 0.11 + (randomCoefficient * lv / 10 + 4)).toFixed(1)
+      var random = lv * 0.11 + (randomCoefficient * lv / 10 + 5)
       random = parseFloat(random * qualityCoefficient).toFixed(1)
       entry.value = random
       entry.showVal = '+' + random + '%'
       break;
-    case 'BLOC':
-      var random = parseInt((lv * 0.6 + (randomCoefficient * lv / 2 + 1)))
-      random = parseInt(random * qualityCoefficient)
-      random = random || 1
-      entry.value = random
-      entry.showVal = '+' + random
-      break;
+    // case 'BLOC':
+    //   var random = lv * 0.6 + (randomCoefficient * lv / 2 + 1)
+    //   random = parseInt(random * qualityCoefficient)
+    //   random = random || 1
+    //   entry.value = random
+    //   entry.showVal = '+' + random
+    //   break;
     // case 'EVA':
-    //     var random = parseInt(randomCoefficient  * 12 + 3)
+    //     var random = randomCoefficient  * 12 + 3
     //     random = parseInt(random * qualityCoefficient)
     //     entry.value = random
     //     entry.showVal = '+' + random + '%'
