@@ -91,7 +91,7 @@ export const equiAttributeRing = {
           des: '据说拥有增强佩戴者体质的神秘功效',
           iconSrc: './icons/Ac_9.png',
           entry: [{
-            valCoefficient: 1.1,
+            valCoefficient: 1.8,
             value: 11,
             showVal: '+11',
             type: 'HP',
@@ -103,19 +103,13 @@ export const equiAttributeRing = {
           des: '喵喵戒指，上面有没有摸到毛毛jio的怨念',
           iconSrc: './icons/Ac_11.png',
           entry: [{
-            valCoefficient: 0.9,
-            value: 11,
-            showVal: '+11',
-            type: 'HP',
-            name: '生命值'
-          }, {
             valCoefficient: 0.3,
             value: 11,
             showVal: '+11',
             type: 'ATK',
             name: '攻击力'
           }, {
-            valCoefficient: 0.5,
+            valCoefficient: 1.5,
             value: 11,
             showVal: '+11',
             type: 'CRIT',
@@ -127,17 +121,17 @@ export const equiAttributeRing = {
           des: '出来吧，卡赞！吸纳所有彷徨的灵魂！   ——鬼剑士约翰',
           iconSrc: './icons/Ac_10.png',
           entry: [{
-            valCoefficient: 0.7,
-            value: 11,
-            showVal: '+11',
-            type: 'HP',
-            name: '生命值'
-          }, {
-            valCoefficient: 0.5,
+            valCoefficient: 1.3,
             value: 11,
             showVal: '+11',
             type: 'ATK',
             name: '攻击力'
+          }, {
+            valCoefficient: 0.5,
+            value: 11,
+            showVal: '+11',
+            type: 'CRIT',
+            name: '暴击率'
           },]
         },
       ],

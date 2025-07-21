@@ -117,13 +117,7 @@ export const equiAttributeNeck = {
           des: '十字军佩戴的项链',
           iconSrc: './icons/Ac_1.png',
           entry: [{
-            valCoefficient: 0.9,
-            value: 11,
-            showVal: '+11',
-            type: 'DEF',
-            name: '防御力'
-          }, {
-            valCoefficient: 0.5,
+            valCoefficient: 1.5,
             value: 11,
             showVal: '+11',
             type: 'HP',
@@ -141,23 +135,17 @@ export const equiAttributeNeck = {
           des: '冰龙凝雪',
           iconSrc: './icons/Ac_7.png',
           entry: [{
-            valCoefficient: 0.75,
-            value: 11,
-            showVal: '+11',
-            type: 'CRITDMG',
-            name: '暴击伤害'
-          }, {
-            valCoefficient: 0.5,
-            value: 11,
-            showVal: '+11',
-            type: 'CRIT',
-            name: '暴击率'
-          }, {
-            valCoefficient: 0.5,
+            valCoefficient: 1.1,
             value: 11,
             showVal: '+11',
             type: 'HP',
             name: '生命值'
+          }, {
+            valCoefficient: 1.1,
+            value: 11,
+            showVal: '+11',
+            type: 'CRIT',
+            name: '暴击率'
           }]
         },
         {
@@ -168,20 +156,14 @@ export const equiAttributeNeck = {
             valCoefficient: 0.5,
             value: 11,
             showVal: '+11',
-            type: 'CRIT',
-            name: '暴击率'
-          }, {
-            valCoefficient: 0.5,
-            value: 11,
-            showVal: '+11',
             type: 'HP',
             name: '生命值'
           }, {
-            valCoefficient: 0.6,
+            valCoefficient: 1.5,
             value: 11,
             showVal: '+11',
-            type: 'ATK',
-            name: '攻击力'
+            type: 'CRIT',
+            name: '暴击率'
           }]
         }
       ]
