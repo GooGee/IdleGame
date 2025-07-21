@@ -12,7 +12,7 @@
           </div>
         </template>
         <template v-slot:tip>
-          <p class="info">* 玩家当前等级与转生次数</p>
+          <p class="info">* 等级与转生次数</p>
           <p class="info">* 成功挑战首领时会提升等级</p>
         </template>
 
@@ -28,7 +28,7 @@
           </div>
         </template>
         <template v-slot:tip>
-          <p class="info">* 当前生命值/最大生命值</p>
+          <p class="info">* 当前生命值/最大生命值（加成%）</p>
         </template>
 
       </cTooltip>
@@ -52,7 +52,7 @@
             </div>
           </template>
           <template v-slot:tip>
-            <p class="info">* 角色攻击力</p>
+            <p class="info">* 攻击力（加成%）</p>
           </template>
         </cTooltip>
 
@@ -61,12 +61,12 @@
             <div class="item">
               <img src="../assets/icons/CRIT.png" alt="">
               <div class="value">
-                {{attribute.CRIT.value}}%
+                {{attribute.CRIT.showValue}}
               </div>
             </div>
           </template>
           <template v-slot:tip>
-            <p class="info">* 角色当前的暴击率</p>
+            <p class="info">* 暴击率</p>
           </template>
         </cTooltip>
 
@@ -75,12 +75,12 @@
             <div class="item">
               <img src="../assets/icons/icon_11.png" alt="">
               <div class="value" :style="{fontSize:attribute.DEF.value>=100000?'.18rem':'.23rem'}">
-                {{attribute.DEF.value}} ({{((1-attribute.REDUCDMG)*100).toFixed(1)}}%)
+                {{attribute.DEF.value}} (-{{((1-attribute.REDUCDMG)*100).toFixed(0)}}%)
               </div>
             </div>
           </template>
           <template v-slot:tip>
-            <p class="info">* 角色防御力和减伤比例</p>
+            <p class="info">* 防御力（减伤%）</p>
           </template>
         </cTooltip>
 
@@ -89,7 +89,7 @@
             <div class="item">
               <img src="../assets/icons/CRITDMG.png" alt="">
               <div class="value">
-                {{attribute.CRITDMG.value}}%
+                {{attribute.CRITDMG.showValue}}
               </div>
             </div>
           </template>
@@ -109,8 +109,7 @@
             </div>
           </template>
           <template v-slot:tip>
-            <p class="info">* DPS:角色每秒伤害</p>
-            <p class="info">* 这个只是伤害数据，未包含防御数据</p>
+            <p class="info">* 每秒伤害</p>
           </template>
         </cTooltip>
         <cTooltip placement="bottom">
@@ -118,7 +117,7 @@
             <div class="gold" :style="{fontSize:userGold>=1000000?'.18rem':'.22rem'}">金币: <span :style="{fontSize:userGold>=1000000?'.14rem':'.16rem'}">{{(userGold || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,')}}</span></div>
           </template>
           <template v-slot:tip>
-            <p class="info">* 你拥有的金币数量</p>
+            <p class="info">* 金币数量</p>
           </template>
         </cTooltip>
 
@@ -246,7 +245,7 @@
         <template v-slot:tip>
           <p class="info">* 刷新当前世界副本</p>
           <p class="info">* 刷新冷却时间：30秒钟</p>
-          <p class="info">* 刷新副本等级[lv-5,lv+5]</p>
+          <p class="info">* 刷新副本等级[lv-5, lv+5]</p>
         </template>
       </cTooltip>
 
@@ -257,8 +256,7 @@
           </div>
         </template>
         <template v-slot:tip>
-          <p class="info">* 角色转生菜单</p>
-          <p class="info">* 淦不过了？尝试转生来提升基础属性</p>
+          <p class="info">* 转生提升基础属性</p>
         </template>
       </cTooltip>
 
