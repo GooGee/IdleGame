@@ -88,7 +88,7 @@ import { assist } from '@/service/assist';
 import cTooltip from '../uiComponent/tooltip'
 import handle from '@/service/handle'
 import { createRandomEntry } from '@/service/factory'
-import { calculateReplacePrice, calculateUpgradePrice } from '@/service/helper'
+import { calculateUpgradeChange, calculateUpgradePrice } from '@/service/helper'
 export default {
   components: { cTooltip },
   name: "equimentPanel",
@@ -152,7 +152,7 @@ export default {
     },
     // 计算重铸所需金币
     recastNeedGold() {
-      return calculateReplacePrice(this.equiment)
+      return calculateUpgradePrice(this.equiment)
     }
   },
   watch: {

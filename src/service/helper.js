@@ -27,15 +27,11 @@ export function calculateGainingPoint(playerAttribute) {
 }
 
 export function calculatePrice(item) {
-    return parseInt((item.lv + 1) ** 1.5 * item.quality.qualityCoefficient ** 3 * 10)
-}
-
-export function calculateReplacePrice(item) {
-    return parseInt(calculatePrice(item) / 5)
+    return parseInt(item.lv ** 1.5 * item.quality.qualityCoefficient ** 3 * 10)
 }
 
 export function calculateUpgradePrice(item) {
-    return parseInt(calculatePrice(item) / 5 * (1.2 ** item.enchantlvl))
+    return parseInt(calculatePrice(item) / 5)
 }
 
 export function calculateUpgradeChange(level) {
