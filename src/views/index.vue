@@ -720,7 +720,7 @@ export default {
           point: this.$store.state.reincarnation.point,
         }
       }
-      var saveData = Base64.encode(Base64.encode(JSON.stringify(data)))
+      var saveData = Base64.encode(JSON.stringify(data))
       localStorage.setItem('_sd', saveData)
 
       needInfo && this.$store.commit("set_sys_info", {
