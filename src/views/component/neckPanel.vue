@@ -3,7 +3,7 @@
     <!-- <div class="btn" style="position:relative;z-index:999;">
       <button @click="createNewneck">随机生成</button>
     </div> -->
-    <div class="neckPanel" :style="{'box-shadow':' 0 0 5px 5px '+neck.quality.color + 'b8'}" v-if="JSON.stringify(neck)!='{}'">
+    <div class="neckPanel" v-if="JSON.stringify(neck)!='{}'">
       <div class="title">
         <div class='icon' :class="{'red-flash':neck.enchantlvl>=13,unique:neck.quality.name=='独特'}" :style="{'box-shadow':'inset 0 0 7px 2px '+neck.quality.color}">
           <img :src="neck.type.iconSrc" alt="">

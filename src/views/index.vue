@@ -110,7 +110,7 @@
           </template>
           <template v-slot:tip>
             <p class="info">* DPS:角色每秒伤害</p>
-            <p class="info">* 这个只是伤害数据，并没有计算防御属</p>
+            <p class="info">* 这个只是伤害数据，未包含防御数据</p>
           </template>
         </cTooltip>
         <cTooltip placement="bottom">
@@ -379,10 +379,10 @@
       <div class="content">
         <div class="body">
           <span class="prompt-message">* 随机生成一套指定等级与质量的装备</span>
-          lv:<input v-model="GMEquipLv" type="number" min="1" placeholder="装备等级1~110">
-          稀有度：<input v-model="GMEquipQu" type="number" min="1" placeholder="装备质量0~4">
+          lv:<input v-model="GMEquipLv" type="number" placeholder="装备等级1~110">
+          稀有度：<input v-model="GMEquipQu" type="number" placeholder="装备质量0~4">
           增加金币：<input v-model="GMGold" type="number" placeholder="增加金币">
-          玩家等级：<input v-model="GMPlayerLv" type="number" min="1" placeholder="玩家等级：">
+          玩家等级：<input v-model="GMPlayerLv" type="number" placeholder="玩家等级：">
           <div class="button" @click="createGMEquip">确定</div>
         </div>
       </div>
@@ -537,7 +537,11 @@ export default {
     GMEquipQu() {
       this.GMEquipQu = this.GMEquipQu > 4 ? 4 : this.GMEquipQu
       this.GMEquipQu = this.GMEquipQu < 1 ? 1 : this.GMEquipQu
-    }
+    },
+    GMPlayerLv() {
+      this.GMPlayerLv = this.GMPlayerLv > 1000 ? 1000 : this.GMPlayerLv
+      this.GMPlayerLv = this.GMPlayerLv < 1 ? 1 : this.GMPlayerLv
+    },
   },
   methods: {
     navToGithub() {
@@ -1062,7 +1066,7 @@ a {
   cursor: pointer;
 }
 .main {
-  background: #111;
+  background: #333;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -1176,7 +1180,6 @@ a {
     padding-top: 0.1rem;
     cursor: pointer;
     & > div {
-      background: rgba(0, 0, 0, 0.7);
       width: calc(100% - 0.4rem);
       margin: 0 20rem;
     }
@@ -1445,8 +1448,8 @@ a {
   transform: translate(-50%, -50%);
   border: 2px solid #fff;
   border-radius: 6px;
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.7);
-  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.8);
   .title {
     display: flex;
     position: relative;
@@ -1533,7 +1536,7 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 3.5rem;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 4px;
   border: 2px solid #ccc;
   height: 3.5rem;

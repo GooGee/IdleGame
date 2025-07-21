@@ -275,7 +275,7 @@ export default {
         num = 10
       }
 
-      if(v.maxPoint&&v.point + num+v.hasPoint>v.maxPoint){
+      if(v.maxPoint && v.point + num > v.maxPoint){
         this.$store.commit("set_sys_info", {
           msg: `
               该项最多加点至${v.maxPoint}
