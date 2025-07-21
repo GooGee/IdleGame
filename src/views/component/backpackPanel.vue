@@ -263,7 +263,7 @@ export default {
         return
       }
       this.$set(this.grid, this.currentItemIndex, {});
-      var gold = calculatePrice(this.currentItem)
+      var gold = calculatePrice(this.currentItem, false)
       this.$store.commit("set_player_gold", parseInt(gold));
       this.$store.commit("set_sys_info", {
         msg: `

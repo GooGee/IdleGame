@@ -1,3 +1,5 @@
+const UpgradeBaseLevel = 5
+
 const N_1k = 1000
 const N_1m = N_1k * N_1k
 
@@ -26,23 +28,45 @@ export function calculateGainingPoint(playerAttribute) {
     return parseInt(sum * 1.2)
 }
 
-export function calculatePrice(item) {
-    return parseInt(item.lv ** 1.5 * item.quality.qualityCoefficient ** 3 * 10)
+/**
+ * 
+ * @param {object} item 
+ * @param {boolean} ignoreUpgrade 
+ * @returns 
+ */
+export function calculatePrice(item, ignoreUpgrade = true) {
+    let factor = 1
+    const upgrade = item.enchantlvl ? item.enchantlvl : 1
+    factor += upgrade * 0.2
+    if (ignoreUpgrade) {
+        factor = 1
+    }
+    return parseInt(item.lv ** 1.5 * item.quality.qualityCoefficient ** 3 * factor * 10)
 }
 
-export function calculateUpgradePrice(item) {
-    return parseInt(calculatePrice(item) / 5)
+/**
+ * 
+ * @param {object} item 
+ * @param {boolean} ignoreUpgrade 
+ * @returns 
+ */
+export function calculateUpgradePrice(item, ignoreUpgrade = true) {
+    return parseInt(calculatePrice(item, ignoreUpgrade) / 5)
 }
 
+/**
+ * 
+ * @param {number} level 
+ * @returns 
+ */
 export function calculateUpgradeChange(level) {
-    const base = 5
-    if (level <= base) {
+    if (level <= UpgradeBaseLevel) {
         return 1
     }
 
-    let odds = (level - base) * 0.1
-    if (odds > 0.9) {
-        odds = 0.9
+    let odds = (level - UpgradeBaseLevel) * 0.1
+    if (odds > 0.90) {
+        odds = 0.95
     }
     return 1 - odds
 }
