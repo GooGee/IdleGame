@@ -1,5 +1,12 @@
+const N_1k = 1000
+const N_1m = N_1k * N_1k
+
 export function calculateGainingPoint(playerAttribute) {
     let sum = playerAttribute.lv < 20 ? 0 : Math.floor((playerAttribute.lv - 20) ** 1.5)
+
+    if (playerAttribute.GOLD >= N_1m) {
+        sum += playerAttribute.GOLD / N_1m
+    }
 
     const warezz = [
         playerAttribute.armor,

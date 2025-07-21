@@ -5,8 +5,6 @@
       <p>现在转生可以获得{{willGetreincarnationPoint}}转生点数</p>
       <div class="info">
         <p>- 转生后会失去金币与装备</p>
-        <p>- 转生会获得转生点数</p>
-        <p>- 转生点数根据人物等级，身上装备品质强化等级计算，持有金币与背包装备不会纳入计算</p>
       </div>
       <div class='btn-div'>
         <div class="button" @click="reincarnationConfirm">确认转生</div>
@@ -133,7 +131,7 @@ export default {
     };
   },
   mounted() {
-    this.caculateWillGetreincarnationPoint()
+    this.willGetreincarnationPoint = calculateGainingPoint(this.$store.state.playerAttribute)
 
     for (let i in this.reincarnationAttribute) {
       let item = this.reincarnationAttribute[i]
@@ -195,10 +193,10 @@ export default {
   },
   methods: {
     reincarnationConfirm() {
-      if (this.$store.state.playerAttribute.lv <= 30) {
+      if (this.$store.state.playerAttribute.lv < 30) {
         this.$store.commit("set_sys_info", {
           msg: `
-              等级这么低就先别转了吧，超过lv:30再来看看
+              等级超过lv:30才能转生
             `,
           type: 'warning'
         });
@@ -228,9 +226,6 @@ export default {
       backpackPanel.clear()
       var p = this.findComponentUpward(this, 'index')
       p.createdDungeons(true)
-    },
-    caculateWillGetreincarnationPoint() {
-      this.willGetreincarnationPoint = calculateGainingPoint(this.$store.state.playerAttribute)
     },
     subtract(v, e) {
       let num = 1

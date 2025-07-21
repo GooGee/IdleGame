@@ -383,10 +383,10 @@
       <div class="content">
         <div class="body">
           <span class="prompt-message">* 随机生成一套指定等级与质量的装备</span>
-          lv:<input v-model="GMEquipLv" type="number" placeholder="装备等级1~110">
-          稀有度：<input v-model="GMEquipQu" type="number" placeholder="装备质量0~4">
+          lv:<input v-model="GMEquipLv" type="number" min="1" placeholder="装备等级1~110">
+          稀有度：<input v-model="GMEquipQu" type="number" min="1" placeholder="装备质量0~4">
           增加金币：<input v-model="GMGold" type="number" placeholder="增加金币">
-          玩家等级：<input v-model="GMPlayerLv" type="number" placeholder="玩家等级：">
+          玩家等级：<input v-model="GMPlayerLv" type="number" min="1" placeholder="玩家等级：">
           <div class="button" @click="createGMEquip">确定</div>
         </div>
       </div>
@@ -446,10 +446,10 @@ export default {
       exportSaveDataPanelOpened: false,
       strengthenEquipmentPanelOpened: false,
       itemDialogStyle: {},
-      GMEquipLv: 110,
+      GMEquipLv: 33,
       GMEquipQu: 4,
-      GMGold: 10000000,
-      GMPlayerLv: 1,
+      GMGold: 1000000,
+      GMPlayerLv: 33,
       GMOpened: false,
       needComparison: true,
       saveData: {},
@@ -535,12 +535,12 @@ export default {
       this.upEChallenge = !this.reEChallenge
     },
     GMEquipLv() {
-      this.GMEquipLv = this.GMEquipLv > 10000 ? 10000 : this.GMEquipLv
+      this.GMEquipLv = this.GMEquipLv > 1000 ? 1000 : this.GMEquipLv
       this.GMEquipLv = this.GMEquipLv < 1 ? 1 : this.GMEquipLv
     },
     GMEquipQu() {
       this.GMEquipQu = this.GMEquipQu > 4 ? 4 : this.GMEquipQu
-      this.GMEquipQu = this.GMEquipQu < 0 ? 0 : this.GMEquipQu
+      this.GMEquipQu = this.GMEquipQu < 1 ? 1 : this.GMEquipQu
     }
   },
   methods: {
