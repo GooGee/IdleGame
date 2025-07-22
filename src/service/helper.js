@@ -41,7 +41,12 @@ export function calculatePrice(item, ignoreUpgrade = true) {
     if (ignoreUpgrade) {
         factor = 1
     }
-    return parseInt(item.lv ** 1.5 * item.quality.qualityCoefficient ** 3 * factor * 10)
+
+    let quality = item.quality.qualityCoefficient
+    if (quality < 0.9) {
+        quality = 0.9
+    }
+    return parseInt(item.lv ** 1.5 * quality ** 3 * factor * 10)
 }
 
 /**
