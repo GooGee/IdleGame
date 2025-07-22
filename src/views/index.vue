@@ -114,7 +114,7 @@
         </cTooltip>
         <cTooltip placement="bottom">
           <template v-slot:content>
-            <div class="gold" :style="{fontSize:userGold>=1000000?'.18rem':'.22rem'}">金币: <span :style="{fontSize:userGold>=1000000?'.14rem':'.16rem'}">{{(userGold || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,')}}</span></div>
+            <div class="gold" :style="{fontSize:userGold>=1000000?'.18rem':'.22rem'}">Gold: <span :style="{fontSize:userGold>=1000000?'.14rem':'.16rem'}">{{(userGold || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,')}}</span></div>
           </template>
           <template v-slot:tip>
             <p class="info">* 金币数量</p>
@@ -190,10 +190,8 @@
           <p>- 无尽模式挑战成功会回满血</p>
         </div>
         <div class="info" v-else>
-          <p>- 副本难度等级分为：普通，困难，极难</p>
-          <p>- 难度越高装备爆率也相应提升</p>
-          <p>- 困难，极难仅能挑战一次</p>
-          <p>- 困难，极难下有几率出现套装装备(下个版本加入)</p>
+          <p>- 难度越高装备爆率也越高</p>
+          <p>- 困难和极难副本仅能挑战一次</p>
         </div>
         <div class="handle">
           <div v-if="dungeons.type!='endless'">
@@ -232,7 +230,7 @@
           </div>
         </template>
         <template v-slot:tip>
-          <p class="info">* 商 店</p>
+          <p class="info">* 商店</p>
         </template>
       </cTooltip>
 
@@ -300,7 +298,7 @@
           </div>
         </template>
         <template v-slot:tip>
-          <p class="info">* GM模式</p>
+          <p class="info">* 作弊</p>
         </template>
       </cTooltip>
 
@@ -466,11 +464,6 @@ export default {
     };
     this.initial()
 
-    // 监听当前窗口是否处于后台状态
-    document.addEventListener("visibilitychange", e => {
-      this.windowVisibilitychange()
-    });
-
   },
   mounted() {
     // 自动回血
@@ -482,7 +475,7 @@ export default {
     // 自动保存
     setInterval(() => {
       this.saveGame()
-    }, 5 * 60 * 1000)
+    }, 60 * 1000)
 
     this.sysInfo = this.$store.state.sysInfo
     this.weapon = this.playerWeapon
@@ -676,24 +669,6 @@ export default {
       }
       this.loadGame(this.saveDateString)
       this.closePanel()
-    },
-    windowVisibilitychange() {
-      if (!this.inDungeons) {
-        if (!this.autoHealthRecovery) {
-          this.autoHealthRecovery = setInterval(() => {
-            this.$store.commit('set_player_curhp', this.healthRecoverySpeed * (this.attribute.MAXHP.value / 50))
-          }, 1000)
-        }
-        return
-      }
-      if (document.hidden) {
-        clearInterval(this.autoHealthRecovery)
-        this.autoHealthRecovery = ''
-      } else {
-        this.autoHealthRecovery = setInterval(() => {
-          this.$store.commit('set_player_curhp', this.healthRecoverySpeed * (this.attribute.MAXHP.value / 50))
-        }, 1000)
-      }
     },
     async saveGame(needInfo) {
       var data = {}
