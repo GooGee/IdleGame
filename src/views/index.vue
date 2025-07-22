@@ -567,7 +567,7 @@ export default {
       // 存储副本数据的数组
       this.dungeonsArr = []
       // 此系数决定生成副本难度对应的概率
-      let Co = [0.7, 0.2, 0.1]
+      let odds = [0.7, 0.9, 1]
       // 这个for循环会生成低于玩家等级的副本
       for (let i = this.playerLv - 1; i > this.playerLv - 5; i--) {
         if (i < 1) {
@@ -578,20 +578,14 @@ export default {
         // difficulty==1  =>  普通难度的副本
         // difficulty==2  =>  困难难度的副本
         // difficulty==3  =>  极难难度的副本
-        if (r <= Co[0]) {
+        if (r < odds[0]) {
           difficulty = 1
-        } else if (r < Co[1] + Co[0] && r >= Co[0]) {
+        } else if (r < odds[1]) {
           difficulty = 2
         } else {
           difficulty = 3
         }
-        // 副本等级超过100级时会按照百分比来刷新，而不是一级一级递增
-        if (i > 100) {
-          var lv = Math.floor(this.playerLv * (100 - (this.playerLv - i)) / 100)
-        } else {
-          var lv = i
-        }
-        this.dungeonsArr.push(handle.createRandomDungeons(lv, 1))
+        this.dungeonsArr.push(handle.createRandomDungeons(i, 1))
         if (difficulty != 1) {
           this.dungeonsArr.push(handle.createRandomDungeons(i, difficulty))
         }
@@ -600,21 +594,16 @@ export default {
       for (let i = this.playerLv; i < this.playerLv + 5; i++) {
         let difficulty = 1, r = Math.random()
         // 生成普通副本时有几率刷新高难度副本
-        if (r <= Co[0]) {
+        if (r < odds[0]) {
           difficulty = 1
-        } else if (r < Co[1] + Co[0] && r >= Co[0]) {
+        } else if (r < odds[1]) {
           difficulty = 2
         } else {
           difficulty = 3
         }
-        if (i > 100) {
-          var lv = Math.floor(this.playerLv * (100 + (i - this.playerLv)) / 100)
-        } else {
-          var lv = i
-        }
-        this.dungeonsArr.push(handle.createRandomDungeons(lv, 1))
+        this.dungeonsArr.push(handle.createRandomDungeons(i, 1))
         if (difficulty != 1) {
-          this.dungeonsArr.push(handle.createRandomDungeons(lv, difficulty))
+          this.dungeonsArr.push(handle.createRandomDungeons(i, difficulty))
         }
       }
     },

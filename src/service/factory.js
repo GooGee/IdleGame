@@ -1,9 +1,9 @@
 
 /**
- * @param {number} lv  
+ * @param {number} level  
  * @param {number} qualityCoefficient  
  */
-export function createRandomEntry(lv, qualityCoefficient) {
+export function createRandomEntry(level, qualityCoefficient) {
 
     const extraEntry = [{
         value: 11,
@@ -66,52 +66,52 @@ export function createRandomEntry(lv, qualityCoefficient) {
         // },
     ]
 
-    let randomCoefficient = Math.random()
-    if (randomCoefficient < 0.11) {
-        randomCoefficient = 0.11
+    let factor = Math.random()
+    if (factor < 0.11) {
+        factor = 0.11
     }
-    let entry = {}
-    let index = Math.floor((Math.random() * extraEntry.length));
+    const entry = {}
+    const index = Math.floor((Math.random() * extraEntry.length));
     entry = extraEntry[index]
-    entry.EntryLevel = Math.floor(randomCoefficient * 100)
+    entry.EntryLevel = Math.floor(factor * 100)
     switch (entry.type) {
         case 'ATK':
-            var random = lv * 1 + (randomCoefficient * lv / 2 + 1)
+            var random = level * 1 + (factor * level / 2 + 1)
             random = parseInt(random * qualityCoefficient)
             random = random || 1
             entry.value = random
             entry.showVal = '+' + random
             break;
         case 'DEF':
-            var random = lv * 0.4 + (randomCoefficient * lv / 2 + 1)
+            var random = level * 0.4 + (factor * level / 2 + 1)
             random = parseInt(random * qualityCoefficient)
             random = random || 1
             entry.value = random
             entry.showVal = '+' + random
             break;
         case 'HP':
-            var random = lv * 3 + (randomCoefficient * lv / 2 + 1)
+            var random = level * 3 + (factor * level / 2 + 1)
             random = parseInt(random * qualityCoefficient)
             random = random || 1
             entry.value = random
             entry.showVal = '+' + random
             break;
         case 'ATKPERCENT':
-            var random = lv * 0.11 + (randomCoefficient * lv / 10 + 5)
+            var random = level * 0.11 + (factor * level / 10 + 5)
             random = parseFloat(random * qualityCoefficient).toFixed(1)
             random = random || 1
             entry.value = random
             entry.showVal = '+' + random + '%'
             break;
         case 'DEFPERCENT':
-            var random = lv * 0.11 + (randomCoefficient * lv / 10 + 5)
+            var random = level * 0.11 + (factor * level / 10 + 5)
             random = parseFloat(random * qualityCoefficient).toFixed(1)
             random = random || 1
             entry.value = random
             entry.showVal = '+' + random + '%'
             break;
         case 'HPPERCENT':
-            var random = lv * 0.11 + (randomCoefficient * lv / 10 + 5)
+            var random = level * 0.11 + (factor * level / 10 + 5)
             random = parseFloat(random * qualityCoefficient).toFixed(1)
             random = random || 1
             entry.value = random
@@ -125,13 +125,13 @@ export function createRandomEntry(lv, qualityCoefficient) {
         //   entry.showVal = '+' + random + '%'
         //   break;
         case 'CRIT':
-            var random = lv * 0.11 + (randomCoefficient * lv / 10 + 5)
+            var random = level * 0.11 + (factor * level / 10 + 5)
             random = parseFloat(random * qualityCoefficient).toFixed(1)
             entry.value = random
             entry.showVal = '+' + random + '%'
             break;
         case 'CRITDMG':
-            var random = lv * 0.11 + (randomCoefficient * lv / 10 + 5)
+            var random = level * 0.11 + (factor * level / 10 + 5)
             random = parseFloat(random * qualityCoefficient).toFixed(1)
             entry.value = random
             entry.showVal = '+' + random + '%'

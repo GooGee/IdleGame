@@ -342,22 +342,23 @@ export default {
       if (event.type == 'boss' && this.dungeons.type != 'endless') {
         const odds = 0.5*(this.dungeons.difficulty-1)
         if (Math.random() < odds) {
+          const level = parseInt(lv + Math.random() * 11)
           var random = Math.random()
           if (random < 0.25) {
             var b = this.findBrothersComponents(this, 'weaponPanel', false)[0]
-            var item = b.createNewItem(4, parseInt(lv + Math.random() * 11))
+            var item = b.createNewItem(4, level)
             items.push(JSON.parse(item))
           } else if (random < 0.5) {
             var b = this.findBrothersComponents(this, 'armorPanel', false)[0]
-            var item = b.createNewItem(4, parseInt(lv + Math.random() * 11))
+            var item = b.createNewItem(4, level)
             items.push(JSON.parse(item))
           }else if (random < 0.75) {
             var b = this.findBrothersComponents(this, 'ringPanel', false)[0]
-            var item = b.createNewItem(4, parseInt(lv + Math.random() * 11))
+            var item = b.createNewItem(4, level)
             items.push(JSON.parse(item))
           } else {
             var b = this.findBrothersComponents(this, 'neckPanel', false)[0]
-            var item = b.createNewItem(4, parseInt(lv + Math.random() * 11))
+            var item = b.createNewItem(4, level)
             items.push(JSON.parse(item))
           }
 
