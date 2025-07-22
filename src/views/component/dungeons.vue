@@ -340,18 +340,18 @@ export default {
       var lv = this.dungeons.lv
       // 获取独特装备
       if (event.type == 'boss' && this.dungeons.type != 'endless') {
-        var randow = 0.2*(this.dungeons.difficulty-1)
-        if (Math.random() < randow) {
+        const odds = 0.2*(this.dungeons.difficulty-1)
+        if (Math.random() < odds) {
           var random = Math.random()
-          if (random <= 0.3 && random > 0) {
+          if (random <= 0.25) {
             var b = this.findBrothersComponents(this, 'weaponPanel', false)[0]
             var item = b.createNewItem(4, parseInt(lv + Math.random() * 11))
             items.push(JSON.parse(item))
-          } else if (random <= 0.5 && random > 0.3) {
+          } else if (random <= 0.5) {
             var b = this.findBrothersComponents(this, 'armorPanel', false)[0]
             var item = b.createNewItem(4, parseInt(lv + Math.random() * 11))
             items.push(JSON.parse(item))
-          }else if (random <= 0.75 && random > 0.5) {
+          }else if (random <= 0.75) {
             var b = this.findBrothersComponents(this, 'ringPanel', false)[0]
             var item = b.createNewItem(4, parseInt(lv + Math.random() * 11))
             items.push(JSON.parse(item))
@@ -363,25 +363,19 @@ export default {
 
         }
       }
-      var trophy = event.trophy
-      var equip = [
-        0.25, 0.25, 0.25, 0.25
-      ]
-      var equip = trophy.equip
+      var equip = event.trophy.equip
       var equipQua = -1;
       var r = Math.random()
       if (r <= equip[0]) {
         // 获得破旧装备
         equipQua = 0
-      } else if (r < equip[1] + equip[0] && r >= equip[0]) {
+      } else if (r < equip[1] + equip[0]) {
         // 获得普通装备
         equipQua = 1
-      }
-      else if (r < equip[2] + equip[1] + equip[0] && r >= equip[1] + equip[0]) {
+      } else if (r < equip[2] + equip[1] + equip[0]) {
         // 获得神器装备
         equipQua = 2
-      }
-      else if (r < equip[3] + equip[2] + equip[1] + equip[0] && r >= equip[2] + equip[1] + equip[0]) {
+      } else if (r < equip[3] + equip[2] + equip[1] + equip[0]) {
         // 获得史诗装备
         equipQua = 3
       } else {
