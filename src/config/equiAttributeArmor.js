@@ -81,23 +81,17 @@ export const equiAttributeArmor = {
                 des: '',
                 iconSrc: './icons/U_Armor02.png',
                 entry: [{
-                    valCoefficient: 2.6,
+                    valCoefficient: 3.2,
                     value: 11,
                     showVal: '+11',
                     type: 'DEF',
                     name: '防御力'
                 }, {
                     type: 'HP',
-                    valCoefficient: 1.2,
+                    valCoefficient: 1.8,
                     value: 8,
                     showVal: '8',
                     name: '生命值'
-                }, {
-                    valCoefficient: 1.2,
-                    value: 11,
-                    showVal: '+11',
-                    type: 'ATK',
-                    name: '攻击力'
                 }]
             }, {
                 name: '夜魔战袍',
@@ -111,53 +105,41 @@ export const equiAttributeArmor = {
                     name: '防御力'
                 }, {
                     type: 'HP',
-                    valCoefficient: 1.2,
+                    valCoefficient: 2.8,
                     value: 8,
                     showVal: '8',
                     name: '生命值'
-                }, {
-                    valCoefficient: 1.6,
-                    value: 11,
-                    showVal: '+11',
-                    type: 'ATK',
-                    name: '攻击力'
                 }]
             }, {
                 name: '隐武士铠甲',
                 des: '',
                 iconSrc: './icons/U_Armor05.png',
                 entry: [{
-                    valCoefficient: 2.2,
+                    valCoefficient: 2.8,
                     value: 11,
                     showVal: '+11',
                     type: 'DEF',
                     name: '防御力'
                 }, {
                     type: 'HP',
-                    valCoefficient: 1.6,
+                    valCoefficient: 2.2,
                     value: 8,
                     showVal: '8',
                     name: '生命值'
-                }, {
-                    valCoefficient: 1.2,
-                    value: 11,
-                    showVal: '+11',
-                    type: 'ATK',
-                    name: '攻击力'
                 },]
             }, {
                 name: '狂龙战士盔甲',
                 des: '',
                 iconSrc: './icons/U_Armor07.png',
                 entry: [{
-                    valCoefficient: 3.2,
+                    valCoefficient: 3.8,
                     value: 11,
                     showVal: '+11',
                     type: 'DEF',
                     name: '防御力'
                 }, {
                     type: 'HP',
-                    valCoefficient: 1.8,
+                    valCoefficient: 1.2,
                     value: 8,
                     showVal: '8',
                     name: '生命值'
