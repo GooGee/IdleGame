@@ -6,7 +6,10 @@
           <div class="icon" :style="{ 'box-shadow': 'inset 0 0 7px 2px ' + v.quality.color }">
             <img :src="v.type.iconSrc" alt="" />
           </div>
-          <span class="info" :style="{'font-size':(parseInt(v.gold)>99999?0.18:0.22)+'rem'}">{{v.gold}}</span>
+          <div class="info" :style="{'font-size':(parseInt(v.gold)>99999?0.18:0.22)+'rem'}">
+            <div>{{v.lv}}</div>
+            <div>{{v.gold}}</div>
+          </div>
         </div>
       </div>
     </div>
@@ -14,7 +17,7 @@
 
       <div class="info">
         <span v-show="timeStart" class="timeStart">等待：{{timeo}}s</span>
-        <span>免费刷新次数：{{freeAmount}}次。</span>
+        <span>免费刷新次数：{{freeAmount}}</span>
       </div>
 
       <div class="button" @click="goldRefreshShopItems()">付费高级刷新</div>
@@ -307,12 +310,10 @@ export default {
 <style lang="scss" scoped>
 .shop {
   width: 5.02rem;
-  height: 3.1rem;
+  height: 2.5rem;
   display: flex;
   flex-wrap: wrap;
   padding: 0.14rem 0.14rem 0.14rem;
-  justify-items: flex-start;
-  align-items: flex-start;
   position: relative;
 }
 .handle {
@@ -321,7 +322,6 @@ export default {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 0.5rem;
   .info {
     display: flex;
     align-items: flex-start;
@@ -332,7 +332,7 @@ export default {
 }
 .content {
   width: 100%;
-  height: 2rem;
+  height: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -362,7 +362,7 @@ export default {
   }
   .info {
     position: absolute;
-    bottom: -0.26rem;
+    bottom: -0.6rem;
     font-size: 0.24rem;
   }
 }

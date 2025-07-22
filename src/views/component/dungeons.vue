@@ -340,18 +340,18 @@ export default {
       var lv = this.dungeons.lv
       // 获取独特装备
       if (event.type == 'boss' && this.dungeons.type != 'endless') {
-        const odds = 0.2*(this.dungeons.difficulty-1)
+        const odds = 0.5*(this.dungeons.difficulty-1)
         if (Math.random() < odds) {
           var random = Math.random()
-          if (random <= 0.25) {
+          if (random < 0.25) {
             var b = this.findBrothersComponents(this, 'weaponPanel', false)[0]
             var item = b.createNewItem(4, parseInt(lv + Math.random() * 11))
             items.push(JSON.parse(item))
-          } else if (random <= 0.5) {
+          } else if (random < 0.5) {
             var b = this.findBrothersComponents(this, 'armorPanel', false)[0]
             var item = b.createNewItem(4, parseInt(lv + Math.random() * 11))
             items.push(JSON.parse(item))
-          }else if (random <= 0.75) {
+          }else if (random < 0.75) {
             var b = this.findBrothersComponents(this, 'ringPanel', false)[0]
             var item = b.createNewItem(4, parseInt(lv + Math.random() * 11))
             items.push(JSON.parse(item))

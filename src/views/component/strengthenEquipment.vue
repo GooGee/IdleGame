@@ -100,7 +100,7 @@ export default {
       strengTimeO: 60, //刷新副本时间间隔 单位：S
       autoRecasting: false,
       autoRecastModel: false,
-      autoRecastLv: 80,
+      autoRecastLv: 60,
       autoRecastTimer: 0,
       autoStrengModel: false,
       autoStrengLv: 10,
@@ -184,8 +184,7 @@ export default {
         return
       }
       // 自动强化需要金币倍率
-      var ra = auto ? 2 : 1
-      var needGold = this.strengthenNeedGold * 1  //ra
+      var needGold = this.strengthenNeedGold * 1
       if (this.$store.state.playerAttribute.GOLD < needGold) {
         this.stopAutoStreng()
         this.$store.commit("set_sys_info", {
