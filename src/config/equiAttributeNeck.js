@@ -77,7 +77,7 @@ export const equiAttributeNeck = {
                     name: '暴击伤害'
                 }]
             }, {
-                name: '魔族之翼展',
+                name: '夜魔之翼',
                 des: '',
                 iconSrc: './icons/U_neck04.png',
                 entry: [{
@@ -94,7 +94,7 @@ export const equiAttributeNeck = {
                     name: '暴击伤害'
                 },]
             }, {
-                name: '黑暗龙王项链',
+                name: '龙心项链',
                 des: '',
                 iconSrc: './icons/U_neck05.png',
                 entry: [{

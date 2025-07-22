@@ -11,8 +11,8 @@ export function createRandomEntry(lv, qualityCoefficient) {
         type: 'ATK',
         name: '攻击力'
     }, {
-        value: 8,
-        showVal: '+8%',
+        value: 11,
+        showVal: '+11%',
         type: 'CRIT',
         name: '暴击率'
     }, {
@@ -26,8 +26,8 @@ export function createRandomEntry(lv, qualityCoefficient) {
         type: 'HP',
         name: '生命值'
     }, {
-        value: 8,
-        showVal: '+8%',
+        value: 11,
+        showVal: '+11%',
         type: 'DEF',
         name: '防御力'
     }, {
@@ -90,7 +90,7 @@ export function createRandomEntry(lv, qualityCoefficient) {
             entry.showVal = '+' + random
             break;
         case 'HP':
-            var random = lv * 0.2 * 15 + (randomCoefficient * lv / 2 + 1)
+            var random = lv * 3 + (randomCoefficient * lv / 2 + 1)
             random = parseInt(random * qualityCoefficient)
             random = random || 1
             entry.value = random

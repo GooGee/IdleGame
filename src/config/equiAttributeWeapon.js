@@ -34,7 +34,7 @@ export const equiAttributeWeapon = {
                 color: '#ff0000', extraEntryNum: 5,
             }],
             uniqueCategory: [{
-                name: '创世之剑',
+                name: '炼狱之剑',
                 des: '',
                 iconSrc: './icons/U_Sword01.png',
                 entry: [{

@@ -1,4 +1,3 @@
-const UpgradeBaseLevel = 5
 
 const N_1k = 1000
 const N_1m = N_1k * N_1k
@@ -65,11 +64,7 @@ export function calculateUpgradePrice(item, ignoreUpgrade = true) {
  * @returns 
  */
 export function calculateUpgradeChange(level) {
-    if (level <= UpgradeBaseLevel) {
-        return 1
-    }
-
-    let odds = (level - UpgradeBaseLevel) * 0.1
+    let odds = level * 0.1
     if (odds > 0.90) {
         odds = 0.95
     }

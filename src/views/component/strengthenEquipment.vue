@@ -9,7 +9,7 @@
           <p class="info">* 花费金币强化装备</p>
           <p class="info">* 强化装备会加强装备的基础属性</p>
           <p class="info">* 强化等级越高成功率越低</p>
-          <p class="info">* 强化等级高于5时强化失败可能会降低强化等级</p>
+          <p class="info">* 强化等级高于5时，强化失败可能会降低强化等级</p>
         </template>
       </cTooltip>
 
@@ -103,7 +103,7 @@ export default {
       autoRecastLv: 60,
       autoRecastTimer: 0,
       autoStrengModel: false,
-      autoStrengLv: 10,
+      autoStrengLv: 8,
       autoStrengTimer: 0,
       recast: false,
       qualityClass: '',
@@ -197,13 +197,12 @@ export default {
       }
       let lv = this.equiment.enchantlvl
       let probabilityOfSuccess = calculateUpgradeChange(lv)
-      let r = Math.random()
-      if (r < probabilityOfSuccess) {
+      if (Math.random() < probabilityOfSuccess) {
         // 强化成功
         lv++
       } else {
         // 强化失败
-        if (lv >= 5) {
+        if (lv > 5 && Math.random() < 0.3) {
           lv = lv - 1
         }
       }

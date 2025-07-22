@@ -243,7 +243,7 @@
         <template v-slot:tip>
           <p class="info">* 刷新当前世界副本</p>
           <p class="info">* 刷新冷却时间：30秒钟</p>
-          <p class="info">* 刷新副本等级[lv-5, lv+5]</p>
+          <p class="info">* 刷新副本等级 [lv-5, lv+5]</p>
         </template>
       </cTooltip>
 
@@ -468,7 +468,7 @@ export default {
   mounted() {
     // 自动回血
     this.autoHealthRecovery = setInterval(() => {
-      this.$store.commit('set_player_curhp', this.healthRecoverySpeed * this.attribute.MAXHP.value / 50)
+      this.$store.commit('set_player_curhp', this.healthRecoverySpeed * this.attribute.MAXHP.value / 100)
     }, 500)
 
 

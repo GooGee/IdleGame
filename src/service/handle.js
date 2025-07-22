@@ -109,13 +109,14 @@ function makeMonster(level, factor, isBoss = false) {
  */
 function createRandomDungeons(level = 1, difficulty = 1) {
     const factor = difficulty == 1 ? 1 : difficulty == 2 ? 1.2 : 1.5
+    const boss = makeMonster(level, factor, true)
     const dungeonsConfig = {
         id: level + '' + difficulty,
         battleTime: 2000,
         name: 'Lv' + level + '_' + (difficulty == 1 ? '容易' : difficulty == 2 ? '困难' : '极难'),
         eventNum: '5',
         lv: level,
-        needDPS: parseInt(difficulty * level ** 2 * 3),
+        needDPS: boss.attribute.ATK,
         difficulty: difficulty,
         difficultyName: difficulty == 1 ? '容易' : difficulty == 2 ? '困难' : '极难',
         top: Math.random() * 70 + 15 + '%',
@@ -125,7 +126,7 @@ function createRandomDungeons(level = 1, difficulty = 1) {
             makeMonster(level, factor),
             makeMonster(level, factor),
             makeMonster(level, factor),
-            makeMonster(level, factor, true),
+            boss,
         ]
     }
     return dungeonsConfig
