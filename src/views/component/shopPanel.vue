@@ -13,13 +13,12 @@
     <div class="handle">
 
       <div class="info">
-        <span v-show="timeStart" class="timeStart">下次刷新次数获取：{{timeo}}s</span>
-        <span>剩余刷新次数：{{refreshTime}}次。</span>
+        <span v-show="timeStart" class="timeStart">等待：{{timeo}}s</span>
+        <span>免费刷新次数：{{freeAmount}}次。</span>
       </div>
 
-      <div class="button" @click="goldRefreshShopItems()">付费刷新</div>
+      <div class="button" @click="goldRefreshShopItems()">付费高级刷新</div>
       <div class="button" @click="refreshShopItems()">免费刷新</div>
-      <!-- <div class="button" @click="sell">一键出售</div> -->
     </div>
     <ul v-show="visible" :style="{ left: left + 'px', top: top + 'px' }" class="contextmenu">
       <li @click="showItemInfo($event,currentItem.itemType,currentItem,'touch')" v-if="$store.state.operatorSchemaIsMobile">查看</li>
@@ -28,6 +27,9 @@
   </div>
 </template>
 <script>
+const CD = 5
+const MaxFree = 10
+
 import { assist } from "@/service/assist";
 import { calculatePrice } from '@/service/helper';
 export default {
@@ -40,8 +42,8 @@ export default {
       visible: false,
       currentItem: {},
       currentItemIndex: "",
-      refreshTime: 10,
-      timeo: 60,
+      freeAmount: MaxFree,
+      timeo: CD,
       timeStart: false,
       timeInterval: '',
       isTouch: false,
@@ -61,8 +63,8 @@ export default {
         document.body.removeEventListener("click", this.closeMenu);
       }
     },
-    refreshTime(value) {
-      if (value < 10) {
+    freeAmount(value) {
+      if (value < MaxFree) {
 
         if (this.timeStart) {
           return
@@ -71,13 +73,13 @@ export default {
         this.timeInterval = setInterval(() => {
           this.timeo--
           if (this.timeo <= 0) {
-            this.refreshTime++
-            this.timeo = 60
+            this.freeAmount++
+            this.timeo = CD
           }
         }, 1000)
       } else {
         this.timeStart = false
-        this.timeo = 5
+        this.timeo = CD
         clearInterval(this.timeInterval)
       }
     }
@@ -113,10 +115,10 @@ export default {
         })
         return
       }
-      if (this.refreshTime > 10) {
-        this.refreshTime = 10
+      if (this.freeAmount > MaxFree) {
+        this.freeAmount = MaxFree
       }
-      if (this.refreshTime < 1) {
+      if (this.freeAmount < 1) {
         this.$store.commit("set_sys_info", {
           msg: `
               刷新次数不够了，等等吧。
@@ -125,16 +127,14 @@ export default {
         });
         return
       }
-      this.refreshTime--
+      this.freeAmount--
       this.grid = new Array(5).fill({});
       var wlv = Number(this.$store.state.playerAttribute.weapon.lv);
       var alv = Number(this.$store.state.playerAttribute.armor.lv);
       var ringlv = Number(this.$store.state.playerAttribute.ring.lv);
       var necklv = Number(this.$store.state.playerAttribute.neck.lv);
       for (let i = 0; i < 5; i++) {
-        var lv = Math.floor(this.$store.state.playerAttribute.lv + Math.random() * 3);
-        //装备等级最高200
-        // lv = lv > 200 ? 200 : lv
+        var lv = Math.floor(this.$store.state.playerAttribute.lv + Math.random() * 5);
         this.createShopItem(lv);
       }
     },
