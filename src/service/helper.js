@@ -64,8 +64,8 @@ export function calculateUpgradePrice(item, ignoreUpgrade = true) {
  * @returns 
  */
 export function calculateUpgradeChange(level) {
-    let odds = level * 0.1
-    if (odds > 0.90) {
+    let odds = level * 0.05
+    if (odds > 0.95) {
         odds = 0.95
     }
     return 1 - odds

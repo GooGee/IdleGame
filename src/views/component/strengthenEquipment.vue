@@ -202,7 +202,7 @@ export default {
         lv++
       } else {
         // 强化失败
-        if (lv > 5 && Math.random() < 0.1) {
+        if (lv > 5 && Math.random() < 0.5) {
           lv = lv - 1
         }
       }

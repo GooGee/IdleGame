@@ -34,7 +34,7 @@ export const equiAttributeRing = {
                 color: '#ff0000', extraEntryNum: 5,
             }],
             uniqueCategory: [{
-                name: '先驱戒指',
+                name: '天使戒指',
                 des: '',
                 iconSrc: './icons/U_ring03.png',
                 entry: [{
@@ -68,7 +68,7 @@ export const equiAttributeRing = {
                     name: '暴击伤害'
                 },]
             }, {
-                name: '月尊戒指',
+                name: '魔鬼戒指',
                 des: '',
                 iconSrc: './icons/U_ring05.png',
                 entry: [{

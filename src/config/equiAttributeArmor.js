@@ -60,7 +60,7 @@ export const equiAttributeArmor = {
                 name: '生命值'
             },],
             uniqueCategoryArmor: [{
-                name: '争执连身衣',
+                name: '天使羽衣',
                 des: '',
                 iconSrc: './icons/U_Armor01.png',
                 entry: [{
@@ -94,7 +94,7 @@ export const equiAttributeArmor = {
                     name: '生命值'
                 }]
             }, {
-                name: '夜魔战袍',
+                name: '魔鬼战袍',
                 des: '',
                 iconSrc: './icons/U_Armor03.png',
                 entry: [{
@@ -111,7 +111,7 @@ export const equiAttributeArmor = {
                     name: '生命值'
                 }]
             }, {
-                name: '隐武士铠甲',
+                name: '死神黑衣',
                 des: '',
                 iconSrc: './icons/U_Armor05.png',
                 entry: [{

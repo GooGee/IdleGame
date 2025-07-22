@@ -70,7 +70,8 @@ export function createRandomEntry(level, qualityCoefficient) {
     if (factor < 0.11) {
         factor = 0.11
     }
-    const entry = {}
+    const percentage = (factor * (level ** 0.7 + 20) + 1).toFixed(1)
+    let entry = {}
     const index = Math.floor((Math.random() * extraEntry.length));
     entry = extraEntry[index]
     entry.EntryLevel = Math.floor(factor * 100)
@@ -97,58 +98,25 @@ export function createRandomEntry(level, qualityCoefficient) {
             entry.showVal = '+' + random
             break;
         case 'ATKPERCENT':
-            var random = level * 0.11 + (factor * level / 10 + 5)
-            random = parseFloat(random * qualityCoefficient).toFixed(1)
-            random = random || 1
-            entry.value = random
-            entry.showVal = '+' + random + '%'
+            entry.value = percentage
+            entry.showVal = '+' + percentage + '%'
             break;
         case 'DEFPERCENT':
-            var random = level * 0.11 + (factor * level / 10 + 5)
-            random = parseFloat(random * qualityCoefficient).toFixed(1)
-            random = random || 1
-            entry.value = random
-            entry.showVal = '+' + random + '%'
+            entry.value = percentage
+            entry.showVal = '+' + percentage + '%'
             break;
         case 'HPPERCENT':
-            var random = level * 0.11 + (factor * level / 10 + 5)
-            random = parseFloat(random * qualityCoefficient).toFixed(1)
-            random = random || 1
-            entry.value = random
-            entry.showVal = '+' + random + '%'
+            entry.value = percentage
+            entry.showVal = '+' + percentage + '%'
             break;
-        // case 'BLOCPERCENT':
-        //   var random = lv * 0.1 + (randomCoefficient * lv / 10 + 5)
-        //   random = parseFloat(random * qualityCoefficient).toFixed(1)
-        //   random = random || 1
-        //   entry.value = random
-        //   entry.showVal = '+' + random + '%'
-        //   break;
         case 'CRIT':
-            var random = level * 0.11 + (factor * level / 10 + 5)
-            random = parseFloat(random * qualityCoefficient).toFixed(1)
-            entry.value = random
-            entry.showVal = '+' + random + '%'
+            entry.value = percentage
+            entry.showVal = '+' + percentage + '%'
             break;
         case 'CRITDMG':
-            var random = level * 0.11 + (factor * level / 10 + 5)
-            random = parseFloat(random * qualityCoefficient).toFixed(1)
-            entry.value = random
-            entry.showVal = '+' + random + '%'
+            entry.value = percentage
+            entry.showVal = '+' + percentage + '%'
             break;
-        // case 'BLOC':
-        //   var random = lv * 0.6 + (randomCoefficient * lv / 2 + 1)
-        //   random = parseInt(random * qualityCoefficient)
-        //   random = random || 1
-        //   entry.value = random
-        //   entry.showVal = '+' + random
-        //   break;
-        // case 'EVA':
-        //     var random = randomCoefficient  * 12 + 3
-        //     random = parseInt(random * qualityCoefficient)
-        //     entry.value = random
-        //     entry.showVal = '+' + random + '%'
-        //     break;
         default:
             break;
     }
