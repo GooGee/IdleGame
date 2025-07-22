@@ -70,36 +70,35 @@ function CalculateStrAttr(entry, lv) {
 /**
  * 
  * @param {number} level 
- * @param {number} difficulty 
+ * @param {number} factor 
  * @returns 
  */
-function makeAttribute(level, difficulty) {
-    const random = Math.random()
-    const HP = parseInt(difficulty * level ** 2 * (random * 5 + 11))
-    const ATK = parseInt(difficulty * level ** 2 * (random * 1 + 2))
-    return { HP, ATK, }
-}
-
-/**
- * 
- * @param {number} level 
- * @param {number} difficulty 
- * @returns 
- */
-function makeMonster(level, difficulty) {
-    const gold = parseInt(difficulty * level ** 1.2 * (Math.random() * 5 + 11))
-    const equip = [
-        0.1 * difficulty,
-        0.2 * difficulty,
-        0.1 * difficulty,
-        0 * difficulty,
+function makeMonster(level, factor, isBoss = false) {
+    const modifier = isBoss ? 2 : 1
+    const name = isBoss ? 'boss' : 'monster'
+    const gold = modifier * parseInt(factor * level ** 1.2 * (Math.random() * 5 + 11))
+    const HP = modifier * parseInt(factor * level ** 2 * (Math.random() * 5 + 11))
+    const ATK = modifier * parseInt(factor * level ** 2 * (Math.random() * 1 + 2))
+    let equip = [
+        0.1 * factor,
+        0.2 * factor,
+        0.1 * factor,
+        0,
     ]
+    if (isBoss) {
+        equip = [
+            0,
+            0.5 - 0.3 * factor,
+            0.3 + 0.2 * factor,
+            0.2 + 0.1 * factor,
+        ]
+    }
     return {
-        name: 'monster',
-        type: 'monster',
+        name: name,
+        type: name,
         eventType: 'battle',
-        attribute: makeAttribute(level, difficulty),
-        trophy: { gold, equip, }
+        attribute: { HP, ATK, },
+        trophy: { gold, equip, },
     }
 }
 
@@ -126,24 +125,7 @@ function createRandomDungeons(level = 1, difficulty = 1) {
             makeMonster(level, factor),
             makeMonster(level, factor),
             makeMonster(level, factor),
-            {
-                name: 'boss',
-                type: 'boss',
-                eventType: 'battle',
-                attribute: {
-                    HP: parseInt(factor * level ** 2 * (Math.random() * 5 + 33)),
-                    ATK: parseInt(factor * level ** 2 * (Math.random() * 2 + 3)),
-                },
-                trophy: {
-                    gold: parseInt(factor * level ** 2 * (Math.random() * 11 + 33)),
-                    equip: [
-                        0.2 - 0.1 * factor,
-                        0.5 - 0.2 * factor,
-                        0.2 + 0.2 * factor,
-                        0.1 + 0.1 * factor,
-                    ],
-                }
-            },
+            makeMonster(level, factor, true),
         ]
     }
     return dungeonsConfig
