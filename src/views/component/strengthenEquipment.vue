@@ -88,7 +88,7 @@ import { assist } from '@/service/assist';
 import cTooltip from '../uiComponent/tooltip'
 import handle from '@/service/handle'
 import { createRandomEntry } from '@/service/factory'
-import { calculateUpgradeChange, calculateUpgradePrice } from '@/service/helper'
+import { calculateUpgradeChance, calculateUpgradePrice } from '@/service/helper'
 export default {
   components: { cTooltip },
   name: "equimentPanel",
@@ -196,7 +196,7 @@ export default {
         return
       }
       let lv = this.equiment.enchantlvl
-      let probabilityOfSuccess = calculateUpgradeChange(lv)
+      let probabilityOfSuccess = calculateUpgradeChance(lv)
       if (Math.random() < probabilityOfSuccess) {
         // 强化成功
         lv++
