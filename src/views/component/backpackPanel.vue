@@ -33,8 +33,8 @@
 
         </div>
       </div>
-      <div class="button" @click="neaten">一键整理</div>
-      <div class="button" @click="sell">一键出售</div>
+      <div class="button" @click="neaten">整理</div>
+      <div class="button" @click="sellAll">全部出售</div>
     </div>
     <ul v-show="visible" :style="{left:left+'px',top:top+'px'}" class="contextmenu">
       <li @click="showItemInfo($event,currentItem.itemType,currentItem,'touch')" v-if="$store.state.operatorSchemaIsMobile">查看</li>
@@ -172,13 +172,20 @@ export default {
     clear(){
       this.grid = new Array(32).fill({});
     },
-    // 一键出售
-    sell() {
-      this.grid.map((item, index) => {
-        if (JSON.stringify(item) != '{}') {
-          this.currentItemIndex = index
-          this.currentItem = item
-          this.sellTheEquipment(true)
+    // 全部出售
+    sellAll() {
+      this.$message({
+        message: '这将出售背包里全部未加锁的物品，确定要出售吗?',
+        title:'提示',
+        confirmBtnText:'全部出售',
+        onClose: () => {
+          this.grid.map((item, index) => {
+            if (JSON.stringify(item) != '{}') {
+              this.currentItemIndex = index
+              this.currentItem = item
+              this.sellTheEquipment(true)
+            }
+          })
         }
       })
     },
@@ -397,6 +404,9 @@ export default {
 }
 .height-capacity {
   color: red;
+}
+.icon-setting {
+  margin-left: 5px;
 }
 .autoSellSetting {
   position: absolute;
