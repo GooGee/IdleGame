@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import vueInstance from './main'
-import handle from './service/handle'
+import { calculateUpgradeValue } from './service/helper'
+
 Vue.use(Vuex)
 
 var initial_weapon = {
@@ -273,12 +274,21 @@ export default new Vuex.Store({
             let armorStrEntry = vueInstance.$deepCopy(armor.type.entry)
             let ringStrEntry = vueInstance.$deepCopy(ring.type.entry)
             let neckStrEntry = vueInstance.$deepCopy(neck.type.entry)
-            handle.CalculateStrAttr(warponStrEntry, warpon.enchantlvl || 0)
-            handle.CalculateStrAttr(armorStrEntry, armor.enchantlvl || 0)
-            handle.CalculateStrAttr(ringStrEntry, ring.enchantlvl || 0)
-            handle.CalculateStrAttr(neckStrEntry, neck.enchantlvl || 0)
+            calculateUpgradeValue(warponStrEntry, warpon.enchantlvl || 0)
+            calculateUpgradeValue(armorStrEntry, armor.enchantlvl || 0)
+            calculateUpgradeValue(ringStrEntry, ring.enchantlvl || 0)
+            calculateUpgradeValue(neckStrEntry, neck.enchantlvl || 0)
 
-            entry = [].concat(warponStrEntry).concat(warpon.extraEntry).concat(armorStrEntry).concat(armor.extraEntry).concat(ringStrEntry).concat(ring.extraEntry).concat(neckStrEntry).concat(neck.extraEntry)
+            entry = [
+                ...warponStrEntry,
+                ...warpon.extraEntry,
+                ...armorStrEntry,
+                ...armor.extraEntry,
+                ...ringStrEntry,
+                ...ring.extraEntry,
+                ...neckStrEntry,
+                ...neck.extraEntry,
+            ]
 
             // 命中几率初始为100%，用来计算最终的闪避几率
             let HitChance = 1

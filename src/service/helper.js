@@ -70,3 +70,22 @@ export function calculateUpgradeChance(level) {
     }
     return 1 - odds
 }
+
+/**
+ * 
+ * @param {array} entry 
+ * @param {number} level 
+ * @returns 
+ */
+export function calculateUpgradeValue(entry, level) {
+    const factor = 1.08 ** level
+    entry.map((item) => {
+        const value = Math.round(factor * item.value)
+        item.value = value
+        item.showValue = '+' + value
+        if (['ATKPERCENT', 'DEFPERCENT', 'HPPERCENT', 'CRIT', 'CRITDMG'].includes(item.type)) {
+            item.showValue = '+' + value + '%'
+        }
+    })
+    return entry
+}
