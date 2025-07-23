@@ -185,30 +185,27 @@ export default {
         var necklv = Number(this.$store.state.playerAttribute.neck.lv);
         for (let i = 0; i < 5; i++) {
           var lv = Math.floor(this.$store.state.playerAttribute.lv + Math.random() * 11);
-          this.createShopItem(lv);
+          this.createShopItem(lv, true);
         }
       }
     },
-    createShopItem(lv) {
-      var equip = [0.4, 0.3, 0.2, 0.1];
+    createShopItem(lv, isPaid = false) {
+      var equip = [0.0, 0.6, 0.3, 0.1];
+      if (isPaid) {
+        equip = [0.0, 0.0, 0.5, 0.5]
+      }
       var equipQua = -1;
       var r = Math.random();
-      if (r <= equip[0]) {
+      if (r < equip[0]) {
         // 获得普通装备
         equipQua = 1;
-      } else if (r < equip[1] + equip[0] && r >= equip[0]) {
+      } else if (r < equip[1] + equip[0]) {
         // 获得神器装备
         equipQua = 2;
-      } else if (
-        r < equip[2] + equip[1] + equip[0] &&
-        r >= equip[1] + equip[0]
-      ) {
+      } else if (r < equip[2] + equip[1] + equip[0]) {
         // 获得史诗装备
         equipQua = 3;
-      } else if (
-        r < equip[3] + equip[2] + equip[1] + equip[0] &&
-        r >= equip[2] + equip[1] + equip[0]
-      ) {
+      } else if (r < equip[3] + equip[2] + equip[1] + equip[0]) {
         // 获得独特装备
         equipQua = 4;
       } else {
