@@ -407,6 +407,7 @@ export default {
 }
 .icon-setting {
   margin-left: 5px;
+  margin-right: 11px;
 }
 .autoSellSetting {
   position: absolute;

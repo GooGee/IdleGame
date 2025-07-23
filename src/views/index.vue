@@ -201,7 +201,10 @@
             <p><input type="checkbox" name="" v-model="upEChallenge"> 向上挑战</p>
             <p><input type="checkbox" name="" v-model="reEChallenge"> 重复挑战</p>
           </div>
-          <div class="dungeons-btn" @click="eventBegin()">开始挑战</div>
+          <div>
+            HP {{(attribute.CURHP.value / attribute.MAXHP.value * 100).toFixed(0)}}%
+            <div class="dungeons-btn" @click="eventBegin()">开始挑战</div>
+          </div>
         </div>
       </div>
       <div class="event-icon" :class="{'low-level':v.difficulty==1,'h-level':v.difficulty==2,'boss':v.difficulty==3}" v-for="(v,k) in dungeonsArr" :key="k" @click="showDungeonsInfo(k)" v-show='!inDungeons' :style="{top: v.top,left: v.left}">
@@ -242,8 +245,7 @@
         </template>
         <template v-slot:tip>
           <p class="info">* 刷新当前世界副本</p>
-          <p class="info">* 刷新冷却时间：30秒钟</p>
-          <p class="info">* 刷新副本等级 [lv-5, lv+5]</p>
+          <p class="info">* 冷却时间：30秒钟</p>
         </template>
       </cTooltip>
 
@@ -555,6 +557,12 @@ export default {
           });
           return
         }
+          this.$store.commit("set_sys_info", {
+            msg: `
+                    副本刷新完成。
+                  `,
+            type: 'wrning'
+          });
         this.dungeonsTime = setInterval(() => {
           this.dungeonsTimeO--
           if (this.dungeonsTimeO <= 0) {

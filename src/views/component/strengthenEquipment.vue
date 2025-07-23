@@ -38,7 +38,7 @@
       </div>
       <div class="btn-group" v-if='!autoStrengModel'>
         <p>自动强化至等级：</p>
-        <p><input type="number" placeholder="目标等级" max="15" min="5" v-model="autoStrengLv"></p>
+        <p><input type="number" placeholder="目标等级" max="22" min="5" v-model="autoStrengLv"></p>
         <div class="button" @click="startAutoStreng">自动强化</div>
       </div>
       <div class="btn-group" v-if='autoStrengModel'>
@@ -212,6 +212,9 @@ export default {
       this.changeTheEquiment()
     },
     startAutoStreng() {
+      if (this.autoRecasting || this.autoStrengModel) {
+        return
+      }
       this.autoStrengModel = true
       this.autoStrengTimer = setInterval(() => {
         this.startStreng(true)
@@ -261,7 +264,7 @@ export default {
       return newEntry
     },
     startAutoRecast(v, k) {
-      if (this.autoRecasting) {
+      if (this.autoRecasting || this.autoStrengModel) {
         return
       }
       if (this.autoRecastModel === false) {
