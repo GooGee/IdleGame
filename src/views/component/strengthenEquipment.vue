@@ -86,7 +86,6 @@
 <script>
 import { assist } from '@/service/assist';
 import cTooltip from '../uiComponent/tooltip'
-import handle from '@/service/handle'
 import { createEntry } from '@/service/factory'
 import { calculateUpgradeChance, calculateUpgradePrice } from '@/service/helper'
 export default {

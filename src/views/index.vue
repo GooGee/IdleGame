@@ -403,8 +403,9 @@ import setting from './component/setting'
 import qa from './component/qa'
 import cTooltip from './uiComponent/tooltip'
 import { assist } from '@/service/assist';
+import { makeDungeon } from '@/service/factory';
 import { Base64 } from 'js-base64';
-import handle from '@/service/handle'
+
 export default {
   name: "index",
   mixins: [assist],
@@ -585,9 +586,9 @@ export default {
         } else {
           difficulty = 3
         }
-        this.dungeonsArr.push(handle.createRandomDungeons(i, 1))
+        this.dungeonsArr.push(makeDungeon(i, 1))
         if (difficulty != 1) {
-          this.dungeonsArr.push(handle.createRandomDungeons(i, difficulty))
+          this.dungeonsArr.push(makeDungeon(i, difficulty))
         }
       }
       // 这个for循环会生成高于玩家等级的副本
@@ -601,9 +602,9 @@ export default {
         } else {
           difficulty = 3
         }
-        this.dungeonsArr.push(handle.createRandomDungeons(i, 1))
+        this.dungeonsArr.push(makeDungeon(i, 1))
         if (difficulty != 1) {
-          this.dungeonsArr.push(handle.createRandomDungeons(i, difficulty))
+          this.dungeonsArr.push(makeDungeon(i, difficulty))
         }
       }
     },
@@ -866,7 +867,7 @@ export default {
     showEndlessDungeonsInfo() {
       this.reChallenge = false
       // 设置无尽副本属性
-      this.dungeons = handle.createRandomDungeons(this.$store.state.playerAttribute.endlessLv * 5, 3)
+      this.dungeons = makeDungeon(this.$store.state.playerAttribute.endlessLv * 5, 3)
       this.dungeons.lv = this.$store.state.playerAttribute.endlessLv
       this.dungeons.type = 'endless'
     },

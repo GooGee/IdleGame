@@ -122,3 +122,67 @@ export function createEntry(level, qualityCoefficient) {
     }
     return entry
 }
+
+/**
+ * 
+ * @param {number} level 
+ * @param {number} difficulty 
+ */
+export function makeDungeon(level = 1, difficulty = 1) {
+    const factor = difficulty == 1 ? 1 : difficulty == 2 ? 1.2 : 1.5
+    const boss = makeMonster(level, factor, true)
+    return {
+        id: level + '' + difficulty,
+        battleTime: 2000,
+        name: 'Lv' + level + '_' + (difficulty == 1 ? '容易' : difficulty == 2 ? '困难' : '极难'),
+        eventNum: '5',
+        lv: level,
+        needDPS: boss.attribute.ATK,
+        difficulty: difficulty,
+        difficultyName: difficulty == 1 ? '容易' : difficulty == 2 ? '困难' : '极难',
+        top: Math.random() * 70 + 15 + '%',
+        left: Math.random() * 70 + 10 + '%',
+        eventType: [
+            makeMonster(level, factor),
+            makeMonster(level, factor),
+            makeMonster(level, factor),
+            makeMonster(level, factor),
+            boss,
+        ]
+    }
+}
+
+/**
+ * 
+ * @param {number} level 
+ * @param {number} factor 
+ * @returns 
+ */
+function makeMonster(level, factor, isBoss = false) {
+    const modifier = isBoss ? 2 : 1
+    const name = isBoss ? 'boss' : 'monster'
+    const gold = modifier * parseInt(factor * level ** 1.2 * (Math.random() * 5 + 11))
+    const HP = modifier * parseInt(factor * level ** 2 * (Math.random() * 5 + 11))
+    const ATK = modifier * parseInt(factor * level ** 2 * (Math.random() * 1 + 2))
+    let equip = [
+        0.1 * factor,
+        0.2 * factor,
+        0.1 * factor,
+        0,
+    ]
+    if (isBoss) {
+        equip = [
+            0,
+            0.3 - 0.2 * factor,
+            0.5 - 0.1 * factor,
+            0.2 + 0.3 * factor,
+        ]
+    }
+    return {
+        name: name,
+        type: name,
+        eventType: 'battle',
+        attribute: { HP, ATK, },
+        trophy: { gold, equip, },
+    }
+}
