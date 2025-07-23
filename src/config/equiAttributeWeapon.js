@@ -34,7 +34,7 @@ export const equiAttributeWeapon = {
                 color: '#ff0000', extraEntryNum: 5,
             }],
             uniqueCategory: [{
-                name: '炼狱之剑',
+                name: '炼狱之刃',
                 des: '',
                 iconSrc: './icons/U_Sword01.png',
                 entry: [{
@@ -51,7 +51,7 @@ export const equiAttributeWeapon = {
                     name: '防御力'
                 }]
             }, {
-                name: '死亡之镰',
+                name: '死神之镰',
                 des: '',
                 iconSrc: './icons/U_Sword04.png',
                 entry: [{
@@ -68,7 +68,7 @@ export const equiAttributeWeapon = {
                     name: '暴击伤害'
                 }]
             }, {
-                name: '冰霜利刃',
+                name: '霜电之刃',
                 des: '',
                 iconSrc: './icons/U_Sword05.png',
                 entry: [{
@@ -102,7 +102,7 @@ export const equiAttributeWeapon = {
                     name: '暴击伤害'
                 }]
             }, {
-                name: '大冒险家之剑',
+                name: '战神之剑',
                 des: '',
                 iconSrc: './icons/U_Sword10.png',
                 entry: [{
@@ -120,57 +120,39 @@ export const equiAttributeWeapon = {
                 }]
             },],
             category: [{
-                name: '铁剑',
-                des: '',
-                iconSrc: './icons/W_Sword003.png',
-                entry: [{
-                    valCoefficient: 1.2,
-                    value: 11,
-                    showVal: '+11',
-                    type: 'ATK',
-                    name: '攻击力'
-                }, {
-                    type: 'CRIT',
-                    valCoefficient: 1.3,
-                    value: 8,
-                    showVal: '+8%',
-                    name: '暴击率'
-                }]
-            },
-            {
-                name: '战士长剑',
+                name: '巨剑',
                 des: '',
                 iconSrc: './icons/W_Sword007.png',
                 entry: [{
-                    valCoefficient: 1.2,
+                    valCoefficient: 1.5,
                     value: 11,
                     showVal: '+11',
                     type: 'ATK',
                     name: '攻击力'
                 }, {
-                    type: 'DEF',
-                    valCoefficient: 0.5,
+                    valCoefficient: 1.1,
                     value: 8,
                     showVal: '8',
+                    type: 'DEF',
                     name: '防御力'
                 }]
             },
             {
-                name: '赤柳血刃',
+                name: '烈焰之刃',
                 des: '',
                 iconSrc: './icons/W_Sword016.png',
                 entry: [{
-                    valCoefficient: 1.3,
+                    valCoefficient: 1.1,
                     value: 11,
                     showVal: '+11',
                     type: 'ATK',
                     name: '攻击力'
                 }, {
-                    type: 'HP',
-                    valCoefficient: 1.1,
-                    value: 8,
-                    showVal: '8',
-                    name: '生命值'
+                    valCoefficient: 2.1,
+                    value: 11,
+                    showVal: '+11',
+                    type: 'CRITDMG',
+                    name: '暴击伤害'
                 }]
             },
             {
@@ -178,13 +160,13 @@ export const equiAttributeWeapon = {
                 des: '',
                 iconSrc: './icons/W_Sword018.png',
                 entry: [{
-                    valCoefficient: 1.4,
+                    valCoefficient: 2.1,
                     value: 11,
                     showVal: '+11',
                     type: 'ATK',
                     name: '攻击力'
                 }, {
-                    valCoefficient: 1.3,
+                    valCoefficient: 1.1,
                     value: 11,
                     showVal: '+11',
                     type: 'CRITDMG',
@@ -215,7 +197,7 @@ export const equiAttributeWeapon = {
             }, {
                 type: 'DEF',
                 value: 8,
-                showVal: '+8%',
+                showVal: '+8',
                 name: '防御力'
             }, {
                 value: 11,

@@ -34,7 +34,7 @@ export const equiAttributeRing = {
                 color: '#ff0000', extraEntryNum: 5,
             }],
             uniqueCategory: [{
-                name: '天使戒指',
+                name: '星光指环',
                 des: '',
                 iconSrc: './icons/U_ring03.png',
                 entry: [{
@@ -51,7 +51,7 @@ export const equiAttributeRing = {
                     name: '暴击伤害'
                 }]
             }, {
-                name: '死神戒指',
+                name: '金仙之戒',
                 des: '',
                 iconSrc: './icons/U_ring04.png',
                 entry: [{
@@ -68,7 +68,7 @@ export const equiAttributeRing = {
                     name: '暴击伤害'
                 },]
             }, {
-                name: '魔鬼戒指',
+                name: '恶魔戒指',
                 des: '',
                 iconSrc: './icons/U_ring05.png',
                 entry: [{
@@ -87,7 +87,7 @@ export const equiAttributeRing = {
             },],
             category: [
                 {
-                    name: '白金戒指',
+                    name: '玄铁指环',
                     des: '',
                     iconSrc: './icons/Ac_9.png',
                     entry: [{
@@ -100,30 +100,30 @@ export const equiAttributeRing = {
                         valCoefficient: 1.1,
                         value: 11,
                         showVal: '+11',
-                        type: 'CRIT',
-                        name: '暴击率'
+                        type: 'CRITDMG',
+                        name: '暴击伤害'
                     }]
                 },
                 {
-                    name: '毛毛指环',
+                    name: '蝠翼指环',
                     des: '',
-                    iconSrc: './icons/Ac_11.png',
+                    iconSrc: './icons/U_ring01.png',
                     entry: [{
-                        valCoefficient: 0.3,
+                        valCoefficient: 0.5,
                         value: 11,
                         showVal: '+11',
                         type: 'ATK',
                         name: '攻击力'
                     }, {
-                        valCoefficient: 1.5,
+                        valCoefficient: 1.3,
                         value: 11,
                         showVal: '+11',
-                        type: 'CRIT',
-                        name: '暴击率'
+                        type: 'CRITDMG',
+                        name: '暴击伤害'
                     },]
                 },
                 {
-                    name: '御魂之戒',
+                    name: '白金戒指',
                     des: '',
                     iconSrc: './icons/Ac_10.png',
                     entry: [{
@@ -136,8 +136,8 @@ export const equiAttributeRing = {
                         valCoefficient: 0.5,
                         value: 11,
                         showVal: '+11',
-                        type: 'CRIT',
-                        name: '暴击率'
+                        type: 'CRITDMG',
+                        name: '暴击伤害'
                     },]
                 },
             ],
@@ -164,7 +164,7 @@ export const equiAttributeRing = {
             }, {
                 type: 'DEF',
                 value: 8,
-                showVal: '+8%',
+                showVal: '+8',
                 name: '防御力'
             }]
         }

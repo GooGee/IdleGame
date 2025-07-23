@@ -46,7 +46,7 @@ export const equiAttributeArmor = {
             }, {
                 type: 'DEF',
                 value: 8,
-                showVal: '+8%',
+                showVal: '+8',
                 name: '防御力'
             }, {
                 value: 11,
@@ -77,7 +77,7 @@ export const equiAttributeArmor = {
                     name: '生命值'
                 }]
             }, {
-                name: '剑豪盔甲',
+                name: '剑圣盔甲',
                 des: '',
                 iconSrc: './icons/U_Armor02.png',
                 entry: [{
@@ -111,7 +111,7 @@ export const equiAttributeArmor = {
                     name: '生命值'
                 }]
             }, {
-                name: '死神黑衣',
+                name: '死神冥衣',
                 des: '',
                 iconSrc: './icons/U_Armor05.png',
                 entry: [{
@@ -128,7 +128,7 @@ export const equiAttributeArmor = {
                     name: '生命值'
                 },]
             }, {
-                name: '狂龙战士盔甲',
+                name: '战神盔甲',
                 des: '',
                 iconSrc: './icons/U_Armor07.png',
                 entry: [{
@@ -147,7 +147,7 @@ export const equiAttributeArmor = {
             },],
             categoryArmor: [
                 {
-                    name: '紫金守护胸甲',
+                    name: '紫金铠甲',
                     des: '',
                     iconSrc: './icons/A_A2.png',
                     entry: [{
@@ -165,11 +165,11 @@ export const equiAttributeArmor = {
                     }]
                 },
                 {
-                    name: '战士重铠',
+                    name: '勇士盔甲',
                     des: '',
                     iconSrc: './icons/A_A5.png',
                     entry: [{
-                        valCoefficient: 1.1,
+                        valCoefficient: 1.2,
                         value: 11,
                         showVal: '+11',
                         type: 'DEF',
@@ -183,31 +183,7 @@ export const equiAttributeArmor = {
                     }]
                 },
                 {
-                    name: '皮衣',
-                    des: '',
-                    iconSrc: './icons/A_A7.png',
-                    entry: [{
-                        valCoefficient: 0.7,
-                        value: 11,
-                        showVal: '+11',
-                        type: 'DEF',
-                        name: '防御力'
-                    }, {
-                        type: 'HP',
-                        valCoefficient: 0.5,
-                        value: 8,
-                        showVal: '8',
-                        name: '生命值'
-                    }, {
-                        valCoefficient: 0.5,
-                        value: 11,
-                        showVal: '+11',
-                        type: 'ATK',
-                        name: '攻击力'
-                    }]
-                },
-                {
-                    name: '天权轻甲',
+                    name: '皮甲',
                     des: '',
                     iconSrc: './icons/A_A3.png',
                     entry: [{

@@ -44,9 +44,9 @@ export const equiAttributeNeck = {
                 showVal: '+20',
                 name: '生命值'
             }, {
-                type: 'DEF',
                 value: 8,
-                showVal: '+8%',
+                showVal: '+8',
+                type: 'DEF',
                 name: '防御力'
             }, {
                 value: 11,
@@ -60,7 +60,7 @@ export const equiAttributeNeck = {
                 name: '生命值'
             },],
             uniqueCategoryNeck: [{
-                name: '十字降魔项链',
+                name: '降魔项链',
                 des: '',
                 iconSrc: './icons/U_neck01.png',
                 entry: [{
@@ -71,13 +71,13 @@ export const equiAttributeNeck = {
                     name: '生命值'
                 }, {
                     valCoefficient: 1.5,
-                    value: 11,
-                    showVal: '+11',
-                    type: 'CRITDMG',
-                    name: '暴击伤害'
+                    value: 8,
+                    showVal: '+8',
+                    type: 'DEF',
+                    name: '防御力'
                 }]
             }, {
-                name: '夜魔之翼',
+                name: '恶魔血晶',
                 des: '',
                 iconSrc: './icons/U_neck04.png',
                 entry: [{
@@ -88,13 +88,13 @@ export const equiAttributeNeck = {
                     name: '生命值'
                 }, {
                     valCoefficient: 1.8,
-                    value: 11,
-                    showVal: '+11',
-                    type: 'CRITDMG',
-                    name: '暴击伤害'
+                    value: 8,
+                    showVal: '+8',
+                    type: 'DEF',
+                    name: '防御力'
                 },]
             }, {
-                name: '龙心项链',
+                name: '朱仙之玉',
                 des: '',
                 iconSrc: './icons/U_neck05.png',
                 entry: [{
@@ -105,15 +105,15 @@ export const equiAttributeNeck = {
                     name: '生命值'
                 }, {
                     valCoefficient: 1.2,
-                    value: 11,
-                    showVal: '+11',
-                    type: 'CRITDMG',
-                    name: '暴击伤害'
+                    value: 8,
+                    showVal: '+8',
+                    type: 'DEF',
+                    name: '防御力'
                 }]
             }],
             categoryNeck: [
                 {
-                    name: '十字军项链',
+                    name: '十字项链',
                     des: '',
                     iconSrc: './icons/Ac_1.png',
                     entry: [{
@@ -124,14 +124,14 @@ export const equiAttributeNeck = {
                         name: '生命值'
                     }, {
                         valCoefficient: 0.5,
-                        value: 11,
-                        showVal: '+11',
-                        type: 'CRIT',
-                        name: '暴击率'
+                        value: 8,
+                        showVal: '+8',
+                        type: 'DEF',
+                        name: '防御力'
                     }]
                 },
                 {
-                    name: '冰龙凝雪',
+                    name: '琉璃项链',
                     des: '',
                     iconSrc: './icons/Ac_7.png',
                     entry: [{
@@ -142,14 +142,14 @@ export const equiAttributeNeck = {
                         name: '生命值'
                     }, {
                         valCoefficient: 1.1,
-                        value: 11,
-                        showVal: '+11',
-                        type: 'CRIT',
-                        name: '暴击率'
+                        value: 8,
+                        showVal: '+8',
+                        type: 'DEF',
+                        name: '防御力'
                     }]
                 },
                 {
-                    name: '银魂之眼',
+                    name: '红玉项链',
                     des: '',
                     iconSrc: './icons/Ac_5.png',
                     entry: [{
@@ -160,10 +160,10 @@ export const equiAttributeNeck = {
                         name: '生命值'
                     }, {
                         valCoefficient: 1.5,
-                        value: 11,
-                        showVal: '+11',
-                        type: 'CRIT',
-                        name: '暴击率'
+                        value: 8,
+                        showVal: '+8',
+                        type: 'DEF',
+                        name: '防御力'
                     }]
                 }
             ]
