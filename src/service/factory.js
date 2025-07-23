@@ -3,7 +3,7 @@
  * @param {number} level  
  * @param {number} qualityCoefficient  
  */
-export function createRandomEntry(level, qualityCoefficient) {
+export function createEntry(level, qualityCoefficient) {
 
     const extraEntry = [{
         value: 11,

@@ -87,7 +87,7 @@
 import { assist } from '@/service/assist';
 import cTooltip from '../uiComponent/tooltip'
 import handle from '@/service/handle'
-import { createRandomEntry } from '@/service/factory'
+import { createEntry } from '@/service/factory'
 import { calculateUpgradeChance, calculateUpgradePrice } from '@/service/helper'
 export default {
   components: { cTooltip },
@@ -243,7 +243,7 @@ export default {
         });
         return
       }
-      let newEntry = createRandomEntry(this.equiment.lv, this.equiment.quality.qualityCoefficient)
+      let newEntry = createEntry(this.equiment.lv, this.equiment.quality.qualityCoefficient)
       this.$set(this.equiment.extraEntry, k, newEntry);
       this.$store.commit("set_player_gold", -parseInt(this.recastNeedGold));
       var EntryLevel = this.equiment.extraEntry[k].EntryLevel
