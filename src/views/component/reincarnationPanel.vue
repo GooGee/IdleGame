@@ -159,25 +159,6 @@ export default {
           p.oldValue = p.currentValue = item
           p.hasPoint = item / 2
           break;
-        case 'BLOC':
-          var p = this.attr.filter(({ name }) => name == 'BLOC')[0];
-          p.oldValue = p.currentValue = item
-          p.hasPoint = item / 2
-          break;
-        case 'MOVESPEED':
-          var p = this.attr.filter(({ name }) => name == 'MOVESPEED')[0];
-          p.oldValue = p.currentValue = Number((-(item / 0.06 * 0.01)).toFixed(2))
-          p.hasPoint = -(item / 0.06)
-          // item.currentValue = Number((item.point * 0.01).toFixed(2))
-          // data.MOVESPEED = -(item.point * 0.06)
-          break;
-        case 'BATTLESPEED':
-          var p = this.attr.filter(({ name }) => name == 'BATTLESPEED')[0];
-          p.oldValue = p.currentValue = Number((-(item / 3 * 0.01)).toFixed(2))
-          p.hasPoint = -(item / 3)
-          // item.currentValue = Number((item.point * 0.01).toFixed(2))
-          // data.BATTLESPEED = -(item.point * 3)
-          break;
         default:
           break;
       }
