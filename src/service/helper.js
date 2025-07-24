@@ -24,7 +24,7 @@ export function calculateGainingPoint(playerAttribute) {
         // sum += ((item.lv - 20) / 10) ** 1.5 * (0.1 * item.enchantlvl ** 1.5 + 1) * item.quality.qualityCoefficient / 3
     })
 
-    return parseInt(sum * 1.2)
+    return parseInt(sum)
 }
 
 /**
@@ -65,8 +65,8 @@ export function calculateUpgradePrice(item, ignoreUpgrade = true) {
  */
 export function calculateUpgradeChance(level) {
     let odds = level * 0.05
-    if (odds > 0.95) {
-        odds = 0.95
+    if (odds > 0.99) {
+        odds = 0.99
     }
     return 1 - odds
 }

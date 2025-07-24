@@ -65,15 +65,15 @@ export const equiAttributeArmor = {
                 iconSrc: './icons/U_Armor01.png',
                 entry: [{
                     valCoefficient: 1.8,
-                    value: 11,
-                    showVal: '+11',
+                    value: 8,
+                    showVal: '+8',
                     type: 'DEF',
                     name: '防御力'
                 }, {
                     type: 'HP',
                     valCoefficient: 3.2,
-                    value: 8,
-                    showVal: '8',
+                    value: 11,
+                    showVal: '11',
                     name: '生命值'
                 }]
             }, {
@@ -82,15 +82,15 @@ export const equiAttributeArmor = {
                 iconSrc: './icons/U_Armor02.png',
                 entry: [{
                     valCoefficient: 3.2,
-                    value: 11,
-                    showVal: '+11',
+                    value: 8,
+                    showVal: '+8',
                     type: 'DEF',
                     name: '防御力'
                 }, {
                     type: 'HP',
                     valCoefficient: 1.8,
-                    value: 8,
-                    showVal: '8',
+                    value: 11,
+                    showVal: '11',
                     name: '生命值'
                 }]
             }, {
@@ -99,15 +99,15 @@ export const equiAttributeArmor = {
                 iconSrc: './icons/U_Armor03.png',
                 entry: [{
                     valCoefficient: 2.2,
-                    value: 11,
-                    showVal: '+11',
+                    value: 8,
+                    showVal: '+8',
                     type: 'DEF',
                     name: '防御力'
                 }, {
                     type: 'HP',
                     valCoefficient: 2.8,
-                    value: 8,
-                    showVal: '8',
+                    value: 11,
+                    showVal: '11',
                     name: '生命值'
                 }]
             }, {
@@ -116,15 +116,15 @@ export const equiAttributeArmor = {
                 iconSrc: './icons/U_Armor05.png',
                 entry: [{
                     valCoefficient: 2.8,
-                    value: 11,
-                    showVal: '+11',
+                    value: 8,
+                    showVal: '+8',
                     type: 'DEF',
                     name: '防御力'
                 }, {
                     type: 'HP',
                     valCoefficient: 2.2,
-                    value: 8,
-                    showVal: '8',
+                    value: 11,
+                    showVal: '11',
                     name: '生命值'
                 },]
             }, {
@@ -133,15 +133,15 @@ export const equiAttributeArmor = {
                 iconSrc: './icons/U_Armor07.png',
                 entry: [{
                     valCoefficient: 3.8,
-                    value: 11,
-                    showVal: '+11',
+                    value: 8,
+                    showVal: '+8',
                     type: 'DEF',
                     name: '防御力'
                 }, {
                     type: 'HP',
                     valCoefficient: 1.2,
-                    value: 8,
-                    showVal: '8',
+                    value: 11,
+                    showVal: '11',
                     name: '生命值'
                 },]
             },],
@@ -152,15 +152,15 @@ export const equiAttributeArmor = {
                     iconSrc: './icons/A_A2.png',
                     entry: [{
                         valCoefficient: 2,
-                        value: 11,
-                        showVal: '+11',
+                        value: 8,
+                        showVal: '+8',
                         type: 'DEF',
                         name: '防御力'
                     }, {
                         type: 'HP',
                         valCoefficient: 0.6,
-                        value: 8,
-                        showVal: '8',
+                        value: 11,
+                        showVal: '11',
                         name: '生命值'
                     }]
                 },
@@ -170,15 +170,15 @@ export const equiAttributeArmor = {
                     iconSrc: './icons/A_A5.png',
                     entry: [{
                         valCoefficient: 1.2,
-                        value: 11,
-                        showVal: '+11',
+                        value: 8,
+                        showVal: '+8',
                         type: 'DEF',
                         name: '防御力'
                     }, {
                         type: 'HP',
                         valCoefficient: 0.8,
-                        value: 8,
-                        showVal: '8',
+                        value: 11,
+                        showVal: '11',
                         name: '生命值'
                     }]
                 },
@@ -188,15 +188,15 @@ export const equiAttributeArmor = {
                     iconSrc: './icons/A_A3.png',
                     entry: [{
                         valCoefficient: 0.9,
-                        value: 11,
-                        showVal: '+11',
+                        value: 8,
+                        showVal: '+8',
                         type: 'DEF',
                         name: '防御力'
                     }, {
                         type: 'HP',
                         valCoefficient: 1.2,
-                        value: 8,
-                        showVal: '8',
+                        value: 11,
+                        showVal: '11',
                         name: '生命值'
                     }]
                 }

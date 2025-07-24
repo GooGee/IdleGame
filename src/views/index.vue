@@ -202,7 +202,7 @@
             <p><input type="checkbox" name="" v-model="reEChallenge"> 重复挑战</p>
           </div>
           <div>
-            HP {{(attribute.CURHP.value / attribute.MAXHP.value * 100).toFixed(0)}}%
+            {{(attribute.CURHP.value / attribute.MAXHP.value * 100).toFixed(0)}}% HP
             <div class="dungeons-btn" @click="eventBegin()">开始挑战</div>
           </div>
         </div>
