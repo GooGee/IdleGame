@@ -20,7 +20,7 @@
       <div class="entry">
         <div v-for="v in neck.type.entry" :key="v.id">
           <!-- <div>{{v.name}} : {{v.showVal}}</div> -->
-          <div>{{v.name}} : {{v.showVal}} <span style="color:#68d5ed" v-if="neck.enchantlvl">(+{{Math.round(v.value*(1.05**(neck.enchantlvl)**1.1)-v.value)}})</span></div>
+          <div>{{v.name}} : {{v.showVal}} <span style="color:#68d5ed" v-if="neck.enchantlvl">(+{{calculateUpgradeValue(v.value, neck.enchantlvl) - v.value}})</span></div>
         </div>
       </div>
       <div class="extraEntry">
@@ -39,6 +39,7 @@
 </template>
 <script>
 import {equiAttributeNeck} from '@/config/equiAttributeNeck'
+import { calculateUpgradeValue } from '@/service/helper'
 export default {
   name: "neckPanel",
   mixins:[equiAttributeNeck],
@@ -57,6 +58,7 @@ export default {
     }
   },
   methods: {
+    calculateUpgradeValue,
     createNewItem(qualityIndex, lv) {
       var neck = {}
       neck.itemType = 'neck'

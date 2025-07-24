@@ -20,7 +20,7 @@
       <div class="entry">
         <div v-for="v in ring.type.entry" :key="v.id">
           <!-- <div>{{v.name}} : {{v.showVal}}</div> -->
-          <div>{{v.name}} : {{v.showVal}} <span style="color:#68d5ed" v-if="ring.enchantlvl">(+{{Math.round(v.value*(1.05**(ring.enchantlvl)**1.1)-v.value)}})</span></div>
+          <div>{{v.name}} : {{v.showVal}} <span style="color:#68d5ed" v-if="ring.enchantlvl">(+{{calculateUpgradeValue(v.value, ring.enchantlvl) - v.value}})</span></div>
         </div>
       </div>
       <div class="extraEntry">
@@ -39,6 +39,7 @@
 </template>
 <script>
 import { equiAttributeRing } from '@/config/equiAttributeRing'
+import { calculateUpgradeValue } from '@/service/helper'
 export default {
   name: "ringPanel",
   mixins: [equiAttributeRing],
@@ -57,6 +58,7 @@ export default {
     }
   },
   methods: {
+    calculateUpgradeValue,
     createNewItem(qualityIndex, lv) {
       var ring = {}
       ring.itemType = 'ring'

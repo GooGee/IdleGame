@@ -22,13 +22,13 @@
       <div class="entry">
         <div class="old">
           <div v-for="v in equiment.type.entry" :key="v.id">
-            <div>{{v.name}} : + {{Math.round(v.value*(1.05**(equiment.enchantlvl)**1.1))}}</div>
+            <div>{{v.name}} : + {{calculateUpgradeValue(v.value, equiment.enchantlvl)}}</div>
           </div>
         </div>
         <div class="arror">➡</div>
         <div class="new">
           <div v-for="v in equiment.type.entry" :key="v.id">
-            <div>{{Math.round(v.value*(1.05**(equiment.enchantlvl+1)**1.1))}} <span class="set"> ⬆({{Math.round(v.value*(1.05**(equiment.enchantlvl+1)**1.1)-Math.round(v.value*(1.05**(equiment.enchantlvl)**1.1)))}})</span></div>
+            <div>{{Math.round(v.value*(1.05**(equiment.enchantlvl+1)**1.1))}} <span class="set"> ⬆({{calculateUpgradeValue(v.value, equiment.enchantlvl + 1) - calculateUpgradeValue(v.value, equiment.enchantlvl)}})</span></div>
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@
       </div>
       <div class="btn-group" v-if='!autoStrengModel'>
         <p>自动强化至等级：</p>
-        <p><input type="number" placeholder="目标等级" max="22" min="5" v-model="autoStrengLv"></p>
+        <p><input type="number" placeholder="目标等级" max="33" min="5" v-model="autoStrengLv"></p>
         <div class="button" @click="startAutoStreng">自动强化</div>
       </div>
       <div class="btn-group" v-if='autoStrengModel'>
@@ -87,7 +87,7 @@
 import { assist } from '@/service/assist';
 import cTooltip from '../uiComponent/tooltip'
 import { createEntry } from '@/service/factory'
-import { calculateUpgradeChance, calculateUpgradePrice } from '@/service/helper'
+import { calculateUpgradeChance, calculateUpgradePrice, calculateUpgradeValue } from '@/service/helper'
 export default {
   components: { cTooltip },
   name: "equimentPanel",
@@ -163,6 +163,7 @@ export default {
     }
   },
   methods: {
+    calculateUpgradeValue,
     changeRecastStatus(v, k, status) {
       // 设置是否处于重置状态中
       this.qualityClass = ''

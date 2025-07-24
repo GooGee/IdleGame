@@ -20,7 +20,7 @@
       <div class="entry">
         <div v-for="v in armor.type.entry" :key="v.id">
           <!-- <div>{{v.name}} : {{v.showVal}}</div> -->
-          <div>{{v.name}} : {{v.showVal}} <span style="color:#68d5ed" v-if="armor.enchantlvl">(+{{Math.round(v.value*(1.05**(armor.enchantlvl)**1.1)-v.value)}})</span></div>
+          <div>{{v.name}} : {{v.showVal}} <span style="color:#68d5ed" v-if="armor.enchantlvl">(+{{calculateUpgradeValue(v.value, armor.enchantlvl) - v.value}})</span></div>
         </div>
       </div>
       <div class="extraEntry">
@@ -39,6 +39,7 @@
 </template>
 <script>
 import {equiAttributeArmor} from '@/config/equiAttributeArmor'
+import { calculateUpgradeValue } from '@/service/helper'
 export default {
   name: "armorPanel",
   mixins:[equiAttributeArmor],
@@ -57,6 +58,7 @@ export default {
     }
   },
   methods: {
+    calculateUpgradeValue,
     createNewItem(qualityIndex, lv) {
       var armor = {}
       armor.itemType = 'armor'

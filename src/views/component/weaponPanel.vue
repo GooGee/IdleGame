@@ -20,7 +20,7 @@
       <div class="entry">
         <div v-for="v in weapon.type.entry" :key="v.id">
           <!-- <div>{{v.name}} : {{v.showVal}}</div> -->
-          <div>{{v.name}} : {{v.showVal}} <span style="color:#68d5ed" v-if="weapon.enchantlvl">(+{{Math.round(v.value*(1.05**(weapon.enchantlvl)**1.1)-v.value)}})</span></div>
+          <div>{{v.name}} : {{v.showVal}} <span style="color:#68d5ed" v-if="weapon.enchantlvl">(+{{calculateUpgradeValue(v.value, weapon.enchantlvl) - v.value}})</span></div>
         </div>
       </div>
       <div class="extraEntry">
@@ -39,6 +39,7 @@
 </template>
 <script>
 import {equiAttributeWeapon} from '@/config/equiAttributeWeapon'
+import { calculateUpgradeValue } from '@/service/helper'
 export default {
   name: "weaponPanel",
   mixins: [equiAttributeWeapon],
@@ -59,6 +60,7 @@ export default {
     }
   },
   methods: {
+    calculateUpgradeValue,
     createNewItem(qualityIndex, lv) {
       var weapon = {}
       weapon.itemType = 'weapon'
