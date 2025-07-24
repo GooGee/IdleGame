@@ -77,7 +77,7 @@ export function calculateUpgradeChance(level) {
  * @param {number} level 
  * @returns 
  */
-export function calculateUpgradeValue(entry, level) {
+export function setUpgradeValue(entry, level) {
     const factor = 1.08 ** level
     entry.map((item) => {
         const value = Math.round(factor * item.value)

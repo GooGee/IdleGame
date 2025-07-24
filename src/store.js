@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import vueInstance from './main'
-import { calculateUpgradeValue } from './service/helper'
+import { setUpgradeValue } from './service/helper'
 
 Vue.use(Vuex)
 
@@ -274,10 +274,10 @@ export default new Vuex.Store({
             let armorStrEntry = vueInstance.$deepCopy(armor.type.entry)
             let ringStrEntry = vueInstance.$deepCopy(ring.type.entry)
             let neckStrEntry = vueInstance.$deepCopy(neck.type.entry)
-            calculateUpgradeValue(warponStrEntry, warpon.enchantlvl || 0)
-            calculateUpgradeValue(armorStrEntry, armor.enchantlvl || 0)
-            calculateUpgradeValue(ringStrEntry, ring.enchantlvl || 0)
-            calculateUpgradeValue(neckStrEntry, neck.enchantlvl || 0)
+            setUpgradeValue(warponStrEntry, warpon.enchantlvl || 0)
+            setUpgradeValue(armorStrEntry, armor.enchantlvl || 0)
+            setUpgradeValue(ringStrEntry, ring.enchantlvl || 0)
+            setUpgradeValue(neckStrEntry, neck.enchantlvl || 0)
 
             entry = [
                 ...warponStrEntry,
