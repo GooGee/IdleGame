@@ -120,7 +120,7 @@ export const equiAttributeWeapon = {
                 }]
             },],
             category: [{
-                name: '巨剑',
+                name: '大剑',
                 des: '',
                 iconSrc: './icons/W_Sword007.png',
                 entry: [{

@@ -51,7 +51,7 @@ export const equiAttributeRing = {
                     name: '暴击伤害'
                 }]
             }, {
-                name: '金仙之戒',
+                name: '赤金戒指',
                 des: '',
                 iconSrc: './icons/U_ring04.png',
                 entry: [{
@@ -68,7 +68,7 @@ export const equiAttributeRing = {
                     name: '暴击伤害'
                 },]
             }, {
-                name: '恶魔戒指',
+                name: '恶魔指环',
                 des: '',
                 iconSrc: './icons/U_ring05.png',
                 entry: [{

@@ -77,7 +77,7 @@ export const equiAttributeNeck = {
                     name: '防御力'
                 }]
             }, {
-                name: '恶魔血晶',
+                name: '恶魔血珠',
                 des: '',
                 iconSrc: './icons/U_neck04.png',
                 entry: [{
@@ -94,7 +94,7 @@ export const equiAttributeNeck = {
                     name: '防御力'
                 },]
             }, {
-                name: '朱仙之玉',
+                name: '生命之源',
                 des: '',
                 iconSrc: './icons/U_neck05.png',
                 entry: [{
