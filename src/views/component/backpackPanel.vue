@@ -61,7 +61,7 @@ export default {
       currentItem: {},
       currentItemIndex: '',
       autoSellPanel: false,
-      autoSell:[true,true,false,false]
+      autoSell:[true,false,false,false]
     };
   },
   mixins: [assist],
@@ -97,6 +97,12 @@ export default {
     }
   },
   mounted() {
+    if (this.$store.state.playerAttribute.lv >= 10) {
+      this.$set(this.autoSell,1,true)
+      this.$set(this.autoSell,2,true)
+      this.$set(this.autoSell,3,true)
+    }
+
     var item = {
       lv: 30,
       itemType: 'armor',
