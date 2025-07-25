@@ -374,7 +374,7 @@ export default {
         // 获得普通装备
         equipQua = 1
       } else if (r < equip[2] + equip[1] + equip[0]) {
-        // 获得极品装备
+        // 获得精良装备
         equipQua = 2
       } else if (r < equip[3] + equip[2] + equip[1] + equip[0]) {
         // 获得传说装备

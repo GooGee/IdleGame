@@ -18,7 +18,7 @@ export const equiAttributeNeck = {
                 probability: '0.55',
                 color: '#fff', extraEntryNum: 2,
             }, {
-                name: '极品',
+                name: '精良',
                 qualityCoefficient: 1.3,
                 probability: '0.15',
                 color: '#ff00ff', extraEntryNum: 3,

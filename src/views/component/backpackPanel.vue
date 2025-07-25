@@ -27,7 +27,7 @@
             <span @click="setAutoSell(1)"><input type="checkbox" name="" v-model="autoSell[1]">普通</span>
           </div>
           <div>
-            <span @click="setAutoSell(2)"><input type="checkbox" name="" v-model="autoSell[2]">极品</span>
+            <span @click="setAutoSell(2)"><input type="checkbox" name="" v-model="autoSell[2]">精良</span>
             <span @click="setAutoSell(3)"><input type="checkbox" name="" v-model="autoSell[3]">传说</span>
           </div>
 
