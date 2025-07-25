@@ -342,7 +342,7 @@ export default {
       if (event.type == 'boss' && this.dungeons.type != 'endless') {
         const odds = 0.5*(this.dungeons.difficulty-1)
         if (Math.random() < odds) {
-          const level = parseInt(lv + Math.random() * 11 + 5)
+          const level = parseInt(lv + Math.random() * 5 + 5)
           var random = Math.random()
           if (random < 0.25) {
             var b = this.findBrothersComponents(this, 'weaponPanel', false)[0]

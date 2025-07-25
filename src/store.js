@@ -21,15 +21,15 @@ var initial_weapon = {
         "iconSrc": "./icons/W_Sword001.png",
         "entry": [{
             "valCoefficient": 0.9,
-            "value": 1,
-            "showVal": "+1",
+            "value": 10,
+            "showVal": "+10",
             "type": "ATK",
             "name": "攻击力"
         }]
     },
     "extraEntry": [{
-        "value": 1,
-        "showVal": "+1",
+        "value": 10,
+        "showVal": "+10",
         "type": "ATK",
         "name": "攻击力"
     }]
@@ -50,8 +50,8 @@ var initial_weapon = {
             "iconSrc": "./icons/A_A3.png",
             "entry": [{
                 "valCoefficient": 0.9,
-                "value": 1,
-                "showVal": "+1",
+                "value": 10,
+                "showVal": "+10",
                 "type": "DEF",
                 "name": "防御力"
             }]

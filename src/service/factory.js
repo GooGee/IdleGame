@@ -146,8 +146,8 @@ export function makeDungeon(level = 1, difficulty = 1) {
 function makeMonster(level, factor, isBoss = false) {
     const modifier = isBoss ? 2 : 1
     const name = isBoss ? 'boss' : 'monster'
-    const gold = modifier * parseInt(factor * level ** 1.2 * (Math.random() * 5 + 11))
-    const HP = modifier * parseInt(factor * level ** 2 * (Math.random() * 5 + 11))
+    const gold = modifier * parseInt(factor * level ** 1.2 * (Math.random() * 3 + 11))
+    const HP = modifier * parseInt(factor * level ** 2 * (Math.random() * 3 + 11))
     const ATK = modifier * parseInt(factor * level ** 2 * (Math.random() * 1 + 2))
     let equip = [
         0.1 * factor,
