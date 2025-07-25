@@ -93,11 +93,11 @@ export default {
   methods: {
     /**
      * 刷新商店
-     * constraint 是否跳过独特装备检测强制刷新
+     * constraint 是否跳过神器装备检测强制刷新
      */
     refreshShopItems(constraint) {
       this.tipsFlag = !constraint && this.grid.find(item => {
-        return item.quality && item.quality.name == '独特'
+        return item.quality && item.quality.name == '神器'
       })
       if (this.tipsFlagComfirm) {
         return
@@ -105,7 +105,7 @@ export default {
       if (this.tipsFlag && !constraint) {
         this.tipsFlagComfirm = true
         this.$message({
-          message: '刷到了独特装备哦，不看看嘛？',
+          message: '刷到了神器装备哦，不看看嘛？',
           closeBtnText: '看看',
           confirmBtnText: '辣鸡我不要',
           onCancle: () => {
@@ -143,11 +143,11 @@ export default {
     },
     /**
      * 金币刷新商店
-     * constraint 是否跳过独特装备检测强制刷新
+     * constraint 是否跳过神器装备检测强制刷新
      */
     goldRefreshShopItems(constraint) {
       this.tipsFlag = !constraint && this.grid.find(item => {
-        return item.quality && item.quality.name == '独特'
+        return item.quality && item.quality.name == '神器'
       })
       if (this.tipsFlagComfirm) {
         return
@@ -155,7 +155,7 @@ export default {
       if (this.tipsFlag && !constraint) {
         this.tipsFlagComfirm = true
         this.$message({
-          message: '刷到了独特装备哦，不看看嘛？',
+          message: '刷到了神器装备哦，不看看嘛？',
           closeBtnText: '看看',
           confirmBtnText: '辣鸡我不要',
           onCancle: () => {
@@ -200,13 +200,13 @@ export default {
         // 获得普通装备
         equipQua = 1;
       } else if (r < equip[1] + equip[0]) {
-        // 获得神器装备
+        // 获得极品装备
         equipQua = 2;
       } else if (r < equip[2] + equip[1] + equip[0]) {
-        // 获得史诗装备
+        // 获得传说装备
         equipQua = 3;
       } else if (r < equip[3] + equip[2] + equip[1] + equip[0]) {
-        // 获得独特装备
+        // 获得神器装备
         equipQua = 4;
       } else {
         // 未获得装备

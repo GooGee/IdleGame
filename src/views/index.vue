@@ -125,7 +125,7 @@
 
       <div class="weapon" @mouseover="showItemInfo($event,'weapon',playerWeapon,false)" @mouseleave="closeItemInfo">
         <div class="title" v-if="playerWeapon">
-          <div class='icon' :class="{'red-flash':playerWeapon.enchantlvl>=13,unique:playerWeapon.quality.name=='独特'}" :style="{'box-shadow':'inset 0 0 7px 2px '+playerWeapon.quality.color}">
+          <div class='icon' :class="{'red-flash':playerWeapon.enchantlvl>=13,unique:playerWeapon.quality.name=='神器'}" :style="{'box-shadow':'inset 0 0 7px 2px '+playerWeapon.quality.color}">
             <img :src="playerWeapon.type.iconSrc" alt="">
           </div>
           <div class='name' :style="{color:playerWeapon.quality.color}">{{playerWeapon.type.name}} {{playerWeapon.enchantlvl?'(+'+playerWeapon.enchantlvl+')':''}}</div>
@@ -133,7 +133,7 @@
       </div>
       <div class="armor" @mouseover="showItemInfo($event,'armor',playerArmor,false)" @mouseleave="closeItemInfo">
         <div class="title" v-if="playerArmor">
-          <div class='icon' :class="{'red-flash':playerArmor.enchantlvl>=13,unique:playerArmor.quality.name=='独特'}" :style="{'box-shadow':'inset 0 0 7px 2px  '+playerArmor.quality.color}">
+          <div class='icon' :class="{'red-flash':playerArmor.enchantlvl>=13,unique:playerArmor.quality.name=='神器'}" :style="{'box-shadow':'inset 0 0 7px 2px  '+playerArmor.quality.color}">
             <img :src="playerArmor.type.iconSrc" alt="">
           </div>
           <div class='name' :style="{color:playerArmor.quality.color}">{{playerArmor.type.name}} {{playerArmor.enchantlvl?'(+'+playerArmor.enchantlvl+')':''}}</div>
@@ -141,7 +141,7 @@
       </div>
       <div class="neck" @mouseover="showItemInfo($event,'neck',playerNeck,false)" @mouseleave="closeItemInfo">
         <div class="title" v-if="playerNeck">
-          <div class='icon' :class="{'red-flash':playerNeck.enchantlvl>=13,unique:playerNeck.quality.name=='独特'}" :style="{'box-shadow':'inset 0 0 7px 2px '+playerNeck.quality.color}">
+          <div class='icon' :class="{'red-flash':playerNeck.enchantlvl>=13,unique:playerNeck.quality.name=='神器'}" :style="{'box-shadow':'inset 0 0 7px 2px '+playerNeck.quality.color}">
             <img :src="playerNeck.type.iconSrc" alt="">
           </div>
           <div class='name' :style="{color:playerNeck.quality.color}">{{playerNeck.type.name}} {{playerNeck.enchantlvl?'(+'+playerNeck.enchantlvl+')':''}}</div>
@@ -149,7 +149,7 @@
       </div>
       <div class="ring" @mouseover="showItemInfo($event,'ring',playerRing,false)" @mouseleave="closeItemInfo">
         <div class="title" v-if="playerRing">
-          <div class='icon' :class="{'red-flash':playerRing.enchantlvl>=13,unique:playerRing.quality.name=='独特'}" :style="{'box-shadow':'inset 0 0 7px 2px '+playerRing.quality.color}">
+          <div class='icon' :class="{'red-flash':playerRing.enchantlvl>=13,unique:playerRing.quality.name=='神器'}" :style="{'box-shadow':'inset 0 0 7px 2px '+playerRing.quality.color}">
             <img :src="playerRing.type.iconSrc" alt="">
           </div>
           <div class='name' :style="{color:playerRing.quality.color}">{{playerRing.type.name}} {{playerRing.enchantlvl?'(+'+playerRing.enchantlvl+')':''}}</div>
@@ -161,7 +161,7 @@
       <div id='sysInfo'>
         <div class="info warning" :class="{warning:v.type=='warning',battle:v.type=='battle',win:v.type=='win',trophy:v.type=='trophy',}" v-for="(v,k) in sysInfo" :key="k">系统<i style="font-size:.12rem" v-if="v.time">({{v.time}})</i>：
           <span>{{v.msg}}</span>
-          <a v-if="v.equip" v-for="(o,p) in v.equip" :key="p" :style="{color:o.quality.color}" @mouseover="showItemInfo($event,o.itemType,o)" @mouseleave="closeItemInfo"><span v-if="o.quality.name=='独特'">稀有掉落：</span>{{o.type.name}}</a>
+          <a v-if="v.equip" v-for="(o,p) in v.equip" :key="p" :style="{color:o.quality.color}" @mouseover="showItemInfo($event,o.itemType,o)" @mouseleave="closeItemInfo"><span v-if="o.quality.name=='神器'">稀有掉落：</span>{{o.type.name}}</a>
         </div>
       </div>
     </div>

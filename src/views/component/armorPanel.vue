@@ -5,7 +5,7 @@
     </div> -->
     <div class="armorPanel" v-if="JSON.stringify(armor)!='{}'">
       <div class="title">
-        <div class='icon' :class="{'red-flash':armor.enchantlvl>=13,unique:armor.quality.name=='独特'}"  :style="{'box-shadow':'inset 0 0 7px 2px '+armor.quality.color}">
+        <div class='icon' :class="{'red-flash':armor.enchantlvl>=13,unique:armor.quality.name=='神器'}"  :style="{'box-shadow':'inset 0 0 7px 2px '+armor.quality.color}">
           <img :src="armor.type.iconSrc" alt="">
         </div>
         <div class='name' :style="{color:armor.quality.color}">{{armor.type.name}} {{armor.enchantlvl?'(+'+armor.enchantlvl+')':''}}</div>
@@ -72,7 +72,7 @@ export default {
       return parseInt(Math.random() * (Max || 39)) + 1
     },
     createType(armor) {
-      if (armor.quality.name == '独特') {
+      if (armor.quality.name == '神器') {
         var index = Math.floor((Math.random() * this.uniqueCategoryArmor.length));
         var type = this.uniqueCategoryArmor[index], lv = armor.lv
       } else {

@@ -5,7 +5,7 @@
     </div> -->
     <div class="neckPanel" v-if="JSON.stringify(neck)!='{}'">
       <div class="title">
-        <div class='icon' :class="{'red-flash':neck.enchantlvl>=13,unique:neck.quality.name=='独特'}" :style="{'box-shadow':'inset 0 0 7px 2px '+neck.quality.color}">
+        <div class='icon' :class="{'red-flash':neck.enchantlvl>=13,unique:neck.quality.name=='神器'}" :style="{'box-shadow':'inset 0 0 7px 2px '+neck.quality.color}">
           <img :src="neck.type.iconSrc" alt="">
         </div>
         <div class='name' :style="{color:neck.quality.color}">{{neck.type.name}} {{neck.enchantlvl?'(+'+neck.enchantlvl+')':''}}</div>
@@ -72,7 +72,7 @@ export default {
       return parseInt(Math.random() * (Max || 39)) + 1
     },
     createType(neck) {
-      if (neck.quality.name == '独特') {
+      if (neck.quality.name == '神器') {
         var index = Math.floor((Math.random() * this.uniqueCategoryNeck.length));
         var type = this.uniqueCategoryNeck[index], lv = neck.lv
       } else {

@@ -338,7 +338,7 @@ export default {
     caculateTrophy(event) {
       var items = []
       var lv = this.dungeons.lv
-      // 获取独特装备
+      // 获取神器装备
       if (event.type == 'boss' && this.dungeons.type != 'endless') {
         const odds = 0.5*(this.dungeons.difficulty-1)
         if (Math.random() < odds) {
@@ -374,10 +374,10 @@ export default {
         // 获得普通装备
         equipQua = 1
       } else if (r < equip[2] + equip[1] + equip[0]) {
-        // 获得神器装备
+        // 获得极品装备
         equipQua = 2
       } else if (r < equip[3] + equip[2] + equip[1] + equip[0]) {
-        // 获得史诗装备
+        // 获得传说装备
         equipQua = 3
       } else {
         // 未获得装备
@@ -419,8 +419,8 @@ export default {
           return
         }
         items.map(item => {
-          // 当开启了自动出售并且新获得的装备品质低于史诗时，自动出售
-          if (backpackPanel.autoSell[equipQua]&&item.quality.name!="独特") {
+          // 当开启了自动出售并且新获得的装备品质低于传说时，自动出售
+          if (backpackPanel.autoSell[equipQua]&&item.quality.name!="神器") {
             var gold = calculatePrice(item)
             this.$store.commit("set_player_gold", parseInt(gold));
             this.$store.commit("set_sys_info", {

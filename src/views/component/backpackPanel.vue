@@ -27,8 +27,8 @@
             <span @click="setAutoSell(1)"><input type="checkbox" name="" v-model="autoSell[1]">普通</span>
           </div>
           <div>
-            <span @click="setAutoSell(2)"><input type="checkbox" name="" v-model="autoSell[2]">神器</span>
-            <span @click="setAutoSell(3)"><input type="checkbox" name="" v-model="autoSell[3]">史诗</span>
+            <span @click="setAutoSell(2)"><input type="checkbox" name="" v-model="autoSell[2]">极品</span>
+            <span @click="setAutoSell(3)"><input type="checkbox" name="" v-model="autoSell[3]">传说</span>
           </div>
 
         </div>
@@ -101,7 +101,7 @@ export default {
       lv: 30,
       itemType: 'armor',
       quality: {
-        name: "神器",
+        name: "极品",
         qualityCoefficient: 1.5,
         probability: "0.15",
         color: "#ff00ff",

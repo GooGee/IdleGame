@@ -5,7 +5,7 @@
     </div> -->
     <div class="weaponPanel" v-if="JSON.stringify(weapon)!='{}'">
       <div class="title">
-        <div class='icon'  :class="{'red-flash':weapon.enchantlvl>=13,unique:weapon.quality.name=='独特'}" :style="{'box-shadow':'inset 0 0 7px 2px '+weapon.quality.color}">
+        <div class='icon'  :class="{'red-flash':weapon.enchantlvl>=13,unique:weapon.quality.name=='神器'}" :style="{'box-shadow':'inset 0 0 7px 2px '+weapon.quality.color}">
           <img :src="weapon.type.iconSrc" alt="">
         </div>
         <div class='name' :style="{color:weapon.quality.color}">{{weapon.type.name}} {{weapon.enchantlvl?'(+'+weapon.enchantlvl+')':''}}</div>
@@ -74,7 +74,7 @@ export default {
       return parseInt(Math.random() * (Max || 39)) + 1
     },
     createType(weapon) {
-      if (weapon.quality.name == '独特') {
+      if (weapon.quality.name == '神器') {
         var index = Math.floor((Math.random() * this.uniqueCategory.length));
         var type = this.uniqueCategory[index], lv = weapon.lv
       } else {
