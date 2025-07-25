@@ -57,6 +57,7 @@ export default {
       grid: [],
       left: '',
       top: '',
+      first: true,
       visible: false,
       currentItem: {},
       currentItemIndex: '',
@@ -70,10 +71,13 @@ export default {
   },
   watch: {
     '$store.state.playerAttribute.lv'(value){
-      if (value >= 10) {
-        this.$set(this.autoSell,1,true)
-        this.$set(this.autoSell,2,true)
-        this.$set(this.autoSell,3,true)
+      if (this.first) {
+        this.first = false
+        if (value >= 10) {
+          this.$set(this.autoSell,1,true)
+          this.$set(this.autoSell,2,true)
+          this.$set(this.autoSell,3,true)
+        }
       }
     },
     visible(value) {
