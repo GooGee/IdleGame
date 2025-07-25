@@ -69,6 +69,13 @@ export default {
     this.grid = new Array(32).fill({});
   },
   watch: {
+    '$store.state.playerAttribute.lv'(value){
+      if (value >= 10) {
+        this.$set(this.autoSell,1,true)
+        this.$set(this.autoSell,2,true)
+        this.$set(this.autoSell,3,true)
+      }
+    },
     visible(value) {
       if (value) {
         document.body.addEventListener("click", this.closeMenu);
@@ -97,65 +104,7 @@ export default {
     }
   },
   mounted() {
-    if (this.$store.state.playerAttribute.lv >= 10) {
-      this.$set(this.autoSell,1,true)
-      this.$set(this.autoSell,2,true)
-      this.$set(this.autoSell,3,true)
-    }
-
-    var item = {
-      lv: 30,
-      itemType: 'armor',
-      quality: {
-        name: "极品",
-        qualityCoefficient: 1.5,
-        probability: "0.15",
-        color: "#ff00ff",
-        extraEntryNum: 3,
-      },
-      type: {
-        name: "赤柳血铠",
-        des: "似乎会给使用者提供生命气息",
-        iconSrc: "./icons/A_A3.png",
-        entry: [
-          {
-            valCoefficient: 0.9,
-            value: 51,
-            showVal: "+51",
-            type: "DEF",
-            name: "防御力",
-          },
-          {
-            type: "HP",
-            valCoefficient: 1.4,
-            value: 634,
-            showVal: "+634",
-            name: "生命值",
-          },
-        ],
-      },
-      extraEntry: [
-        { type: "HP", value: 99, showVal: "+99", name: "生命值" },
-        { type: "HP", value: 93, showVal: "+93", name: "生命值" },
-        { type: "HP", value: 97, showVal: "+97", name: "生命值" },
-      ],
-    };
-    // this.$set(this.grid,0,item)
-    // try {
-    //   var p = this.findComponentUpward(this, 'index')
-    //   if (JSON.stringify(p.saveData) != '{}') {
-    //     this.grid = p.saveData.backpackEquipment
-    //   }
-    // } catch (error) {
-    //   console.log(error)
-    //   this.$store.commit("set_sys_info", {
-    //     msg: `
-    //           糟糕，存档坏了！
-    //         `,
-    //     type: 'warning'
-    //   });
-    // }
-
+    
   },
   methods: {
     // 点击span仍然可以设置input的值，操作的是数组，所以需要$set来实现双向绑定
