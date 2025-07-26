@@ -50,7 +50,6 @@ export default {
   border-radius: 4px;
   padding: 0.15rem;
   background: #111111;
-  padding-top: 0.45rem;
   font-size: 0.12rem;
   font-weight: normal;
   z-index: 9999;
@@ -59,18 +58,6 @@ export default {
     font-size: 0.12rem;
     font-weight: normal;
     margin-top: 0.05rem;
-  }
-  &::after {
-    position: absolute;
-    top: 0.05rem;
-    left: 50%;
-    transform: translateX(-50%);
-    content: "";
-    display: flex;
-    width: 0.4rem;
-    height: 0.4rem;
-    background-image: url(../../assets/icons/tips.png);
-    background-size: cover;
   }
 }
 .top{
