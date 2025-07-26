@@ -23,12 +23,13 @@
           <div class="hp">
             <img src="../assets/icons/S_Holy01.png" alt="">
             <div class="value" :style="{fontSize:attribute.MAXHP.value>=10000?'.20rem':'.26rem'}">
-              {{attribute.CURHP.value}}/{{attribute.MAXHP.showValue}}
+              {{attribute.CURHP.value}}/{{attribute.MAXHP.value}}
             </div>
           </div>
         </template>
         <template v-slot:tip>
-          <p class="info">* 当前生命值/最大生命值（加成%）</p>
+          <p class="info">* 当前生命值/最大生命值</p>
+          <p class="info">{{attribute.MAXHP.showValue}}</p>
         </template>
 
       </cTooltip>
@@ -47,12 +48,13 @@
             <div class="item" title="攻击力">
               <img src="../assets/icons/ATK.png" alt="">
               <div class="value" :style="{fontSize:attribute.ATK.value>=100000?'.18rem':'.23rem'}">
-                {{attribute.ATK.showValue}}
+                {{attribute.ATK.value}}
               </div>
             </div>
           </template>
           <template v-slot:tip>
-            <p class="info">* 攻击力（加成%）</p>
+            <p class="info">* 攻击力</p>
+            <p class="info">{{attribute.ATK.showValue}}</p>
           </template>
         </cTooltip>
 
@@ -81,6 +83,7 @@
           </template>
           <template v-slot:tip>
             <p class="info">* 防御力（减伤%）</p>
+            <p class="info">{{attribute.DEF.showValue}}</p>
           </template>
         </cTooltip>
 
