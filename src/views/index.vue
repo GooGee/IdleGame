@@ -557,12 +557,12 @@ export default {
           });
           return
         }
-          this.$store.commit("set_sys_info", {
-            msg: `
-                    副本刷新完成。
-                  `,
-            type: 'wrning'
-          });
+        this.$store.commit("set_sys_info", {
+          msg: `
+                  副本刷新完成。
+                `,
+          type: 'wrning'
+        });
         this.dungeonsTime = setInterval(() => {
           this.dungeonsTimeO--
           if (this.dungeonsTimeO <= 0) {
@@ -576,7 +576,7 @@ export default {
       // 存储副本数据的数组
       this.dungeonsArr = []
       // 此系数决定生成副本难度对应的概率
-      let odds = [0.7, 0.9, 1]
+      let odds = [0.6, 0.9, 1]
       // 这个for循环会生成低于玩家等级的副本
       for (let i = this.playerLv - 1; i > this.playerLv - 5; i--) {
         if (i < 1) {
