@@ -384,7 +384,7 @@ export default new Vuex.Store({
             var armor = attribute.DEF.value
 
             //承受伤害比例
-            attribute.REDUCDMG = 1 - armor / (armor + 100)
+            attribute.REDUCDMG = 1 - armor / (armor + 200)
             // attribute.REDUCDMG = 1 - 0.06 * armor / (1 + (0.06 * armor))
             // attribute.REDUCDMG = 1 - 0.05 * armor / (1 + (0.0525 * armor))
             // if (armor > 7600) {
