@@ -62,7 +62,7 @@ export default {
       currentItem: {},
       currentItemIndex: '',
       autoSellPanel: false,
-      autoSell:[true,false,false,false]
+      autoSell:[true,true,false,false]
     };
   },
   mixins: [assist],
@@ -74,7 +74,6 @@ export default {
       if (this.first) {
         this.first = false
         if (value >= 10) {
-          this.$set(this.autoSell,1,true)
           this.$set(this.autoSell,2,true)
           this.$set(this.autoSell,3,true)
         }
