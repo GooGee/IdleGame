@@ -22,8 +22,8 @@
         <template v-slot:content>
           <div class="hp">
             <img src="../assets/icons/S_Holy01.png" alt="">
-            <div class="value" :style="{fontSize:attribute.MAXHP.value>=10000?'.20rem':'.26rem'}">
-              {{attribute.CURHP.value}}/{{attribute.MAXHP.value}}
+            <div class="value" :style="{fontSize:attribute.MAXHP.value>=100000?'.20rem':'.26rem'}">
+              {{attribute.CURHP.value.toLocaleString('en-US')}}/{{attribute.MAXHP.value.toLocaleString('en-US')}}
             </div>
           </div>
         </template>
@@ -48,7 +48,7 @@
             <div class="item" title="攻击力">
               <img src="../assets/icons/ATK.png" alt="">
               <div class="value" :style="{fontSize:attribute.ATK.value>=100000?'.18rem':'.23rem'}">
-                {{attribute.ATK.value}}
+                {{attribute.ATK.value.toLocaleString('en-US')}}
               </div>
             </div>
           </template>
@@ -108,7 +108,7 @@
         <cTooltip placement="bottom">
           <template v-slot:content>
             <div class="gold" v-if="attribute.DPS" :style="{fontSize:attribute.DPS>=10000?'.18rem':'.22rem'}">DPS:
-              <span :style="{fontSize:attribute.DPS>=10000?'.18rem':'.22rem'}">{{(attribute.DPS).toFixed(0)}}</span>
+              <span :style="{fontSize:attribute.DPS>=10000?'.18rem':'.22rem'}">{{parseInt(attribute.DPS).toLocaleString('en-US')}}</span>
             </div>
           </template>
           <template v-slot:tip>
@@ -117,7 +117,7 @@
         </cTooltip>
         <cTooltip placement="bottom">
           <template v-slot:content>
-            <div class="gold" :style="{fontSize:userGold>=1000000?'.18rem':'.22rem'}">Gold: <span :style="{fontSize:userGold>=1000000?'.14rem':'.16rem'}">{{(userGold || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,')}}</span></div>
+            <div class="gold" :style="{fontSize:userGold>=1000000?'.18rem':'.22rem'}">Gold: <span :style="{fontSize:userGold>=1000000?'.14rem':'.16rem'}">{{userGold.toLocaleString('en-US')}}</span></div>
           </template>
           <template v-slot:tip>
             <p class="info">* 金币数量</p>
@@ -205,7 +205,9 @@
             <p><input type="checkbox" name="" v-model="reEChallenge"> 重复挑战</p>
           </div>
           <div>
-            {{(attribute.CURHP.value / attribute.MAXHP.value * 100).toFixed(0)}}% HP
+            <div :class="(attribute.CURHP.value / attribute.MAXHP.value < 0.5) ? 'red' : ''">
+              {{(attribute.CURHP.value / attribute.MAXHP.value * 100).toFixed(0)}}% HP
+            </div>
             <div class="dungeons-btn" @click="eventBegin()">开始挑战</div>
           </div>
         </div>
@@ -242,6 +244,17 @@
 
       <cTooltip :placement="'top'">
         <template v-slot:content>
+          <div class="Backpack" @click="openMenuPanel('rein')">
+            <img src="../assets/icons/menu/quest_icon_00.png" alt="">
+          </div>
+        </template>
+        <template v-slot:tip>
+          <p class="info">* 转生提升基础属性</p>
+        </template>
+      </cTooltip>
+
+      <cTooltip :placement="'top'">
+        <template v-slot:content>
           <div class="Backpack" @click="createdDungeons()">
             <img src="../assets/icons/menu/refresh_de.png" alt="">
           </div>
@@ -249,17 +262,6 @@
         <template v-slot:tip>
           <p class="info">* 刷新当前世界副本</p>
           <p class="info">* 冷却时间：30秒钟</p>
-        </template>
-      </cTooltip>
-
-      <cTooltip :placement="'top'">
-        <template v-slot:content>
-          <div class="Backpack" @click="openMenuPanel('rein')">
-            <img src="../assets/icons/menu/quest_icon_00.png" alt="">
-          </div>
-        </template>
-        <template v-slot:tip>
-          <p class="info">* 转生提升基础属性</p>
         </template>
       </cTooltip>
 
