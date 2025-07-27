@@ -8,7 +8,7 @@
           </div>
           <div class="info" :style="{'font-size':(parseInt(v.gold)>99999?0.18:0.22)+'rem'}">
             <div>{{v.lv}}</div>
-            <div>{{v.gold}}</div>
+            <div class="gold">{{v.gold.toLocaleString('en-US')}}</div>
           </div>
         </div>
       </div>
@@ -361,6 +361,9 @@ export default {
     position: absolute;
     bottom: -0.6rem;
     font-size: 0.24rem;
+    .gold {
+      font-size: 0.16rem;
+    }
   }
 }
 .contextmenu {

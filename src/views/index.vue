@@ -97,7 +97,8 @@
             </div>
           </template>
           <template v-slot:tip>
-            <p class="info">* 暴击伤害初始为150%</p>
+            <p class="info">* 暴击伤害</p>
+            <p class="info">* 初始为150%</p>
           </template>
         </cTooltip>
 
@@ -179,17 +180,14 @@
         <div class="dungeons-title" v-if="dungeons.type=='endless'">当前副本：无尽</div>
         <div class="dungeons-title" v-else>当前副本：lv{{dungeons.lv}}_{{dungeons.difficultyName}}</div>
         <div class="jjj">
-          <div class="dungeons-dps" v-if="dungeons.type=='endless'">推荐DPS：???</div>
-          <div class="dungeons-dps" v-else>推荐DPS：{{dungeons.needDPS}}</div>
+          <div class="dungeons-dps" v-if="dungeons.type=='endless'">DPS：???</div>
+          <div class="dungeons-dps" v-else>DPS：{{dungeons.needDPS.toLocaleString('en-US')}}</div>
           <div class="dungeons-lv" v-if="dungeons.type=='endless'">无尽层数:{{dungeons.lv}}</div>
           <div class="dungeons-lv" v-else>副本等级:{{dungeons.lv}}</div>
         </div>
-        <div class="jjj">
-          <div class="dungeons-difficulty">当前副本难度等级：{{dungeons.difficultyName}}</div>
-        </div>
         <div class="info" v-if="dungeons.type=='endless'">
-          <p>- 无尽难度大致为层数*5的极难副本难度</p>
-          <p>- 无尽模式下仅能获得金币，将不会有装备</p>
+          <p>- 无尽难度为层数*5的极难副本难度</p>
+          <p>- 无尽模式下仅能获得金币，没有装备</p>
           <p>- 无尽模式挑战成功会回满血</p>
         </div>
         <div class="info" v-else>
@@ -197,19 +195,17 @@
           <p>- 困难和极难副本仅能挑战一次</p>
         </div>
         <div class="handle">
-          <div v-if="dungeons.type!='endless'">
+          <div v-if="dungeons.type!='endless'" class="handle-column">
             <label v-if="dungeons.difficulty==1"><input type="checkbox" name="" v-model="reChallenge"> 重复挑战</label>
           </div>
-          <div class="handle-column" style="display:flex;flex-direction:column" v-else>
-            <p><input type="checkbox" name="" v-model="upEChallenge"> 向上挑战</p>
-            <p><input type="checkbox" name="" v-model="reEChallenge"> 重复挑战</p>
+          <div v-else class="handle-column">
+            <label><input type="checkbox" name="" v-model="upEChallenge"> 向上挑战</label>
+            <label><input type="checkbox" name="" v-model="reEChallenge"> 重复挑战</label>
           </div>
-          <div>
-            <div :class="(attribute.CURHP.value / attribute.MAXHP.value < 0.5) ? 'red' : ''">
-              {{(attribute.CURHP.value / attribute.MAXHP.value * 100).toFixed(0)}}% HP
-            </div>
-            <div class="dungeons-btn" @click="eventBegin()">开始挑战</div>
+          <div :class="(attribute.CURHP.value / attribute.MAXHP.value < 0.5) ? 'red' : ''">
+            {{(attribute.CURHP.value / attribute.MAXHP.value * 100).toFixed(0)}}% HP
           </div>
+          <div class="dungeons-btn" @click="eventBegin()">开始挑战</div>
         </div>
       </div>
       <div class="event-icon" :class="{'low-level':v.difficulty==1,'h-level':v.difficulty==2,'boss':v.difficulty==3}" v-for="(v,k) in dungeonsArr" :key="k" @click="showDungeonsInfo(k)" v-show='!inDungeons' :style="{top: v.top,left: v.left}">
@@ -1519,8 +1515,6 @@ a {
   padding: 0.1rem;
   .info {
     padding: 0.1rem 0.2rem;
-    font-size: 0.12rem;
-    color: #999;
   }
   .dungeons-close {
     cursor: pointer;
@@ -1552,7 +1546,7 @@ a {
   .handle {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     white-space: nowrap;
     font-size: 0.14rem;
     margin-top: 0.1rem;
@@ -1569,13 +1563,12 @@ a {
       height: 0.2rem;
       min-height: 15px;
       min-width: 15px;
-      margin-right: 0.05rem;
     }
   }
   .handle-column {
     display: flex;
     flex-direction: column;
-    p {
+    label {
       display: flex;
       align-items: center;
     }
@@ -1604,7 +1597,6 @@ a {
     color: #999;
   }
   .dungeons-btn {
-    margin: 0.2rem 0.3rem;
     padding: 0.1rem 0.3rem;
     cursor: pointer;
     color: #fff;

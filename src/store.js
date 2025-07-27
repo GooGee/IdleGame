@@ -347,14 +347,14 @@ export default new Vuex.Store({
                         break;
                 }
             })
-            attribute.ATK.showValue = parseInt(attribute.ATK.value) + ` * ${(100 + ATKPERCENT).toFixed(1)}%`
+            attribute.ATK.showValue = parseInt(attribute.ATK.value).toLocaleString('en-US') + ` * ${(100 + ATKPERCENT).toFixed(1)}%`
             attribute.ATK.value = parseInt(attribute.ATK.value * (100 + ATKPERCENT) / 100)
-            attribute.DEF.showValue = parseInt(attribute.DEF.value) + ` * ${(100 + DEFPERCENT).toFixed(1)}%`
+            attribute.DEF.showValue = parseInt(attribute.DEF.value).toLocaleString('en-US') + ` * ${(100 + DEFPERCENT).toFixed(1)}%`
             attribute.DEF.value = parseInt(attribute.DEF.value * (100 + DEFPERCENT) / 100)
             attribute.MAXHP.value += 200
-            attribute.MAXHP.showValue = parseInt(attribute.MAXHP.value) + ` * ${(100 + HPPERCENT).toFixed(1)}%`
+            attribute.MAXHP.showValue = parseInt(attribute.MAXHP.value).toLocaleString('en-US') + ` * ${(100 + HPPERCENT).toFixed(1)}%`
             attribute.MAXHP.value = parseInt(attribute.MAXHP.value * (100 + HPPERCENT) / 100)
-            attribute.CRIT.showValue = attribute.CRIT.value.toFixed(0) + '%'
+            attribute.CRIT.showValue = attribute.CRIT.value.toFixed(1) + '%'
             attribute.BLOC.value = parseInt(attribute.BLOC.value * (100 + BLOCPERCENT) / 100)
             attribute.BLOC.showValue = '+' + (attribute.BLOC.value)
             attribute.EVA.value = ((1 - HitChance) * 100).toFixed(1)
