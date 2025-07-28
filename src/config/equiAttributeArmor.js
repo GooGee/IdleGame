@@ -1,3 +1,5 @@
+import { setEntryzz } from "../service/factory"
+
 /**
  * 护甲属性配置文件
  * @author couy
@@ -204,5 +206,6 @@ export const equiAttributeArmor = {
         }
     },
     methods: {
+        setEntryzz,
     }
 };

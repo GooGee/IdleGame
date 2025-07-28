@@ -1,3 +1,52 @@
+import { equiAttributeArmor } from "../config/equiAttributeArmor"
+import { equiAttributeNeck } from "../config/equiAttributeNeck"
+import { equiAttributeRing } from "../config/equiAttributeRing"
+import { equiAttributeWeapon } from "../config/equiAttributeWeapon"
+
+const Bpzz = [equiAttributeArmor, equiAttributeNeck, equiAttributeRing, equiAttributeWeapon]
+
+/**
+ * 
+ * @param {Equipment} equipment 
+ */
+export function setEntryzz(equipment) {
+    equipment.type.entry.map(item => {
+        switch (item.type) {
+            case 'ATK':
+                var random = parseInt(equipment.lv * item.valCoefficient + (Math.random() * equipment.lv / 2 + 1))
+                random = parseInt(random * equipment.quality.qualityCoefficient)
+                item.value = random
+                item.showVal = '+' + random
+                break;
+            case 'DEF':
+                var random = parseInt((equipment.lv * item.valCoefficient + (Math.random() * equipment.lv / 2 + 1)))
+                random = parseInt(random * equipment.quality.qualityCoefficient)
+                item.value = random
+                item.showVal = '+' + random
+                break;
+            case 'HP':
+                var random = parseInt((equipment.lv * item.valCoefficient * 10 + (Math.random() * equipment.lv / 2 + 1)))
+                random = parseInt(random * equipment.quality.qualityCoefficient)
+                item.value = random
+                item.showVal = '+' + random
+                break;
+            case 'CRIT':
+                var random = parseInt(Math.random() * 5 + 10)
+                random = parseInt(random * equipment.quality.qualityCoefficient)
+                item.value = random
+                item.showVal = '+' + random + '%'
+                break;
+            case 'CRITDMG':
+                var random = equipment.lv * item.valCoefficient / 2 + 1
+                random = parseInt(random * equipment.quality.qualityCoefficient)
+                item.value = random
+                item.showVal = '+' + random + '%'
+                break;
+            default:
+                break;
+        }
+    })
+}
 
 /**
  * @param {number} level  

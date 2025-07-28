@@ -66,14 +66,6 @@ export default {
       weapon.itemType = 'weapon'
       weapon.quality = qualityIndex > -1 ? this.quality[qualityIndex] : this.createQua()
       weapon.lv = lv || this.createLv()
-      weapon.type = this.createType(weapon)
-      weapon.extraEntry = this.createExtraEntry(weapon)
-      return JSON.stringify(weapon)
-    },
-    createLv(Max) {
-      return parseInt(Math.random() * (Max || 39)) + 1
-    },
-    createType(weapon) {
       if (weapon.quality.name == '神器') {
         var index = Math.floor((Math.random() * this.uniqueCategory.length));
         var type = this.uniqueCategory[index], lv = weapon.lv
@@ -81,54 +73,13 @@ export default {
         var index = Math.floor((Math.random() * this.category.length));
         var type = this.category[index], lv = weapon.lv
       }
-
-      type.entry.map(item => {
-        switch (item.type) {
-          case 'ATK':
-            var random = parseInt(lv * item.valCoefficient + (Math.random() * lv / 2 + 1))
-            random = parseInt(random * weapon.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-          case 'DEF':
-            var random = parseInt((lv * item.valCoefficient + (Math.random() * lv / 2 + 1)))
-            random = parseInt(random * weapon.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-          case 'HP':
-            var random = parseInt((lv * item.valCoefficient * 10 + (Math.random() * lv / 2 + 1)))
-            random = parseInt(random * weapon.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-          case 'CRIT':
-            var random = parseInt(Math.random() * 5 + 10)
-            random = parseInt(random * weapon.quality.qualityCoefficient)
-            item.value = random
-            item.showVal = '+' + random + '%'
-            break;
-          case 'CRITDMG':
-            var random = lv * item.valCoefficient / 2 + 1
-            random = parseInt(random * weapon.quality.qualityCoefficient)
-            item.value = random
-            item.showVal = '+' + random + '%'
-            break;
-          case 'BLOC':
-            var random = parseInt((lv * 0.2 * 2 + (Math.random() * lv / 2 + 1)))
-            random = parseInt(random * weapon.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-          default:
-            break;
-        }
-      })
-      return type
+      weapon.type = type
+      this.setEntryzz(weapon)
+      weapon.extraEntry = this.createExtraEntry(weapon)
+      return JSON.stringify(weapon)
+    },
+    createLv(Max) {
+      return parseInt(Math.random() * (Max || 39)) + 1
     },
     createQua() {
       var index = Math.floor((Math.random() * this.qualityProbability.length));

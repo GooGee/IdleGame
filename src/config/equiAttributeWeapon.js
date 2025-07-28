@@ -1,3 +1,5 @@
+import { setEntryzz } from "../service/factory"
+
 /**
  * 武器属性配置文件
  * @author couy
@@ -218,5 +220,6 @@ export const equiAttributeWeapon = {
         }
     },
     methods: {
+        setEntryzz,
     }
 };

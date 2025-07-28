@@ -64,14 +64,6 @@ export default {
       neck.itemType = 'neck'
       neck.quality = qualityIndex > -1 ? this.qualityNeck[qualityIndex] : this.createQua()
       neck.lv = lv || this.createLv()
-      neck.type = this.createType(neck)
-      neck.extraEntry = this.createExtraEntry(neck)
-      return JSON.stringify(neck)
-    },
-    createLv(Max) {
-      return parseInt(Math.random() * (Max || 39)) + 1
-    },
-    createType(neck) {
       if (neck.quality.name == '神器') {
         var index = Math.floor((Math.random() * this.uniqueCategoryNeck.length));
         var type = this.uniqueCategoryNeck[index], lv = neck.lv
@@ -79,54 +71,13 @@ export default {
         var index = Math.floor((Math.random() * this.categoryNeck.length));
         var type = this.categoryNeck[index], lv = neck.lv
       }
-      type.entry.map(item => {
-        switch (item.type) {
-          case 'ATK':
-            var random = parseInt(lv * item.valCoefficient + (Math.random() * lv / 2 + 1))
-            random = parseInt(random * neck.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-          case 'DEF':
-            var random = parseInt((lv * item.valCoefficient + (Math.random() * lv / 2 + 1)))
-            random = parseInt(random * neck.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-          case 'HP':
-            var random = parseInt((lv * item.valCoefficient * 10 + (Math.random() * lv / 2 + 1)))
-            random = parseInt(random * neck.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-          case 'CRIT':
-            var random = parseInt(Math.random() * 5 + 5)
-            random = parseInt(random * neck.quality.qualityCoefficient * item.valCoefficient)
-            item.value = random
-            item.showVal = '+' + random + '%'
-            break;
-          case 'CRITDMG':
-            var random = lv * item.valCoefficient / 2 + 1
-            random = parseInt(random * neck.quality.qualityCoefficient)
-            item.value = random
-            item.showVal = '+' + random + '%'
-            break;
-          case 'BLOC':
-            var random = parseInt((lv * 0.2 * 2 + (Math.random() * lv / 2 + 1)))
-            random = parseInt(random * neck.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-            break;
-          default:
-            break;
-        }
-      })
-      return type
+      neck.type = type
+      this.setEntryzz(neck)
+      neck.extraEntry = this.createExtraEntry(neck)
+      return JSON.stringify(neck)
+    },
+    createLv(Max) {
+      return parseInt(Math.random() * (Max || 39)) + 1
     },
     createQua() {
       var index = Math.floor((Math.random() * this.qualityProbability.length));

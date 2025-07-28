@@ -1,3 +1,5 @@
+import { setEntryzz } from "../service/factory"
+
 /**
  * 戒指属性配置文件
  * @author couy
@@ -170,5 +172,6 @@ export const equiAttributeRing = {
         }
     },
     methods: {
+        setEntryzz,
     }
 };

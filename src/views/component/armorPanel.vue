@@ -64,14 +64,6 @@ export default {
       armor.itemType = 'armor'
       armor.quality = qualityIndex > -1 ? this.qualityArmor[qualityIndex] : this.createQua()
       armor.lv = lv || this.createLv()
-      armor.type = this.createType(armor)
-      armor.extraEntry = this.createExtraEntry(armor)
-      return JSON.stringify(armor)
-    },
-    createLv(Max) {
-      return parseInt(Math.random() * (Max || 39)) + 1
-    },
-    createType(armor) {
       if (armor.quality.name == '神器') {
         var index = Math.floor((Math.random() * this.uniqueCategoryArmor.length));
         var type = this.uniqueCategoryArmor[index], lv = armor.lv
@@ -79,53 +71,13 @@ export default {
         var index = Math.floor((Math.random() * this.categoryArmor.length));
         var type = this.categoryArmor[index], lv = armor.lv
       }
-      type.entry.map(item => {
-        switch (item.type) {
-          case 'ATK':
-            var random = parseInt(lv * item.valCoefficient + (Math.random() * lv / 2 + 1))
-            random = parseInt(random * armor.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-          case 'DEF':
-            var random = parseInt((lv * item.valCoefficient + (Math.random() * lv / 2 + 1)))
-            random = parseInt(random * armor.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-          case 'HP':
-            var random = parseInt((lv * item.valCoefficient * 10 + (Math.random() * lv / 2 + 1)))
-            random = parseInt(random * armor.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-          case 'CRIT':
-            var random = parseInt(Math.random() * 5 + 5)
-            random = parseInt(random * armor.quality.qualityCoefficient)
-            item.value = random
-            item.showVal = '+' + random + '%'
-            break;
-          case 'CRITDMG':
-            var random = lv * item.valCoefficient / 2 + 1
-            random = parseInt(random * armor.quality.qualityCoefficient)
-            item.value = random
-            item.showVal = '+' + random + '%'
-            break;
-          case 'BLOC':
-            var random = parseInt((lv * 1.3 + (Math.random() * lv / 2 + 1)))
-            random = parseInt(random * armor.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-          default:
-            break;
-        }
-      })
-      return type
+      armor.type = type
+      this.setEntryzz(armor)
+      armor.extraEntry = this.createExtraEntry(armor)
+      return JSON.stringify(armor)
+    },
+    createLv(Max) {
+      return parseInt(Math.random() * (Max || 39)) + 1
     },
     createQua() {
       var index = Math.floor((Math.random() * this.qualityProbability.length));

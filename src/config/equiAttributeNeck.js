@@ -1,3 +1,5 @@
+import { setEntryzz } from "../service/factory"
+
 /**
  * 项链属性配置文件
  * @author couy
@@ -170,5 +172,6 @@ export const equiAttributeNeck = {
         }
     },
     methods: {
+        setEntryzz,
     }
 };

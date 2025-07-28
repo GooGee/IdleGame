@@ -64,14 +64,6 @@ export default {
       ring.itemType = 'ring'
       ring.quality = qualityIndex > -1 ? this.quality[qualityIndex] : this.createQua()
       ring.lv = lv || this.createLv()
-      ring.type = this.createType(ring)
-      ring.extraEntry = this.createExtraEntry(ring)
-      return JSON.stringify(ring)
-    },
-    createLv(Max) {
-      return parseInt(Math.random() * (Max || 39)) + 1
-    },
-    createType(ring) {
       if (ring.quality.name == '神器') {
         var index = Math.floor((Math.random() * this.uniqueCategory.length));
         var type = this.uniqueCategory[index], lv = ring.lv
@@ -79,46 +71,13 @@ export default {
         var index = Math.floor((Math.random() * this.category.length));
         var type = this.category[index], lv = ring.lv
       }
-      type.entry.map(item => {
-        switch (item.type) {
-          case 'ATK':
-            var random = parseInt(lv * item.valCoefficient + (Math.random() * lv / 2 + 1))
-            random = parseInt(random * ring.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-          case 'DEF':
-            var random = parseInt((lv * item.valCoefficient + (Math.random() * lv / 2 + 1)))
-            random = parseInt(random * ring.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-          case 'HP':
-            var random = parseInt((lv * item.valCoefficient * 10 + (Math.random() * lv / 2 + 1)))
-            random = parseInt(random * ring.quality.qualityCoefficient)
-            random = random || 1
-            item.value = random
-            item.showVal = '+' + random
-            break;
-          case 'CRIT':
-            var random = parseInt(Math.random() * 5 + 5)
-            random = parseInt(random * ring.quality.qualityCoefficient * item.valCoefficient)
-            item.value = random
-            item.showVal = '+' + random + '%'
-            break;
-          case 'CRITDMG':
-            var random = lv * item.valCoefficient / 2 + 1
-            random = parseInt(random * ring.quality.qualityCoefficient)
-            item.value = random
-            item.showVal = '+' + random + '%'
-            break;
-          default:
-            break;
-        }
-      })
-      return type
+      ring.type = type
+      this.setEntryzz(ring)
+      ring.extraEntry = this.createExtraEntry(ring)
+      return JSON.stringify(ring)
+    },
+    createLv(Max) {
+      return parseInt(Math.random() * (Max || 39)) + 1
     },
     createQua() {
       var index = Math.floor((Math.random() * this.qualityProbability.length));
