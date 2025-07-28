@@ -117,17 +117,20 @@ export default {
         name: '普通',
         qualityCoefficient: 1,
         probability: '0.55',
-        color: '#fff', extraEntryNum: 2,
+        color: '#fff',
+        extraEntryNum: 2,
       }, {
         name: '精良',
         qualityCoefficient: 1.5,
         probability: '0.15',
-        color: '#ff00ff', extraEntryNum: 3,
+        color: '#ff00ff',
+        extraEntryNum: 3,
       }, {
         name: '传说',
         qualityCoefficient: 2,
         probability: '0.05',
-        color: '#f78918', extraEntryNum: 4,
+        color: '#f78918',
+        extraEntryNum: 4,
       }],
     };
   },
