@@ -7,6 +7,7 @@ Vue.use(Vuex)
 
 var initial_weapon = {
     "lv": 1,
+    enchantlvl: 0,
     itemType: 'weapon',
     "quality": {
         name: '破旧',
@@ -36,6 +37,7 @@ var initial_weapon = {
 },
     initial_armor = {
         "lv": 1,
+        enchantlvl: 0,
         itemType: 'armor',
         "quality": {
             name: '破旧',
@@ -65,6 +67,7 @@ var initial_weapon = {
     },
     initial_neck = {
         "lv": 1,
+        enchantlvl: 0,
         itemType: 'neck',
         "quality": {
             name: '破旧',
@@ -94,6 +97,7 @@ var initial_weapon = {
     },
     initial_ring = {
         "lv": 1,
+        enchantlvl: 0,
         itemType: 'ring',
         "quality": {
             name: '破旧',

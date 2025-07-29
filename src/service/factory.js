@@ -10,6 +10,8 @@ const Bpzz = [equiAttributeArmor, equiAttributeNeck, equiAttributeRing, equiAttr
  * @param {Equipment} equipment 
  */
 export function setEntryzz(equipment) {
+    equipment.enchantlvl = 0
+
     equipment.type.entry.map(item => {
         switch (item.type) {
             case 'ATK':
@@ -25,7 +27,7 @@ export function setEntryzz(equipment) {
                 item.showVal = '+' + random
                 break;
             case 'HP':
-                var random = parseInt((equipment.lv * item.valCoefficient * 10 + (Math.random() * equipment.lv / 2 + 1)))
+                var random = parseInt((equipment.lv * item.valCoefficient * 5 + (Math.random() * equipment.lv / 2 + 1)))
                 random = parseInt(random * equipment.quality.qualityCoefficient)
                 item.value = random
                 item.showVal = '+' + random

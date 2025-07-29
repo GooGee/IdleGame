@@ -1,5 +1,6 @@
 interface Equipment {
     lv: number
+    enchantlvl: number
     itemType: string
     quality: Quality
     type: EquipmentType
