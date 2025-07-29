@@ -112,10 +112,10 @@ var initial_weapon = {
             "iconSrc": "./icons/Ac_10.png",
             "entry": [{
                 "valCoefficient": 0.9,
-                "value": 20,
-                "showVal": "+20",
-                "type": "HP",
-                "name": "生命值"
+                "type": "CRIT",
+                "value": 10,
+                "showVal": "+10%",
+                "name": "暴击率"
             }]
         },
         "extraEntry": [{
@@ -148,7 +148,7 @@ export default new Vuex.Store({
         },
         reincarnation: {
             count: 0,
-            point: 10,
+            point: 0,
         },
         playerAttribute: {
             lv: 1,

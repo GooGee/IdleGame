@@ -344,16 +344,12 @@ export default {
         if (Math.random() < odds) {
           const level = parseInt(lv + Math.random() * 11 + 5)
           var random = Math.random()
-          if (random < 0.25) {
+          if (random < 0.33) {
             var b = this.findBrothersComponents(this, 'weaponPanel', false)[0]
             var item = b.createNewItem(4, level)
             items.push(JSON.parse(item))
-          } else if (random < 0.5) {
+          } else if (random < 0.66) {
             var b = this.findBrothersComponents(this, 'armorPanel', false)[0]
-            var item = b.createNewItem(4, level)
-            items.push(JSON.parse(item))
-          }else if (random < 0.75) {
-            var b = this.findBrothersComponents(this, 'ringPanel', false)[0]
             var item = b.createNewItem(4, level)
             items.push(JSON.parse(item))
           } else {
@@ -385,15 +381,12 @@ export default {
       //获得装备时
       if (equipQua != -1) {
         // this.createEquip(equipQua,lv)
-        var index = Math.floor((Math.random() * 4));
+        var index = Math.floor((Math.random() * 3));
         if (index == 0) {
           var b = this.findBrothersComponents(this, 'weaponPanel', false)[0]
           var item = b.createNewItem(equipQua, lv)
         } else if (index == 1) {
           var b = this.findBrothersComponents(this, 'armorPanel', false)[0]
-          var item = b.createNewItem(equipQua, lv)
-        }else if (index == 2) {
-          var b = this.findBrothersComponents(this, 'ringPanel', false)[0]
           var item = b.createNewItem(equipQua, lv)
         } else {
           var b = this.findBrothersComponents(this, 'neckPanel', false)[0]

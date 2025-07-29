@@ -213,15 +213,12 @@ export default {
       }
       if (equipQua != -1) {
         // this.createEquip(equipQua,lv)
-        var index = Math.floor(Math.random() * 4);
+        var index = Math.floor(Math.random() * 3);
         if (index == 0) {
           var b = this.findBrothersComponents(this, "weaponPanel", false)[0];
           var item = b.createNewItem(equipQua, lv);
         } else if (index == 1) {
           var b = this.findBrothersComponents(this, "armorPanel", false)[0];
-          var item = b.createNewItem(equipQua, lv);
-        } else if (index == 2) {
-          var b = this.findBrothersComponents(this, "ringPanel", false)[0];
           var item = b.createNewItem(equipQua, lv);
         } else {
           var b = this.findBrothersComponents(this, "neckPanel", false)[0];

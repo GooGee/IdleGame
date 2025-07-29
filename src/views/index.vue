@@ -151,14 +151,6 @@
           <div class='name' :style="{color:playerNeck.quality.color}">{{playerNeck.type.name}} {{playerNeck.enchantlvl?'(+'+playerNeck.enchantlvl+')':''}}</div>
         </div>
       </div>
-      <div class="ring" @mouseover="showItemInfo($event,'ring',playerRing,false)" @mouseleave="closeItemInfo">
-        <div class="title" v-if="playerRing">
-          <div class='icon' :class="{'red-flash':playerRing.enchantlvl>=13,unique:playerRing.quality.name=='神器'}" :style="{'box-shadow':'inset 0 0 7px 2px '+playerRing.quality.color}">
-            <img :src="playerRing.type.iconSrc" alt="">
-          </div>
-          <div class='name' :style="{color:playerRing.quality.color}">{{playerRing.type.name}} {{playerRing.enchantlvl?'(+'+playerRing.enchantlvl+')':''}}</div>
-        </div>
-      </div>
     </div>
     <div class="sys-info">
       <div class="clear" @click="clearSysInfo">清除信息</div>
@@ -311,8 +303,6 @@
       <weaponPanel :item="playerWeapon" v-show="weaponShow&&needComparison"></weaponPanel>
       <armorPanel :item="armor" v-show="armorShow"></armorPanel>
       <armorPanel :item="playerArmor" v-show="armorShow&&needComparison"></armorPanel>
-      <ringPanel :item="ring" v-show="ringShow"></ringPanel>
-      <ringPanel :item="playerRing" v-show="ringShow&&needComparison"></ringPanel>
       <neckPanel :item="neck" v-show="neckShow"></neckPanel>
       <neckPanel :item="playerNeck" v-show="neckShow&&needComparison"></neckPanel>
       <div class="item-close" @click="closeItemInfo" v-if="(armorShow||ringShow||weaponShow||neckShow)&&needComparison&&operatorSchemaIsMobile">
