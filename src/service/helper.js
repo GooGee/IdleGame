@@ -4,6 +4,63 @@ const N_1m = N_1k * N_1k
 
 /**
  * 
+ * @param {object[]} attributezz 
+ * @returns 
+ */
+export function caculateAttribute(attributezz) {
+    const data = {
+        'HP': 0,
+        'ATK': 0,
+        'CRIT': 0,
+        'CRITDMG': 0,
+        'DEF': 0,
+        'BLOC': 0,
+        'MOVESPEED': 0,
+        'BATTLESPEED': 0,
+    }
+    attributezz.map(item => {
+        switch (item.name) {
+            case 'HP':
+                item.currentValue = item.point * 10 + item.oldValue
+                data.HP = item.currentValue
+                break;
+            case 'ATK':
+                item.currentValue = item.point * 3 + item.oldValue
+                data.ATK = item.currentValue
+                break;
+            case 'CRIT':
+                item.currentValue = Number((item.point * 0.5).toFixed(1)) + item.oldValue
+                data.CRIT = item.currentValue
+                break;
+            case 'CRITDMG':
+                item.currentValue = item.point * 1 + item.oldValue
+                data.CRITDMG = item.currentValue
+                break;
+            case 'DEF':
+                item.currentValue = item.point * 2 + item.oldValue
+                data.DEF = item.currentValue
+                break;
+            case 'BLOC':
+                item.currentValue = item.point * 2 + item.oldValue
+                data.BLOC = item.currentValue
+                break;
+            case 'MOVESPEED':
+                item.currentValue = Number((item.point * 0.01).toFixed(2)) + item.oldValue
+                data.MOVESPEED = -((item.point + item.hasPoint) * 0.06)
+                break;
+            case 'BATTLESPEED':
+                item.currentValue = Number((item.point * 0.01).toFixed(2)) + item.oldValue
+                data.BATTLESPEED = -((item.point + item.hasPoint) * 3)
+                break;
+            default:
+                break;
+        }
+    })
+    return data
+}
+
+/**
+ * 
  * @param {Player} player 
  * @returns 
  */
