@@ -16,7 +16,7 @@
       <div class="panel">
         <div class="item" v-for="(v,k) in attr" :key="k">
           <p>
-            <img :src="v.img"><span>{{v.showName}}：+{{v.currentValue.toFixed(2)}}{{v.unity}}</span>
+            <img :src="v.img"><span>{{v.showName}}：+{{v.currentValue.toFixed(1)}}{{v.unity}}</span>
           </p>
           <div class="group">
             <div class="button" @click="subtract(v,$event)" @mousedown="subtractDown(v,$event)" @mouseup="subtractUp(v,$event)">-</div>
@@ -89,42 +89,7 @@ export default {
           unity: '',
           currentValue: 0,
           maxPoint: null,
-        }, {
-          name: 'BLOC',
-          showName: '格挡',
-          img: require('../../assets/icons/S_BLOC.png'),
-          oldValue: 0,
-          point: 0, unity: '',
-          currentValue: 0,
-          maxPoint: null,
         },
-        // {
-        //   name: 'GOLD',
-        //   showName: '金币获取倍率',
-        //   img: require('../../assets/icons/S_BLOC.png'),
-        //   oldValue: 0,
-        //   point: 0, unity: '',
-        //   currentValue: 0,
-        //   maxPoint: null,
-        // },
-        // {
-        //     name: 'MOVESPEED',
-        //     showName: '副本行进速度',
-        //     img: require('../../assets/icons/S_EVA.png'),
-        //     oldValue: 0,
-        //     point: 0, unity: 'X',
-        //     currentValue: 0,
-        //     maxPoint: 500,
-        // },
-        // {
-        //     name: 'BATTLESPEED',
-        //     showName: '副本战斗速度',
-        //     img: require('../../assets/icons/S_EVA.png'),
-        //     oldValue: 0,
-        //     point: 0, unity: 'X',
-        //     currentValue: 0,
-        //     maxPoint: 500,
-        // },
       ]
     };
   },
@@ -275,7 +240,7 @@ export default {
       this.caculateAttr()
     },
     caculateAttr() {
-      caculateAttribute(this.attr)
+      const data = caculateAttribute(this.attr)
       this.$store.commit('set_player_rein_attribute', data)
     },
 

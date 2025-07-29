@@ -25,32 +25,20 @@ export function caculateAttribute(attributezz) {
                 data.HP = item.currentValue
                 break;
             case 'ATK':
-                item.currentValue = item.point * 3 + item.oldValue
+                item.currentValue = item.point * 5 + item.oldValue
                 data.ATK = item.currentValue
                 break;
             case 'CRIT':
-                item.currentValue = Number((item.point * 0.5).toFixed(1)) + item.oldValue
+                item.currentValue = item.point * 1 + item.oldValue
                 data.CRIT = item.currentValue
                 break;
             case 'CRITDMG':
-                item.currentValue = item.point * 1 + item.oldValue
+                item.currentValue = item.point * 3 + item.oldValue
                 data.CRITDMG = item.currentValue
                 break;
             case 'DEF':
-                item.currentValue = item.point * 2 + item.oldValue
+                item.currentValue = item.point * 5 + item.oldValue
                 data.DEF = item.currentValue
-                break;
-            case 'BLOC':
-                item.currentValue = item.point * 2 + item.oldValue
-                data.BLOC = item.currentValue
-                break;
-            case 'MOVESPEED':
-                item.currentValue = Number((item.point * 0.01).toFixed(2)) + item.oldValue
-                data.MOVESPEED = -((item.point + item.hasPoint) * 0.06)
-                break;
-            case 'BATTLESPEED':
-                item.currentValue = Number((item.point * 0.01).toFixed(2)) + item.oldValue
-                data.BATTLESPEED = -((item.point + item.hasPoint) * 3)
                 break;
             default:
                 break;
