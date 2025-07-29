@@ -2,18 +2,23 @@
 const N_1k = 1000
 const N_1m = N_1k * N_1k
 
-export function calculateGainingPoint(playerAttribute) {
-    let sum = playerAttribute.lv < 20 ? 0 : Math.floor((playerAttribute.lv - 20) ** 1.2)
+/**
+ * 
+ * @param {Player} player 
+ * @returns 
+ */
+export function calculateGainingPoint(player) {
+    let sum = player.lv < 20 ? 0 : Math.floor((player.lv - 20) ** 1.2)
 
-    if (playerAttribute.GOLD >= N_1m) {
-        sum += playerAttribute.GOLD / N_1m
+    if (player.GOLD >= N_1m) {
+        sum += player.GOLD / N_1m
     }
 
     const warezz = [
-        playerAttribute.armor,
-        playerAttribute.neck,
-        playerAttribute.ring,
-        playerAttribute.weapon,
+        player.armor,
+        player.neck,
+        player.ring,
+        player.weapon,
     ]
 
     warezz.forEach(function (item) {
@@ -29,7 +34,7 @@ export function calculateGainingPoint(playerAttribute) {
 
 /**
  * 
- * @param {object} item 
+ * @param {Equipment} item 
  * @param {boolean} ignoreUpgrade 
  * @returns 
  */
@@ -50,7 +55,7 @@ export function calculatePrice(item, ignoreUpgrade = true) {
 
 /**
  * 
- * @param {object} item 
+ * @param {Equipment} item 
  * @param {boolean} ignoreUpgrade 
  * @returns 
  */

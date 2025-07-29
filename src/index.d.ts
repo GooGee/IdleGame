@@ -21,6 +21,17 @@ interface EquipmentType {
     entry: Entry[]
 }
 
+interface Player {
+    lv: number
+    GOLD: number
+    healthRecoverySpeed: number
+    endlessLv: number
+    armor: Equipment
+    neck: Equipment
+    ring: Equipment
+    weapon: Equipment
+}
+
 interface Quality {
     name: string
     color: string
