@@ -71,7 +71,7 @@ export default {
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.7);
   background: rgba(0, 0, 0, 0.7);
   color: #fff;
-  width: 3rem;
+  width: 4rem;
   .title {
     display: flex;
     position: relative;

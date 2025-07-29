@@ -113,15 +113,15 @@ var initial_weapon = {
             "entry": [{
                 "valCoefficient": 0.9,
                 "type": "CRIT",
-                "value": 10,
-                "showVal": "+10%",
+                "value": 0,
+                "showVal": "+0%",
                 "name": "暴击率"
             }]
         },
         "extraEntry": [{
             "type": "CRIT",
-            "value": 10,
-            "showVal": "+10%",
+            "value": 0,
+            "showVal": "+0%",
             "name": "暴击率"
         }]
     };
@@ -137,10 +137,10 @@ export default new Vuex.Store({
             msg: "菜单栏可以刷新当前世界副本。"
         }],
         reincarnationAttribute: {
-            'HP': 0,
+            'HP': 200,
             'ATK': 0,
-            'CRIT': 0,
-            'CRITDMG': 0,
+            'CRIT': 10,
+            'CRITDMG': 150,
             'DEF': 0,
             'BLOC': 0,
             'MOVESPEED': 0,
@@ -355,7 +355,7 @@ export default new Vuex.Store({
             attribute.ATK.value = parseInt(attribute.ATK.value * (100 + ATKPERCENT) / 100)
             attribute.DEF.showValue = parseInt(attribute.DEF.value).toLocaleString('en-US') + ` * ${(100 + DEFPERCENT).toFixed(1)}%`
             attribute.DEF.value = parseInt(attribute.DEF.value * (100 + DEFPERCENT) / 100)
-            attribute.MAXHP.value += 200
+            // attribute.MAXHP.value += 200
             attribute.MAXHP.showValue = parseInt(attribute.MAXHP.value).toLocaleString('en-US') + ` * ${(100 + HPPERCENT).toFixed(1)}%`
             attribute.MAXHP.value = parseInt(attribute.MAXHP.value * (100 + HPPERCENT) / 100)
             attribute.CRIT.showValue = attribute.CRIT.value.toFixed(1) + '%'
@@ -374,7 +374,7 @@ export default new Vuex.Store({
             }
 
             // 初始暴击伤害150%
-            attribute.CRITDMG.value += 150
+            // attribute.CRITDMG.value += 150
             attribute.CRITDMG.showValue = attribute.CRITDMG.value.toFixed(0) + '%'
 
             var atk = attribute.ATK.value,

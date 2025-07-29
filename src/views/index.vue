@@ -98,7 +98,6 @@
           </template>
           <template v-slot:tip>
             <p class="info">* 暴击伤害</p>
-            <p class="info">* 初始为150%</p>
           </template>
         </cTooltip>
 

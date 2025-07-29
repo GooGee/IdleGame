@@ -77,10 +77,10 @@ export const equiAttributeNeck = {
                     name: '生命值'
                 }, {
                     valCoefficient: 1.5,
-                    value: 8,
-                    showVal: '+8',
-                    type: 'DEF',
-                    name: '防御力'
+                    value: 11,
+                    showVal: '+11',
+                    type: 'CRITDMG',
+                    name: '暴击伤害'
                 }]
             }, {
                 name: '恶魔血珠',
@@ -94,10 +94,10 @@ export const equiAttributeNeck = {
                     name: '生命值'
                 }, {
                     valCoefficient: 1.8,
-                    value: 8,
-                    showVal: '+8',
-                    type: 'DEF',
-                    name: '防御力'
+                    value: 11,
+                    showVal: '+11',
+                    type: 'CRITDMG',
+                    name: '暴击伤害'
                 },]
             }, {
                 name: '生命之源',
@@ -111,10 +111,10 @@ export const equiAttributeNeck = {
                     name: '生命值'
                 }, {
                     valCoefficient: 1.2,
-                    value: 8,
-                    showVal: '+8',
-                    type: 'DEF',
-                    name: '防御力'
+                    value: 11,
+                    showVal: '+11',
+                    type: 'CRITDMG',
+                    name: '暴击伤害'
                 }]
             }],
             categoryNeck: [
@@ -130,10 +130,10 @@ export const equiAttributeNeck = {
                         name: '生命值'
                     }, {
                         valCoefficient: 0.5,
-                        value: 8,
-                        showVal: '+8',
-                        type: 'DEF',
-                        name: '防御力'
+                        value: 11,
+                        showVal: '+11',
+                        type: 'CRITDMG',
+                        name: '暴击伤害'
                     }]
                 },
                 {
@@ -148,10 +148,10 @@ export const equiAttributeNeck = {
                         name: '生命值'
                     }, {
                         valCoefficient: 1.1,
-                        value: 8,
-                        showVal: '+8',
-                        type: 'DEF',
-                        name: '防御力'
+                        value: 11,
+                        showVal: '+11',
+                        type: 'CRITDMG',
+                        name: '暴击伤害'
                     }]
                 },
                 {
@@ -166,10 +166,10 @@ export const equiAttributeNeck = {
                         name: '生命值'
                     }, {
                         valCoefficient: 1.5,
-                        value: 8,
-                        showVal: '+8',
-                        type: 'DEF',
-                        name: '防御力'
+                        value: 11,
+                        showVal: '+11',
+                        type: 'CRITDMG',
+                        name: '暴击伤害'
                     }]
                 }
             ]

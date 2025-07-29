@@ -27,7 +27,7 @@ export function setEntryzz(equipment) {
                 item.showVal = '+' + random
                 break;
             case 'HP':
-                var random = parseInt((equipment.lv * item.valCoefficient * 5 + (Math.random() * equipment.lv / 2 + 1)))
+                var random = parseInt((equipment.lv * item.valCoefficient * 10 + (Math.random() * equipment.lv / 2 + 1)))
                 random = parseInt(random * equipment.quality.qualityCoefficient)
                 item.value = random
                 item.showVal = '+' + random
@@ -149,7 +149,7 @@ export function makeRandomEntry(level, qualityCoefficient) {
         case 'HPPERCENT':
         case 'CRIT':
         case 'CRITDMG':
-            const percentage = (factor * 15 + 5).toFixed(1)
+            const percentage = (factor * 25 + 5).toFixed(1)
             entry.value = percentage
             entry.showVal = '+' + percentage + '%'
             break;
