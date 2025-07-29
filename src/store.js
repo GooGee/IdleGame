@@ -148,7 +148,7 @@ export default new Vuex.Store({
         },
         reincarnation: {
             count: 0,
-            point: 0,
+            point: 10,
         },
         playerAttribute: {
             lv: 1,

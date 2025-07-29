@@ -36,7 +36,7 @@ export default {
   mixins: [assist],
   data() {
     return {
-      reincarnationPoint: 100,
+      reincarnationPoint: 0,
       reinCount: 0,
       willGetreincarnationPoint: 0,
       subtractTimer1: {},
@@ -137,10 +137,10 @@ export default {
   },
   methods: {
     reincarnationConfirm() {
-      if (this.$store.state.playerAttribute.lv < 30) {
+      if (this.$store.state.playerAttribute.lv < 20) {
         this.$store.commit("set_sys_info", {
           msg: `
-              等级超过lv:30才能转生
+              等级达到lv:20才能转生
             `,
           type: 'warning'
         });

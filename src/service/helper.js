@@ -53,28 +53,13 @@ export function caculateAttribute(attributezz) {
  * @returns 
  */
 export function calculateGainingPoint(player) {
-    let sum = player.lv < 20 ? 0 : Math.floor((player.lv - 20) ** 1.2)
+    let sum = player.GOLD / N_1m
 
-    if (player.GOLD >= N_1m) {
-        sum += player.GOLD / N_1m
+    if (player.lv > 20) {
+        sum += (player.lv - 20) ** 1.5
     }
 
-    const warezz = [
-        player.armor,
-        player.neck,
-        player.ring,
-        player.weapon,
-    ]
-
-    warezz.forEach(function (item) {
-        if (item.lv < 20) {
-            return
-        }
-
-        // sum += ((item.lv - 20) / 10) ** 1.5 * (0.1 * item.enchantlvl ** 1.5 + 1) * item.quality.qualityCoefficient / 3
-    })
-
-    return parseInt(sum)
+    return Math.ceil(sum)
 }
 
 /**
