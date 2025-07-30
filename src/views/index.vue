@@ -248,7 +248,7 @@
         </template>
         <template v-slot:tip>
           <p class="info">* 刷新当前世界副本</p>
-          <p class="info">* 冷却时间：30秒钟</p>
+          <p class="info">* 冷却时间：10秒钟</p>
         </template>
       </cTooltip>
 
@@ -420,7 +420,7 @@ export default {
       dungeons: '',
       dungeonsArr: [],
       dungeonsTime: '', //刷新副本计时器
-      dungeonsTimeO: 30, //刷新副本时间间隔 单位：S
+      dungeonsTimeO: 11, //刷新副本时间间隔 单位：S
       ring: {},
       neck: {},
       armor: {},
@@ -558,7 +558,7 @@ export default {
           if (this.dungeonsTimeO <= 0) {
             clearInterval(this.dungeonsTime)
             this.dungeonsTime = ''
-            this.dungeonsTimeO = 30
+            this.dungeonsTimeO = 11
           }
         }, 1000)
       }

@@ -26,7 +26,7 @@ export default {
       battleComTime: {},
       nextEvent: 1,
       battleTime:1000,
-      moveTime:50,
+      moveTime:100,
       dungeons: {
         battleTime: 1000,
         name: '史莱姆森林',
@@ -90,7 +90,7 @@ export default {
   methods: {
     evenHandle() {
       let startEnent = () => {
-        if (this.left >= this.nextEvent * 100 / this.dungeons.eventNum) {
+        if (this.left + 1 >= this.nextEvent * 100 / this.dungeons.eventNum) {
           this.evenInExecution()
           this.nextEvent++
           if (this.nextEvent <= this.dungeons.eventNum) {
@@ -108,7 +108,7 @@ export default {
           clearInterval(this.pro)
         }
 
-        this.left += 0.5
+        this.left += 0.9
       }
       this.eventBegin()
       this.pro = setInterval(() => {
