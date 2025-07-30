@@ -171,7 +171,7 @@ export function makeDungeon(level = 1, difficulty = 1) {
         id: level + '' + difficulty,
         battleTime: 2000,
         name: 'Lv' + level + '_' + (difficulty == 1 ? '容易' : difficulty == 2 ? '困难' : '极难'),
-        eventNum: '5',
+        eventNum: 3,
         lv: level,
         needDPS: boss.attribute.ATK,
         difficulty: difficulty,
@@ -179,8 +179,6 @@ export function makeDungeon(level = 1, difficulty = 1) {
         top: Math.random() * 70 + 15 + '%',
         left: Math.random() * 70 + 10 + '%',
         eventType: [
-            makeMonster(level, factor),
-            makeMonster(level, factor),
             makeMonster(level, factor),
             makeMonster(level, factor),
             boss,

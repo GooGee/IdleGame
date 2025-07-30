@@ -25,17 +25,18 @@ export default {
       timeOut: {},
       battleComTime: {},
       nextEvent: 1,
-      battleTime:2000,
+      battleTime:1000,
       moveTime:50,
       dungeons: {
-        battleTime: 2000,
+        battleTime: 1000,
         name: '史莱姆森林',
         time: '60',
         id: '1',
-        eventNum: '5',
+        eventNum: 3,
         lv: 1,
         eventType: [{
-          name: '小史莱姆', type: 'monster',
+          name: '小史莱姆', 
+          type: 'monster', 
           eventType: 'battle',
           attribute: {
             HP: 20,
@@ -44,37 +45,13 @@ export default {
           trophy: {
             gold: 30,
             equip: [
-              1, 0, 0, 0
-            ],
-          }
-        }, {
-          name: '小史莱姆', type: 'monster', eventType: 'battle',
-          attribute: {
-            HP: 20,
-            ATK: 1,
-          },
-          trophy: {
-            gold: 30,
-            equip: [
               0.2, 0.1, 0.05, 0
             ],
           }
         }, {
           name: '小史莱姆',
-          type: 'monster', eventType: 'battle',
-          attribute: {
-            HP: 20,
-            ATK: 1,
-          },
-          trophy: {
-            gold: 30,
-            equip: [
-              0.2, 0.1, 0.05, 0
-            ],
-          }
-        }, {
-          name: '小史莱姆',
-          type: 'monster', eventType: 'battle',
+          type: 'monster', 
+          eventType: 'battle',
           attribute: {
             HP: 20,
             ATK: 1,
@@ -87,7 +64,8 @@ export default {
           }
         }, {
           name: '史莱姆王',
-          type: 'boss', eventType: 'battle',
+          type: 'boss', 
+          eventType: 'battle',
           attribute: {
             HP: 40,
             ATK: 2,
@@ -119,12 +97,12 @@ export default {
             this.timeOut = setTimeout(() => {
               this.pro = setInterval(() => {
                 startEnent()
-              }, this.moveTime+this.reincarnationAttribute.MOVESPEED)
-            }, this.battleTime+this.reincarnationAttribute.BATTLESPEED)
+              }, this.moveTime)
+            }, this.battleTime)
           } else {
             setTimeout(() => {
               this.eventEnd()
-            }, this.battleTime+this.reincarnationAttribute.BATTLESPEED)
+            }, this.battleTime)
           }
 
           clearInterval(this.pro)
@@ -135,7 +113,7 @@ export default {
       this.eventBegin()
       this.pro = setInterval(() => {
         startEnent()
-      }, this.moveTime+this.reincarnationAttribute.MOVESPEED)
+      }, this.moveTime)
     },
     eventBegin() {
       this.$store.commit("set_sys_info", {
@@ -165,7 +143,7 @@ export default {
           });
           this.battleComTime = setTimeout(() => {
             this.battleCom(event)
-          }, this.battleTime+this.reincarnationAttribute.BATTLESPEED)
+          }, this.battleTime)
           break;
 
         default:
@@ -492,7 +470,7 @@ export default {
       background: url(../../assets/icons/map/player-s.png);
     }
     .monster {
-      left: 20%;
+      left: 33%;
     }
   }
 }
