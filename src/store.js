@@ -153,7 +153,7 @@ export default new Vuex.Store({
         playerAttribute: {
             lv: 1,
             GOLD: 0,
-            healthRecoverySpeed: 2,
+            healthRecoverySpeed: 5,
             endlessLv: 0,
             attribute: {
                 CURHP: {

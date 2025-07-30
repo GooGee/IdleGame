@@ -25,7 +25,7 @@ export function caculateAttribute(attributezz) {
                 data.HP = item.currentValue
                 break;
             case 'ATK':
-                item.currentValue = item.point * 5 + item.oldValue
+                item.currentValue = item.point * 2 + item.oldValue
                 data.ATK = item.currentValue
                 break;
             case 'CRIT':
@@ -33,11 +33,11 @@ export function caculateAttribute(attributezz) {
                 data.CRIT = item.currentValue
                 break;
             case 'CRITDMG':
-                item.currentValue = item.point * 3 + item.oldValue
+                item.currentValue = item.point * 2 + item.oldValue
                 data.CRITDMG = item.currentValue
                 break;
             case 'DEF':
-                item.currentValue = item.point * 5 + item.oldValue
+                item.currentValue = item.point * 2 + item.oldValue
                 data.DEF = item.currentValue
                 break;
             default:

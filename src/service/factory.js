@@ -149,7 +149,7 @@ export function makeRandomEntry(level, qualityCoefficient) {
         case 'HPPERCENT':
         case 'CRIT':
         case 'CRITDMG':
-            const percentage = (factor * 25 + 5).toFixed(1)
+            const percentage = (factor * 35 + 5).toFixed(1)
             entry.value = percentage
             entry.showVal = '+' + percentage + '%'
             break;
