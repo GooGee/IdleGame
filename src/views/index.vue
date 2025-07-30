@@ -825,19 +825,6 @@ export default {
           break;
         }
       }
-      var b = this.findComponentDownward(this, "ringPanel");
-      var item = b.createNewItem(this.GMEquipQu, this.GMEquipLv);
-      item = JSON.parse(item);
-      var backpackPanel = this.findComponentDownward(
-        this,
-        "backpackPanel",
-      );
-      for (let i = 0; i < backpackPanel.grid.length; i++) {
-        if (JSON.stringify(backpackPanel.grid[i]).length < 3) {
-          this.$set(backpackPanel.grid, i, item);
-          break;
-        }
-      }
 
       var b = this.findComponentDownward(this, "neckPanel");
       var item = b.createNewItem(this.GMEquipQu, this.GMEquipLv);
