@@ -131,15 +131,14 @@ export default {
         return
       }
       this.freeAmount--
-      this.grid = new Array(5).fill({});
-      var wlv = Number(this.$store.state.playerAttribute.weapon.lv);
-      var alv = Number(this.$store.state.playerAttribute.armor.lv);
-      var ringlv = Number(this.$store.state.playerAttribute.ring.lv);
-      var necklv = Number(this.$store.state.playerAttribute.neck.lv);
+      const itemzz = []
       for (let i = 0; i < 5; i++) {
         var lv = Math.floor(this.$store.state.playerAttribute.lv + Math.random() * 5);
-        this.createShopItem(lv);
+        const item = this.createShopItem(lv, true);
+        itemzz.push(item)
       }
+      itemzz.sort((aa, bb) => bb.lv - aa.lv)
+      this.grid = itemzz
     },
     /**
      * 金币刷新商店
@@ -178,15 +177,14 @@ export default {
         });
       } else {
         this.$store.commit("set_player_gold", -cost);
-        this.grid = new Array(5).fill({});
-        var wlv = Number(this.$store.state.playerAttribute.weapon.lv);
-        var alv = Number(this.$store.state.playerAttribute.armor.lv);
-        var ringlv = Number(this.$store.state.playerAttribute.ring.lv);
-        var necklv = Number(this.$store.state.playerAttribute.neck.lv);
+        const itemzz = []
         for (let i = 0; i < 5; i++) {
           var lv = Math.floor(this.$store.state.playerAttribute.lv + Math.random() * 5 + 5);
-          this.createShopItem(lv, true);
+          const item = this.createShopItem(lv, true);
+          itemzz.push(item)
         }
+        itemzz.sort((aa, bb) => bb.lv - aa.lv)
+        this.grid = itemzz
       }
     },
     createShopItem(lv, isPaid = false) {
@@ -226,12 +224,7 @@ export default {
         }
         item = JSON.parse(item);
         item.gold = calculatePrice(item)
-        for (let i = 0; i < this.grid.length; i++) {
-          if (JSON.stringify(this.grid[i]).length < 3) {
-            this.$set(this.grid, i, item);
-            break;
-          }
-        }
+        return item
       }
     },
     openMenu(k, e) {
