@@ -90,7 +90,7 @@ export default {
   methods: {
     evenHandle() {
       let startEnent = () => {
-        if (this.left + 1 >= this.nextEvent * 100 / this.dungeons.eventNum) {
+        if (this.left + 2 >= this.nextEvent * 100 / this.dungeons.eventNum) {
           this.evenInExecution()
           this.nextEvent++
           if (this.nextEvent <= this.dungeons.eventNum) {

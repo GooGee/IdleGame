@@ -70,8 +70,8 @@ export function calculateGainingPoint(player) {
  */
 export function calculatePrice(item, ignoreUpgrade = true) {
     let factor = 1
-    const upgrade = item.enchantlvl ? item.enchantlvl : 1
-    factor += upgrade * 0.2
+    const level = item.enchantlvl ? item.enchantlvl : 1
+    factor += level * 0.2
     if (ignoreUpgrade) {
         factor = 1
     }
@@ -100,8 +100,8 @@ export function calculateUpgradePrice(item, ignoreUpgrade = true) {
  */
 export function calculateUpgradeChance(level) {
     let odds = level * 0.05
-    if (odds > 0.99) {
-        odds = 0.99
+    if (odds > 0.95) {
+        odds = 0.95
     }
     return 1 - odds
 }

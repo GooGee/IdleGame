@@ -133,13 +133,13 @@ export function makeRandomEntry(level, qualityCoefficient) {
             entry.showVal = '+' + random
             break;
         case 'DEF':
-            var random = level * 0.4 + (factor * level / 2 + 1)
+            var random = level * 1 + (factor * level / 2 + 1)
             random = parseInt(random * qualityCoefficient)
             entry.value = random
             entry.showVal = '+' + random
             break;
         case 'HP':
-            var random = level * 3 + (factor * level / 2 + 1)
+            var random = level * 5 + (factor * level / 2 + 1)
             random = parseInt(random * qualityCoefficient)
             entry.value = random
             entry.showVal = '+' + random
@@ -195,7 +195,7 @@ export function makeDungeon(level = 1, difficulty = 1) {
 function makeMonster(level, factor, isBoss = false) {
     const modifier = isBoss ? 2 : 1
     const name = isBoss ? 'boss' : 'monster'
-    const gold = modifier * parseInt(factor * level ** 1.2 * (Math.random() * 1 + 11))
+    const gold = modifier * parseInt(factor * level ** 1.5 * (Math.random() * 1 + 11))
     const HP = modifier * parseInt(factor * level ** 2 * (Math.random() * 1 + 11))
     const ATK = modifier * parseInt(factor * level ** 2 * (Math.random() * 1 + 2))
     let equip = [
