@@ -5,7 +5,7 @@
     </div> -->
     <div class="neckPanel" v-if="JSON.stringify(neck)!='{}'">
       <div class="title">
-        <div class='icon' :class="{'red-flash':neck.enchantlvl>=13,unique:neck.quality.name=='神器'}" :style="{'box-shadow':'inset 0 0 7px 2px '+neck.quality.color}">
+        <div class='icon' :class="{'red-flash':neck.enchantlvl>11,unique:neck.quality.name=='神器'}" :style="{'box-shadow':'inset 0 0 7px 2px '+neck.quality.color}">
           <img :src="neck.type.iconSrc" alt="">
         </div>
         <div class='name' :style="{color:neck.quality.color}">{{neck.type.name}} {{neck.enchantlvl?'(+'+neck.enchantlvl+')':''}}</div>

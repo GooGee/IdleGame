@@ -128,7 +128,7 @@
 
       <div class="weapon" @mouseover="showItemInfo($event,'weapon',playerWeapon,false)" @mouseleave="closeItemInfo">
         <div class="title" v-if="playerWeapon">
-          <div class='icon' :class="{'red-flash':playerWeapon.enchantlvl>=13,unique:playerWeapon.quality.name=='神器'}" :style="{'box-shadow':'inset 0 0 7px 2px '+playerWeapon.quality.color}">
+          <div class='icon' :class="{'red-flash':playerWeapon.enchantlvl>11,unique:playerWeapon.quality.name=='神器'}" :style="{'box-shadow':'inset 0 0 7px 2px '+playerWeapon.quality.color}">
             <img :src="playerWeapon.type.iconSrc" alt="">
           </div>
           <div class='name' :style="{color:playerWeapon.quality.color}">{{playerWeapon.type.name}} {{playerWeapon.enchantlvl?'(+'+playerWeapon.enchantlvl+')':''}}</div>
@@ -136,7 +136,7 @@
       </div>
       <div class="armor" @mouseover="showItemInfo($event,'armor',playerArmor,false)" @mouseleave="closeItemInfo">
         <div class="title" v-if="playerArmor">
-          <div class='icon' :class="{'red-flash':playerArmor.enchantlvl>=13,unique:playerArmor.quality.name=='神器'}" :style="{'box-shadow':'inset 0 0 7px 2px  '+playerArmor.quality.color}">
+          <div class='icon' :class="{'red-flash':playerArmor.enchantlvl>11,unique:playerArmor.quality.name=='神器'}" :style="{'box-shadow':'inset 0 0 7px 2px  '+playerArmor.quality.color}">
             <img :src="playerArmor.type.iconSrc" alt="">
           </div>
           <div class='name' :style="{color:playerArmor.quality.color}">{{playerArmor.type.name}} {{playerArmor.enchantlvl?'(+'+playerArmor.enchantlvl+')':''}}</div>
@@ -144,7 +144,7 @@
       </div>
       <div class="neck" @mouseover="showItemInfo($event,'neck',playerNeck,false)" @mouseleave="closeItemInfo">
         <div class="title" v-if="playerNeck">
-          <div class='icon' :class="{'red-flash':playerNeck.enchantlvl>=13,unique:playerNeck.quality.name=='神器'}" :style="{'box-shadow':'inset 0 0 7px 2px '+playerNeck.quality.color}">
+          <div class='icon' :class="{'red-flash':playerNeck.enchantlvl>11,unique:playerNeck.quality.name=='神器'}" :style="{'box-shadow':'inset 0 0 7px 2px '+playerNeck.quality.color}">
             <img :src="playerNeck.type.iconSrc" alt="">
           </div>
           <div class='name' :style="{color:playerNeck.quality.color}">{{playerNeck.type.name}} {{playerNeck.enchantlvl?'(+'+playerNeck.enchantlvl+')':''}}</div>

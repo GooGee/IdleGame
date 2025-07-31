@@ -5,7 +5,7 @@
     </div> -->
     <div class="ringPanel" v-if="JSON.stringify(ring)!='{}'">
       <div class="title">
-        <div class='icon' :class="{'red-flash':ring.enchantlvl>=13,unique:ring.quality.name=='神器'}" :style="{'box-shadow':'inset 0 0 7px 2px '+ring.quality.color}">
+        <div class='icon' :class="{'red-flash':ring.enchantlvl>11,unique:ring.quality.name=='神器'}" :style="{'box-shadow':'inset 0 0 7px 2px '+ring.quality.color}">
           <img :src="ring.type.iconSrc" alt="">
         </div>
         <div class='name' :style="{color:ring.quality.color}">{{ring.type.name}} {{ring.enchantlvl?'(+'+ring.enchantlvl+')':''}}</div>
