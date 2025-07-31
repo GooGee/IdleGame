@@ -96,10 +96,10 @@ export default {
     return {
       equiment: {},
       strengTime: '', //刷新副本计时器
-      strengTimeO: 60, //刷新副本时间间隔 单位：S
+      strengTimeO: 33, //刷新副本时间间隔 单位：S
       autoRecasting: false,
       autoRecastModel: false,
-      autoRecastLv: 60,
+      autoRecastLv: 55,
       autoRecastTimer: 0,
       autoStrengModel: false,
       autoStrengLv: 8,
@@ -140,7 +140,7 @@ export default {
       if (this.strengTimeO <= 0) {
         clearInterval(this.strengTime)
         this.strengTime = ''
-        this.strengTimeO = 60
+        this.strengTimeO = 33
       }
     }, 1000)
   },
@@ -178,7 +178,7 @@ export default {
       if (this.strengTime&&this.equiment.enchantlvl>=12) {
         this.$store.commit("set_sys_info", {
           msg: `
-          刷新页面时需要等待60S才能强化+12以上，仍需等待${this.strengTimeO}秒。
+          刷新页面时需要等待33S才能强化+12以上，仍需等待${this.strengTimeO}秒。
         `,
           type: 'wrning'
         });

@@ -108,7 +108,7 @@ export default {
           clearInterval(this.pro)
         }
 
-        this.left += 0.9
+        this.left += 1.2
       }
       this.eventBegin()
       this.pro = setInterval(() => {
@@ -320,7 +320,7 @@ export default {
       if (event.type == 'boss' && this.dungeons.type != 'endless') {
         const odds = 0.5*(this.dungeons.difficulty-1)
         if (Math.random() < odds) {
-          const level = parseInt(lv + Math.random() * 11 + 5)
+          const level = parseInt(lv + Math.random() * 11 + 11)
           var random = Math.random()
           if (random < 0.33) {
             var b = this.findBrothersComponents(this, 'weaponPanel', false)[0]
