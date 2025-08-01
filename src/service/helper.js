@@ -55,9 +55,7 @@ export function caculateAttribute(attributezz) {
 export function calculateGainingPoint(player) {
     let sum = player.GOLD / N_1m
 
-    if (player.lv > 20) {
-        sum += (player.lv - 20) ** 1.5
-    }
+    sum += player.lv ** 1.2
 
     return Math.ceil(sum)
 }

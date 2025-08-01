@@ -197,7 +197,7 @@ function makeMonster(level, factor, isBoss = false) {
     const name = isBoss ? 'boss' : 'monster'
     const gold = modifier * parseInt(factor * level ** 1.5 * (Math.random() * 1 + 11))
     const HP = modifier * parseInt(factor * level ** 2 * (Math.random() * 1 + 11))
-    const ATK = modifier * parseInt(factor * level ** 2 * (Math.random() * 1 + 2))
+    const ATK = modifier * parseInt(factor * level ** 2 * (Math.random() * 0.2 + 2))
     let equip = [
         0.1 * factor,
         0.2 * factor,

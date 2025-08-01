@@ -186,12 +186,8 @@
           <p>- 困难和极难副本仅能挑战一次</p>
         </div>
         <div class="handle">
-          <div v-if="dungeons.type!='endless'" class="handle-column">
+          <div class="handle-column">
             <label v-if="dungeons.difficulty==1"><input type="checkbox" name="" v-model="reChallenge"> 重复挑战</label>
-          </div>
-          <div v-else class="handle-column">
-            <label><input type="checkbox" name="" v-model="upEChallenge"> 向上挑战</label>
-            <label><input type="checkbox" name="" v-model="reEChallenge"> 重复挑战</label>
           </div>
           <div :class="(attribute.CURHP.value / attribute.MAXHP.value < 0.5) ? 'red' : ''">
             {{(attribute.CURHP.value / attribute.MAXHP.value * 100).toFixed(0)}}% HP
@@ -248,7 +244,6 @@
         </template>
         <template v-slot:tip>
           <p class="info">* 刷新当前世界副本</p>
-          <p class="info">* 冷却时间：10秒钟</p>
         </template>
       </cTooltip>
 
