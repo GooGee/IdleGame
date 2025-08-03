@@ -14,12 +14,6 @@
       </div>
     </div>
     <div class="handle">
-
-      <div class="info">
-        <span v-show="timeStart" class="timeStart">等待：{{timeo}}s</span>
-        <span>免费刷新次数：{{freeAmount}}</span>
-      </div>
-
       <div class="button" @click="goldRefreshShopItems()">付费高级刷新</div>
       <div class="button" @click="refreshShopItems()">免费刷新</div>
     </div>
@@ -66,26 +60,6 @@ export default {
         document.body.removeEventListener("click", this.closeMenu);
       }
     },
-    freeAmount(value) {
-      if (value < MaxFree) {
-
-        if (this.timeStart) {
-          return
-        }
-        this.timeStart = true
-        this.timeInterval = setInterval(() => {
-          this.timeo--
-          if (this.timeo <= 0) {
-            this.freeAmount++
-            this.timeo = CD
-          }
-        }, 1000)
-      } else {
-        this.timeStart = false
-        this.timeo = CD
-        clearInterval(this.timeInterval)
-      }
-    }
   },
   mounted() {
     this.refreshShopItems(true);
@@ -118,19 +92,6 @@ export default {
         })
         return
       }
-      if (this.freeAmount > MaxFree) {
-        this.freeAmount = MaxFree
-      }
-      if (this.freeAmount < 1) {
-        this.$store.commit("set_sys_info", {
-          msg: `
-              刷新次数不够了，等等吧。
-            `,
-          type: "warning",
-        });
-        return
-      }
-      this.freeAmount--
       const itemzz = []
       for (let i = 0; i < 5; i++) {
         var lv = Math.floor(this.$store.state.playerAttribute.lv + Math.random() * 5);
