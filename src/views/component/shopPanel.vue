@@ -70,35 +70,24 @@ export default {
      * constraint 是否跳过神器装备检测强制刷新
      */
     refreshShopItems(constraint) {
-      this.tipsFlag = !constraint && this.grid.find(item => {
-        return item.quality && item.quality.name == '神器'
-      })
-      if (this.tipsFlagComfirm) {
-        return
-      }
-      if (this.tipsFlag && !constraint) {
-        this.tipsFlagComfirm = true
-        this.$message({
-          message: '刷到了神器装备哦，不看看嘛？',
-          closeBtnText: '看看',
-          confirmBtnText: '辣鸡我不要',
-          onCancle: () => {
-            this.tipsFlagComfirm = false
-          },
-          onClose: () => {
-            this.tipsFlagComfirm = false
-            this.refreshShopItems(true)
-          }
-        })
-        return
-      }
       const itemzz = []
       for (let i = 0; i < 5; i++) {
         var lv = Math.floor(this.$store.state.playerAttribute.lv + Math.random() * 5);
         const item = this.createShopItem(lv, true);
         itemzz.push(item)
       }
-      itemzz.sort((aa, bb) => bb.lv - aa.lv)
+      itemzz.sort(function (aa, bb) {
+          if (aa.quality.name === bb.quality.name) {
+              return bb.lv - aa.lv
+          }
+          if (aa.quality.name === '神器') {
+              return -1
+          }
+          if (bb.quality.name === '神器') {
+              return 1
+          }
+          return 0
+      })
       this.grid = itemzz
     },
     /**
@@ -106,28 +95,6 @@ export default {
      * constraint 是否跳过神器装备检测强制刷新
      */
     goldRefreshShopItems(constraint) {
-      this.tipsFlag = !constraint && this.grid.find(item => {
-        return item.quality && item.quality.name == '神器'
-      })
-      if (this.tipsFlagComfirm) {
-        return
-      }
-      if (this.tipsFlag && !constraint) {
-        this.tipsFlagComfirm = true
-        this.$message({
-          message: '刷到了神器装备哦，不看看嘛？',
-          closeBtnText: '看看',
-          confirmBtnText: '辣鸡我不要',
-          onCancle: () => {
-            this.tipsFlagComfirm = false
-          },
-          onClose: () => {
-            this.tipsFlagComfirm = false
-            this.goldRefreshShopItems(true)
-          }
-        })
-        return
-      }
       var cost = 100 * this.$store.state.playerAttribute.lv
       if (this.$store.state.playerAttribute.GOLD < cost) {
         this.$store.commit("set_sys_info", {
