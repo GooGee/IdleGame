@@ -77,7 +77,7 @@
             <div class="item">
               <img src="../assets/icons/icon_11.png" alt="">
               <div class="value" :style="{fontSize:attribute.DEF.value>=100000?'.18rem':'.23rem'}">
-                {{attribute.DEF.value}} (-{{((1-attribute.REDUCDMG)*100).toFixed(0)}}%)
+                {{attribute.DEF.value}} (-{{((1-attribute.REDUCDMG)*100).toFixed(1)}}%)
               </div>
             </div>
           </template>
@@ -546,7 +546,7 @@ export default {
           msg: `
                   副本刷新完成。
                 `,
-          type: 'wrning'
+          type: 'win'
         });
         this.dungeonsTime = setInterval(() => {
           this.dungeonsTimeO--

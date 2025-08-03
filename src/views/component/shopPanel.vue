@@ -183,7 +183,18 @@ export default {
           const item = this.createShopItem(lv, true);
           itemzz.push(item)
         }
-        itemzz.sort((aa, bb) => bb.lv - aa.lv)
+        itemzz.sort(function (aa, bb) {
+            if (aa.quality.name === bb.quality.name) {
+                return bb.lv - aa.lv
+            }
+            if (aa.quality.name === '神器') {
+                return -1
+            }
+            if (bb.quality.name === '神器') {
+                return 1
+            }
+            return 0
+        })
         this.grid = itemzz
       }
     },
