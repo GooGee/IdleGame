@@ -13,6 +13,7 @@ interface Entry {
     value: number
     showVal: string
     valCoefficient: number
+    EntryLevel: number
 }
 
 interface EquipmentType {

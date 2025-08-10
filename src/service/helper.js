@@ -2,6 +2,11 @@
 const N_1k = 1000
 const N_1m = N_1k * N_1k
 
+const LevelOdds = 0.05
+const MaxOdds = 0.95
+const MinQuality = 0.9
+const UpgradePriceFactor = 5
+
 /**
  * 
  * @param {object[]} attributezz 
@@ -68,15 +73,40 @@ export function calculateGainingPoint(player) {
  */
 export function calculatePrice(item, ignoreUpgrade = true) {
     let factor = 1
-    const level = item.enchantlvl ? item.enchantlvl : 1
-    factor += level * 0.2
-    if (ignoreUpgrade) {
-        factor = 1
+    if (ignoreUpgrade === false) {
+        const level = item.enchantlvl ? item.enchantlvl : 0
+        for (let index = 1; index <= level; index++) {
+            let odds = index * LevelOdds
+            if (odds > MaxOdds) {
+                odds = MaxOdds
+            }
+            factor += 1 / (1 - odds) / UpgradePriceFactor
+        }
+
+        let amount = 0
+        let sum = 0
+        item.extraEntry.forEach(function (one) {
+            if (one.EntryLevel) {
+                let value = one.EntryLevel
+                if (value <= 11) {
+                    return
+                }
+                if (value > 99) {
+                    value = 99
+                }
+                sum += value - 50
+                amount += 1
+            }
+        })
+        if (amount) {
+            const odds = sum / amount / 50
+            factor += 1 / (1 - odds * odds) / UpgradePriceFactor * amount
+        }
     }
 
     let quality = item.quality.qualityCoefficient
-    if (quality < 0.9) {
-        quality = 0.9
+    if (quality < MinQuality) {
+        quality = MinQuality
     }
     return parseInt(item.lv ** 1.5 * quality ** 3 * factor * 10)
 }
@@ -88,7 +118,7 @@ export function calculatePrice(item, ignoreUpgrade = true) {
  * @returns 
  */
 export function calculateUpgradePrice(item, ignoreUpgrade = true) {
-    return parseInt(calculatePrice(item, ignoreUpgrade) / 5)
+    return parseInt(calculatePrice(item, ignoreUpgrade) / UpgradePriceFactor)
 }
 
 /**
@@ -100,9 +130,9 @@ export function calculateUpgradeChance(level) {
     if (level < 1) {
         return 1
     }
-    let odds = level * 0.05
-    if (odds > 0.95) {
-        odds = 0.95
+    let odds = level * LevelOdds
+    if (odds > MaxOdds) {
+        odds = MaxOdds
     }
     return 1 - odds
 }
@@ -114,7 +144,7 @@ export function calculateUpgradeChance(level) {
  * @returns 
  */
 export function calculateUpgradeValue(value, level) {
-    const factor = level * 0.05 + 1
+    const factor = level * LevelOdds + 1
     return Math.round(factor * value)
 }
 
