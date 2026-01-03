@@ -172,13 +172,6 @@ export default {
           });
           this.$store.commit("set_endless_lv", this.$store.state.playerAttribute.endlessLv + 1);
           this.$store.commit("set_player_curhp", 'full');
-        } else {
-          this.$store.commit("set_sys_info", {
-            msg: `
-                副本探索成功！
-              `,
-            type: "win",
-          });
         }
 
         let p = this.findComponentUpward(this, 'index')

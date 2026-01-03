@@ -232,7 +232,7 @@ export default {
       this.$store.commit("set_player_gold", parseInt(gold));
       this.$store.commit("set_sys_info", {
         msg: `
-              ${sellMsg ? sellMsg : ''}出售装备获得金币${parseInt(gold)}
+              ${sellMsg ? sellMsg : ''}出售装备获得金币${parseInt(gold).toLocaleString('en-US')}
             `,
         type: 'trophy',
       });
