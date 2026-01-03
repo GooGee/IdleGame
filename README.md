@@ -2,11 +2,11 @@
 
 > 一个全随机的刷装备刷词条小游戏,游戏链接：[couy.xyz](http://couy.xyz)
 
-# 游戏截图
 
-![游戏截图1](https://raw.githubusercontent.com/Couy69/assets/master/Snipaste_2020-11-03_13-05-23.png)
-![游戏截图2](https://raw.githubusercontent.com/Couy69/assets/master/Snipaste_2020-11-09_13-01-54.png)
-![游戏截图3](https://raw.githubusercontent.com/Couy69/assets/master/Snipaste_2020-11-09_13-01-30.png)
+## version
+
+- npm 16
+
 
 # 游戏设计
 
@@ -16,6 +16,7 @@
 - 默认暴击伤害 150%
 - 完成副本时可能掉落独特级别(5 个词条)的装备（通关后 2.5%掉落率，无尽挑战不会掉落）
 - 达到lv10后开启无尽挑战
+
 
 # 更新内容
 
